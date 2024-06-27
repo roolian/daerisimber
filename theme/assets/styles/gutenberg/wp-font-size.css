@@ -1,0 +1,19 @@
+.has-xs-font-size {
+    @apply text-xs;
+}
+.has-sm-font-size {
+    @apply text-sm;
+}
+.has-default-font-size,
+.has-normal-font-size {
+    @apply text-base;
+}
+.has-lg-font-size {
+    @apply text-lg;
+}
+.has-xl-font-size {
+    @apply text-xl;
+}
+.has-xxl-font-size {
+    @apply text-2xl;
+}

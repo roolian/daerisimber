@@ -1,0 +1,26 @@
+<div class="card-box has-image-left mb-12">
+    {% if post.thumbnail %}
+        <div class="card-box-image" style="background-image:url({{ post.thumbnail.src('medium') }})"></div>
+    {% else %}
+        <div class="card-box-image"></div>
+    {% endif %}
+    <div class="card-box-content">
+        <div class="circle has-background-light">
+            <div class="circle-decoration has-text-warning"></div>
+        </div>
+        <h3 class="font-display text-2xl has-text-primary mb-0">
+            {{ post.title }}
+        </h3>
+        <div class="description">
+            <div class="mb-4 text-base">
+                <strong>
+                    {{ post.date }}
+                </strong>
+            </div>
+            {{ post.excerpt.read_more(false).length(20) }}
+        </div>
+        <a href="{{ post.link }}" class="card-box-link is-transparent" title="{{ post.title }}">
+            Read more
+        </a>
+    </div>
+</div>

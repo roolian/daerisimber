@@ -1,0 +1,30 @@
+{#
+/**
+ * Block Name: Buttons Block
+ *
+ */
+#}
+
+{% set allowed_blocks = ['daeris/button'] %}
+
+
+{% set alignClass = "md:justify-start" %}
+
+{% if block.align == "center" %}
+
+    {% set alignClass = "md:justify-center" %}
+
+{% elseif block.align == "right" %}
+
+    {% set alignClass = "md:justify-end" %}
+
+{% endif %}
+
+
+
+<div id="{{ id }}" class="{{ class }} ">
+
+    <div class="flex {{ fields.mobile_full_width ? " w-full" : " max-md:w-max" }} flex-col md:flex-row items-stretch md:items-center space-y-5 md:space-y-0 md:space-x-6 {{alignclass}}">
+        <InnerBlocks allowedBlocks="{{ allowed_blocks|json_encode|esc_attr }}"/>
+    </div>
+</div>

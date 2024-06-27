@@ -1,0 +1,27 @@
+{#
+@var Array button : {
+    String label
+    Array bg_color : {
+        Int red
+        Int green
+        Int blue
+    }
+    String color
+}
+
+@var string url
+@var string target
+@var string class
+#}
+
+{% set button_style = '' %}
+{% set button_style = button.bg_color ? button_style ~ '--background-color: ' ~ button.bg_color.red ~ ', ' ~ button.bg_color.green ~ ' , ' ~ button.bg_color.blue ~ '; ' %}
+{% set button_style = button.color ? button_style ~ '--color: ' ~ button.color ~ '; '  %}
+
+{% set class = class ? class : 'button is-primary is-rounded is-small' %}
+{% set url = url ? url : '#' %}
+{% set target = target ? 'target="' ~ target ~ '"' : '' %}
+
+<a href="{{ url }}" {{ target }} class="{{ button.label == '' ? 'is-transparent' }} {{ class }}" title="{{ button.label }}" style="{{ button_style }}">
+    {{ button.label }}
+</a>

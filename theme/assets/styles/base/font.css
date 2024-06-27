@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "BlogScript";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/BlogScript/blog-script.otf") format("opentype");
+    font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@font-face {
+    font-family: "BlogScript";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/BlogScript/blog-script-light.otf") format("opentype");
+    font-feature-settings: 'pnum' on, 'lnum' on;
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_300.otf") format("opentype");
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_300italic.otf") format("opentype");
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_300.otf") format("opentype");
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_300italic.otf") format("opentype");
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_500.otf") format("opentype");
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_500italic.otf") format("opentype");
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_700.otf") format("opentype");
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_700italic.otf") format("opentype");
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_900.otf") format("opentype");
+}
+@font-face {
+    font-family: "MuseoSlab";
+    font-style: italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url("/app/themes/daeristwo/dist/fonts/Museo_Slab/Museo_Slab_900italic.otf") format("opentype");
+}

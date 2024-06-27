@@ -1,0 +1,46 @@
+body .editor-styles-wrapper .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)), 
+.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    max-width: none !important;
+}
+
+
+.block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)) {
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.wp-block-group ,
+.wp-block-group-is-layout-flow {
+    @apply container max-w-screen-lg mx-auto;
+}
+
+.wp-block-group.alignwide,
+.wp-block[data-align="wide"] .wp-block-group {
+    @apply container;
+}
+
+.wp-block-group.alignwide .wp-block-group__inner-container,
+.wp-block[data-align="wide"] .wp-block-group__inner-container {
+    @apply container;
+}
+
+.wp-block-group.alignfull ,
+.wp-block[data-align="full"] .wp-block-group {
+    @apply max-w-none;
+}
+.wp-block-group.alignfull .wp-block-group__inner-container,
+.wp-block[data-align="full"] .wp-block-group__inner-container {
+    @apply max-w-none;
+}
+.wp-block-group.is-style-limited > .wp-block-group__inner-container {
+    @apply container max-w-3xl px-4;
+}
+
+.wp-block-group.is-style-overgrid > .wp-block-group__inner-container {
+    @apply container max-w-[1440px] xl:pl-24  lg:pl-5  ;
+}
+
+.wp-block-group.has-background {
+    padding: 0;
+}

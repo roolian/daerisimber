@@ -1,0 +1,15 @@
+@layer components {
+
+    .field {
+        @apply relative;
+    }
+
+    .label {
+        @apply  text-sm;
+    }
+
+    .input {
+        @apply bg-white placeholder:text-gray-400 placeholder:font-normal hover:border-gray-400 rounded border border-gray-200 p-4 text-sm block focus:border-primary ;
+    }
+
+}

@@ -1,0 +1,48 @@
+{#
+/**
+ * Block Name: Post list
+ */
+#}
+
+<div id="{{ id }}" class="{{ class }} py-14 md:py-24">
+    <div data-ajax-action="drs_post_list_block_load_more_posts" data-ajax-injection="append" data-ajax-form=".post-list-form" data-ajax-update=".wrapper" data-ajax-trigger=".read-more">
+
+        <form method="post" class="post-list-form">
+            <input type="hidden" name="page" value="1">
+            <input type="hidden" name="block_id" value="{{ block.id }}">
+            <input type="hidden" name="post_id" value="{{ post_id }}">
+        </form>
+
+        <div class="flex flex-wrap ">
+
+            <div class="wrapper w-full">
+
+                {% include block.path ~ "/partial/post-list-loop.twig" with {'posts' : posts, 'post_type': fields.post_type, 'item_button' : fields.item_button, 'columns' : fields.columns}  %}
+
+            </div>
+        </div>
+
+        {% if fields.pagination_is_active %}
+            <div class="my-8 post-list-pagination">
+                {{ include('partial/pagination.twig', { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) })  }}
+            </div>
+            {% if fields.see_more_is_active %}
+                <script>
+                    document.querySelector('#{{ id }} .post-list-pagination').classList.add('hidden');
+                </script>
+            {% endif %}
+
+        {% endif %}
+
+        {% if fields.see_more_is_active %}
+
+            <div class="text-center">
+                {{ include('component/button.twig', { button : fields.see_more_button, class: 'read-more button is-custom is-rounded is-small' }) }}
+            </div>
+
+        {% endif %}
+
+
+    </div>
+
+</div>

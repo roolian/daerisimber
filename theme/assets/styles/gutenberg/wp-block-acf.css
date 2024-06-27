@@ -1,0 +1,7 @@
+.wp-block-acf {
+    @apply max-w-none;
+}
+
+.wp-block-acf.alignwide {
+    @apply container;
+}

@@ -1,0 +1,13 @@
+
+<div class="space-y-7">
+    {% for post in posts %}
+        <div class="" style="width:{{ 100 / columns }}%">
+        
+            {% set button = include('component/button.twig', { url: post.link, button: item_button, class: 'link-block button is-custom is-rounded is-small' }) %}
+            
+            {% include ["partial/tease-" ~ post_type ~ ".twig", "partial/tease.twig"] with {'post' : post, 'button' : item_button}  %}
+
+        </div>
+    {% endfor %}
+
+</div>

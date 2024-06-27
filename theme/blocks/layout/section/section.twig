@@ -1,0 +1,41 @@
+{#
+/**
+ * Block Name: Section Block
+ *
+ */
+#}
+
+{% set spacing_class = "my-20 md:my-30 first:mt-30 md:first:mt-40" %}
+{% set styles = "" %}
+{% set inset_deco = "-inset-y-20 md:-inset-y-30 first:-top-30 md:group-first/section:-top-40" %}
+
+{% if fields.bg_color %}
+
+    {% set spacing_class = "py-20 md:py-30 first:pt-30  md:first:py-0" %}
+    {% set styles = "background-color:" ~ fields.bg_color ~ ";" %}
+
+    {% set inset_deco = "" %}
+
+{% endif %}
+
+{% if fields.text_color %}
+    {% set styles = styles ~ " color:" ~ fields.text_color %}
+{% endif %}
+
+<section id="{{ id }}" class="relative  {{ spacing_class }} {{ class }}  group/section" style="{{ styles }}">
+
+        {% if fields.divider_top_activate %}
+            <div class="absolute top-0 w-full">
+                {% include "component/shape-divider.twig" with { options:fields.divider_top} %}
+            </div>
+        {% endif %}
+        <div>
+            <InnerBlocks/>
+        </div>
+        {% if fields.divider_bottom_activate %}
+            <div class="absolute bottom-0 w-full">
+                {% include "component/shape-divider.twig" with { options:fields.divider_bottom} %}
+            </div>
+        {% endif %}
+
+</section>

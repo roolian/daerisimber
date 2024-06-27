@@ -1,0 +1,29 @@
+.wpcf7 {
+    .wpcf7-not-valid-tip {
+        color: theme("colors.warning");
+        font-size: 1em;
+        font-weight: normal;
+        display: block;
+    }
+
+    .wpcf7-not-valid {
+        border-color: theme("colors.warning");
+    }
+
+    .wpcf7-response-output {
+    }
+
+    .columns {
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-top: -5px;
+    }
+    .column {
+        padding: 5px 10px;
+    }
+
+    label {
+        color: theme("colors.primary");
+        font-weight: 600;
+    }
+}

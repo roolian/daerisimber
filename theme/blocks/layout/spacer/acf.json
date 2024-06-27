@@ -1,0 +1,53 @@
+{
+    "key": "group_6378cc04b8f28",
+    "title": "Bloc - Responsive spacer",
+    "fields": [
+        {
+            "key": "field_6378cc05c1ed0",
+            "label": "Type",
+            "name": "spacer_type",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "extra-large": "Extra large - Séparation de section",
+                "large": "Large - Séparation de bloc",
+                "medium": "Medium- Séparation de textes",
+                "regular": "Regular- Séparation de textes",
+                "small": "Small - Enchainement de textes"
+            },
+            "default_value": "section",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "daeris\/spacer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1684858828
+}

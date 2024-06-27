@@ -1,0 +1,23 @@
+.wp-block {
+    @apply max-w-none;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.edit-post-visual-editor__post-title-wrapper {
+    @apply mt-4 mb-8 -mx-2 pb-4 px-2;
+    border-bottom: 2px dashed #e8e8e8;
+
+    .editor-post-title {
+        color: #707070;
+        font-size: 2rem;
+    }
+}
+
+.is-style-md-text-center {
+    @apply md:text-center;
+}
+
+.is-style-max-md-hidden {
+    @apply max-md:hidden;
+}

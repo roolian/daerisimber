@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "settings": {
+		"layout": {
+			"contentSize": "650px",
+			"wideSize": "1200px"
+		},
+        "color": {
+            "custom": false,
+            "customGradient": false
+        },
+        "typography": {
+            "customFontSize": false,
+            "dropCap": false,
+            "fontWeight": false,
+            "fontStyle": false,
+            "textTransform": false,
+            "textDecoration": false
+        }
+    },
+    "styles": {}
+}

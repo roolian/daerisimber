@@ -1,0 +1,46 @@
+{#
+/**
+ * Block Name: Hero Block
+ *
+ */
+#}
+
+<div id="{{ id }}" class=" {{ class }}" x-data="{ open: false }">
+
+    <div class="relative overflow-clip">
+        <div class="row justify-center items-center relative z-10">
+            <div class="col md:w-10/12  xl:w-6/12 ">
+                <div class="py-20 md:py-30">
+                    <h1 class="h1" @click="open = !open">
+                        {{ fields.title|striptags('<strong><br>') }}
+                    </h1>
+
+                    <template x-teleport="body" >
+                        <div x-show="open" class="fixed inset-0 z-40" x-transition.opacity>
+                            <div class="bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center"  @click="open = false">
+                                <div class="bg-white max-w-3xl p-8 rounded-md">
+                                    Aenean incididunt dolorum morbi litora perspiciatis quidem aenean, eu mollit, egestas bibendum, maxime officia commodi facere ipsum fusce, inceptos condimentum aliquip gravida, dis nam, tempora et ea facilis, consequat ultrices, eligendi exercitationem!
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    {% if fields.subtitle %}
+                        <div class="mt-8 ">
+                            {{ fields.subtitle }}
+                        </div>
+                    {% endif %}
+                    <InnerBlocks/>
+
+                </div>
+            </div>
+            {% if fields.image %}
+                <div class="col xl:w-6/12">
+                    <div class="flex justify-center">
+                        <img src="{{ get_image(fields.image).src }}" alt="">
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+</div>

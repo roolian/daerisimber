@@ -1,0 +1,49 @@
+{#
+/**
+ * Block Name: Responsive Spacer Block
+ *
+ */
+#}
+
+{% set h_class = "h-20 md:h-30" %}
+
+{% if fields.spacer_type == "extra-large" %}
+
+    {% set h_class = "h-20 md:h-30" %}
+
+{% endif %}
+
+{% if fields.spacer_type == "large" %}
+
+    {% set h_class = "h-8 md:h-15" %}
+
+{% endif %}
+
+{% if fields.spacer_type == "medium" %}
+
+    {% set h_class = "h-8 md:h-8" %}
+
+{% endif %}
+
+{% if fields.spacer_type == "regular" %}
+
+    {% set h_class = "h-5 md:h-5" %}
+
+{% endif %}
+
+{% if fields.spacer_type == "small" %}
+
+    {% set h_class = "h-3 md:h-3" %}
+
+{% endif %}
+
+<div id="{{ id }}" class="{{ class }} {{ h_class }}">
+
+    {% if is_preview %}
+        <div class="w-full h-full bg-black bg-opacity-50 text-white text-opacity-80 flex items-center justify-center text-xs">
+            Responsive spacer -
+            {{fields.spacer_type}} - {{ h_class }}
+        </div>
+    {% endif %}
+
+</div>

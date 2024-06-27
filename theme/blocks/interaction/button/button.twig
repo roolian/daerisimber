@@ -1,0 +1,104 @@
+{#
+/**
+ * Block Name: Button Block
+ *
+ */
+#}
+
+
+{% set url = is_preview ? "javascript:" : fields.button_link.url  %}
+
+<!-- Tailwind white list <a class="btn-secondary-light btn-secondary btn-primary-light btn-primary btn-primary-outline btn-secondary-outline">test</a>-->
+
+<a 
+    id="{{ id }}" 
+    href="{{ not is_preview ? fields.link.url : "javascript:" }}" 
+    class="{{ fields.style != "outline" ? fields.style }} {{ fields.style == "plein" ? "btn-primary" }} {{ fields.style == "outline" ? "btn-secondary" }}" 
+    target="{{ fields.link.target }}"
+>
+    <span>
+        {{ fields.link.title  }}
+    </span>
+
+    {% if fields.button_icon_name %}
+
+        {% if fields.button_icon_name != "none" %}
+
+            <span class="block w-5">
+                {% include "svg/" ~ fields.button_icon_name ~ ".twig" %}
+            </span>
+
+        {% endif %}
+
+    {% endif %}
+</a>
+
+<style type="text/css">
+    #{{ id }}
+    {
+        {% if item.button_style == "outline" %}
+
+            {% if item.button_color %}
+                color: {{item.button_color}}
+                ;
+                border-color: {{item.button_color}}
+                ;
+            {% endif %}
+
+            {% if item.button_bg_color %}
+                background-color: {{item.button_bg_color}}
+                ;
+            {% endif %}
+
+        {% else %}
+
+            {% if item.button_color %}
+                color: {{item.button_color}}
+                ;
+            {% endif %}
+
+            {% if item.button_bg_color %}
+                background-color: {{item.button_bg_color}}
+                ;
+                border-color: {{item.button_bg_color}}
+                ;
+            {% endif %}
+
+        {% endif %}
+
+    }
+
+    #{{ id ~ ":hover"  }}
+    {
+
+        {% if item.button_bg_color_hover %}
+
+            background-color: {{item.button_bg_color_hover}}
+            ;
+
+        {% else %}
+
+            {% if item.button_color %}
+                background-color: {{item.button_color}}
+                ;
+            {% endif %}
+
+        {% endif %}
+
+        {% if item.button_color_hover %}
+
+            color: {{item.button_color_hover}}
+            ;
+
+        {% else %}
+
+            {% if item.button_bg_color %}
+                color: {{item.button_bg_color}}
+                ;
+            {% endif %}
+
+        {% endif %}
+
+    }
+
+</style>

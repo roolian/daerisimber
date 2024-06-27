@@ -1,0 +1,22 @@
+{
+  "apiVersion": 2,
+  "name": "daeris/post-list",
+  "title": "List de contenu",
+  "description": "Ajoute une liste de contenu",
+  "category": "daeris",
+  "acf": {
+    "mode": "preview"
+  },
+  "supports": {
+    "align": false,
+    "jsx": false
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "is_preview": true
+      }
+    }
+  }
+}

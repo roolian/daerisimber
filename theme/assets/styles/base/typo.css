@@ -1,0 +1,40 @@
+@layer base {
+    html {
+        @apply text-base text-black font-body;
+    }
+
+    hr {
+        border-top: 1px solid;
+    }
+
+    .display {
+        @apply font-display text-38 md:text-54 font-bold;
+    }
+    .display2 {
+        @apply font-display text-32 leading-9 md:text-46 font-bold;
+    }
+    .h1,
+    h1 {
+        @apply font-display text-32 md:text-48 font-black;
+    }
+    .h2,
+    h2 {
+        @apply text-26 md:text-40 font-bold;
+    }
+    .h3,
+    h3 {
+        @apply text-24 md:text-32  font-bold;
+    }
+    .h4,
+    h4 {
+        @apply text-22 md:text-24 font-bold;
+    }
+    .h5,
+    h5 {
+        @apply text-18 md:text-20 font-bold leading-6;
+    }
+    .h6,
+    h6 {
+        @apply text-base md:text-18 font-bold;
+    }
+}
