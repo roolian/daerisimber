@@ -2,18 +2,18 @@
 
 namespace Daerisimber;
 
+use Twig\TwigFunction;
 use Timber\Site as TimberSite;
-use Timber\Timber;
 
 class Site extends TimberSite
 {
     public function __construct()
     {
-        add_action('wp_enqueue_scripts', array( $this, 'enqueue_assets' ));
-        add_action('after_setup_theme', array( $this, 'theme_supports' ));
-        add_filter('timber/context', array( $this, 'add_to_context' ));
-        add_filter('timber/twig', array( $this, 'add_to_twig' ));
-        add_action('enqueue_block_editor_assets', array( $this, 'enqueue_assets' ));
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
+        add_action('after_setup_theme', [$this, 'theme_supports']);
+        add_filter('timber/context', [$this, 'add_to_context']);
+        add_filter('timber/twig', [$this, 'add_to_twig']);
+        add_action('enqueue_block_editor_assets', [$this, 'enqueue_assets']);
 
         parent::__construct();
     }
@@ -32,7 +32,48 @@ class Site extends TimberSite
 
     public function add_to_twig($twig)
     {
+        $twig->addFunction(
+            new TwigFunction('add_styles', [$this, 'add_styles'])
+        );
+        $twig->addFunction(
+            new TwigFunction('print_styles', [$this, 'print_styles'])
+        );
+
         return $twig;
+    }
+
+    public function add_styles($selector, $styles = [])
+    {
+        $compiled_styles[$selector] = [];
+
+        foreach ($styles as $key => $value) {
+            if (!empty($value)) {
+                $compiled_styles[$selector][] = $key;
+            }
+        }
+
+        return count($compiled_styles[$selector]) > 0 ? $compiled_styles : [];
+    }
+
+    public function print_styles($styles = [])
+    {
+        if(count($styles) <= 0) {
+            return false;
+        }
+
+        $render = '<style type="text/css">';
+        foreach ($styles as $selector => $rules) {
+            $render .= $selector . '{';
+
+            foreach ($rules as $rule) {
+                $render .= $rule . ';';
+            }
+
+            $render .= '}';
+        }
+        $render .= '</style>';
+
+        return $render;
     }
 
     public function theme_supports()
@@ -40,12 +81,12 @@ class Site extends TimberSite
         add_theme_support('automatic-feed-links');
         add_theme_support(
             'html5',
-            array(
+            [
                 'comment-form',
                 'comment-list',
                 'gallery',
                 'caption',
-            )
+            ]
         );
         add_theme_support('menus');
         add_theme_support('post-thumbnails');
@@ -65,5 +106,4 @@ class Site extends TimberSite
         wp_dequeue_script('jquery');
     }
 
-    
 }

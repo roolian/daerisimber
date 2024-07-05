@@ -3,13 +3,13 @@
     "name": "daeris/prose",
     "title": "Prose",
     "description": "Ajouter du texte qui sera mis en forme automatiquement",
-    "category": "daeris",
+    "category": "drs_layout",
     "keyords": ["section", "layout", "text", "format", "prose"],
     "acf": {
       "mode": "preview"
     },
     "supports": {
-      "align": false,
+      "align": ["wide", "full"],
       "jsx": true,
       "anchor": true
     },

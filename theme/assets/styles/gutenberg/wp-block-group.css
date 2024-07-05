@@ -1,44 +1,22 @@
-body .editor-styles-wrapper .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)), 
-.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-    max-width: none !important;
+body .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)),
+body .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)),
+body .editor-styles-wrapper .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)), 
+body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)) {
+    max-width: none;
 }
 
-
-.block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)) {
-    max-width: none !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+body .editor-styles-wrapper .block-editor-block-list__layout.is-root-container .wp-block-group:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)),
+.wp-block-group:where(:not(.alignleft):not(.alignright):not(.alignfull):not(.alignwide)) {
+    max-width: none;
 }
 
-.wp-block-group ,
-.wp-block-group-is-layout-flow {
+body .editor-styles-wrapper .block-editor-block-list__layout.is-root-container .alignwide,
+.alignwide {
     @apply container max-w-screen-lg mx-auto;
 }
-
-.wp-block-group.alignwide,
-.wp-block[data-align="wide"] .wp-block-group {
+body .editor-styles-wrapper .block-editor-block-list__layout.is-root-container .alignfull,
+.alignfull {
     @apply container;
-}
-
-.wp-block-group.alignwide .wp-block-group__inner-container,
-.wp-block[data-align="wide"] .wp-block-group__inner-container {
-    @apply container;
-}
-
-.wp-block-group.alignfull ,
-.wp-block[data-align="full"] .wp-block-group {
-    @apply max-w-none;
-}
-.wp-block-group.alignfull .wp-block-group__inner-container,
-.wp-block[data-align="full"] .wp-block-group__inner-container {
-    @apply max-w-none;
-}
-.wp-block-group.is-style-limited > .wp-block-group__inner-container {
-    @apply container max-w-3xl px-4;
-}
-
-.wp-block-group.is-style-overgrid > .wp-block-group__inner-container {
-    @apply container max-w-[1440px] xl:pl-24  lg:pl-5  ;
 }
 
 .wp-block-group.has-background {

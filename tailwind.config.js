@@ -1,5 +1,5 @@
 export default {
-    content: ["./theme/views/**/*.twig", "./theme/blocks/**/*.twig"],
+    content: ["./theme/views/**/*.twig", "./theme/blocks/**/*.twig", "./theme/modules/**/*.twig"],
     theme: {
         fontFamily: {
             display: ["Roboto", "Helvetica", "Arial", "sans-serif"],

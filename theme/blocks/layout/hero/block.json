@@ -3,7 +3,7 @@
   "name": "daeris/hero",
   "title": "Hero",
   "description": "Entête de page",
-  "category": "daeris",
+  "category": "drs_layout",
   "acf": {
     "mode": "preview"
   },

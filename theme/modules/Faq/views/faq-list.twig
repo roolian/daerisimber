@@ -1,0 +1,37 @@
+<div class="faq-list">
+    {% for post in posts %}
+
+        {% set post = get_post(post) %}
+
+        <div class="faq-box group border-b  border-secondary border-opacity-30 " x-data="{open:false}">
+            <div class="text-black py-4 md:py-6 flex flex-row-reverse gap-5 justify-between faq-button cursor-pointer transition-colors" @click="open = !open">
+                <h3 class=" font-body text-base font-bold md:h5 pr-1 flex-1 group-active:text-primary group-hover:text-primary transition-colors">
+                    {{ post.title }}
+                </h3>
+                <div class="w-8 relative p-1">
+                    <div class="opacity-100 group-active:opacity-0 absolute right-0 top-1/2 -translate-y-1/2 text-primary faq-control origin-center duration-300   transition-opacity">
+                        <div class="w-8">
+                            {% include ["svg/more.twig", "svg/rafter-right.twig"] ignore missing %}
+                        </div>
+                    </div>
+                    <div class="opacity-0 group-active:opacity-100 absolute right-0 top-1/2 -translate-y-1/2 text-primary faq-control origin-center duration-300  transition-opacity">
+                        <div class="w-8 ">
+                            {% include ["svg/less.twig", "svg/rafter-right.twig"] ignore missing %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div 
+                class="transition-all duration-500 h-0  overflow-hidden {{ is_preview ? "!h-auto" }}"
+                :style="open && {height: $el.scrollHeight+`px`}"
+            >
+                <div class="pb-6 pt-3 px-6 pl-14">
+                    <div class="prose max-w-none">
+                        {{ post.content }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>

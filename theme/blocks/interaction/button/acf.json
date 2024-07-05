@@ -1,4 +1,5 @@
 {
+    "modified": 1720110951,
     "key": "group_61a60c311770a",
     "title": "Bloc - bouton",
     "fields": [
@@ -39,13 +40,35 @@
                 "btn-secondary-light": "Secondary light",
                 "btn-primary-outiline": "Outline"
             },
-            "default_value": "plein",
+            "default_value": "btn-primary",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_6374204381eaf",
+            "label": "Icone clone",
+            "name": "icone_clone",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_6686ba5d4ea8a"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_66696233615a2",
@@ -248,76 +271,6 @@
             "default_value": "",
             "enable_opacity": 0,
             "return_format": "string"
-        },
-        {
-            "key": "field_63741fe481eae",
-            "label": "Icone",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_6374204381eaf",
-            "label": "Icone",
-            "name": "icon_name",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "field_6374208209495"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0,
-            "choices": {
-                "none": "Aucun",
-                "account": "account",
-                "arrow-circle": "arrow-circle",
-                "burger": "burger",
-                "caret-left": "caret-left",
-                "caret-right": "caret-right",
-                "check": "check",
-                "close": "close",
-                "college": "college",
-                "ecole": "ecole",
-                "facebook": "facebook",
-                "instagram": "instagram",
-                "less": "less",
-                "linkedin": "linkedin",
-                "lycee": "lycee",
-                "mail": "mail",
-                "more": "more",
-                "quotes": "quotes",
-                "rafter-left": "rafter-left",
-                "rafter-right": "rafter-right",
-                "rafter-up": "rafter-up",
-                "search": "search",
-                "send": "send",
-                "shape-arc": "shape-arc",
-                "shape-circle-half": "shape-circle-half",
-                "shape-circle-quarter": "shape-circle-quarter",
-                "shape-rectangle": "shape-rectangle",
-                "twitter": "twitter",
-                "youtube": "youtube"
-            }
         }
     ],
     "location": [
@@ -337,6 +290,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1718182860
+    "show_in_rest": 0
 }

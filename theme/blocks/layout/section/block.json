@@ -3,7 +3,7 @@
     "name": "daeris/section",
     "title": "Section",
     "description": "Section de page",
-    "category": "daeris",
+    "category": "drs_layout",
     "acf": {
       "mode": "preview"
     },

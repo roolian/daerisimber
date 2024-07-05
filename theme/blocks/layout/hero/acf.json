@@ -1,11 +1,11 @@
 {
-    "modified": 1716999170,
+    "modified": 1716999175,
     "key": "group_61953c65eda97",
     "title": "Bloc hero",
     "fields": [
         {
             "key": "field_64356e9e77fe7",
-            "label": "Stylesdsdsd",
+            "label": "Style",
             "name": "style",
             "aria-label": "",
             "type": "select",

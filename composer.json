@@ -21,7 +21,8 @@
   "minimum-stability": "stable",
   "autoload": {
       "psr-4": {
-          "Daerisimber\\": "theme/src/"
+          "Daerisimber\\": "theme/src/",
+          "Daerisimber\\Modules\\": "theme/modules/"
       }
   }
 }

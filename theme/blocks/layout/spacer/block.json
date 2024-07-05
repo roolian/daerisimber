@@ -3,7 +3,7 @@
     "name": "daeris/spacer",
     "title": "Spacer responsive",
     "description": "Espacement responsive pour avoir des écarts uniformes entre les blocs",
-    "category": "daeris",
+    "category": "drs_layout",
     "keyords": ["section", "layout", "spacer", "espace", "marge"],
     "acf": {
       "mode": "preview"

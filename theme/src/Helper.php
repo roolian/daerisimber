@@ -29,4 +29,18 @@ class Helper
 
         return $string;
     }
+
+    public static function str_to_title($string)
+    {
+        $string = 
+            strtr(
+                $string,
+                ['_' => ' ', '-' => ' ']
+            )
+        ;
+
+        return ucfirst($string);
+    }
+
+    
 }

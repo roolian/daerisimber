@@ -1,0 +1,45 @@
+{#
+/**
+ * Block Name: FAQ Page
+ *
+ */
+#}
+{% if is_preview %}
+{% endif %}
+
+<div id="{{ id }}" class="{{ class }}">
+
+    <div class="row">
+        <div class="col md:w-3/12">
+            <div class="sticky top-0 bg-white">
+                <div class="container">
+                    <div class="w-full flex flex-col justify-start lg:justify-center gap-3 bg-gray-light rounded-xl p-1">
+                        {% for category in faq_list %}
+                            <a href="#{{ category.slug }}" class="flex-1 tab  whitespace-nowrap" data-y="120">
+                                <span>{{category.label}}</span>
+                            </a>
+                        {% endfor %}
+                        <div class="lg:hidden w-8">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col md:w-9/12">
+            <div class="">
+                <div class="container">
+                    <div class="md:w-10/12 mx-auto">
+                        {% for category in faq_list %}
+                            <h2 class="mb-8 md:mb-10" id="{{ category.slug }}">
+                                {{category.label}}
+                            </h2>
+                            <div class="mb-12 md:mb-20">
+                                {% include "Faq/views/faq-list.twig" with {'posts': category.posts, is_preview} %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

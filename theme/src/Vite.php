@@ -1,5 +1,4 @@
 <?php
-
 namespace Daerisimber;
 
 class Vite
@@ -31,7 +30,7 @@ class Vite
 
         if ($this->dev_assets_wanted()) {
             add_action('wp_head', [$this,'enqueue_dev_assets']);
-            add_action('admin_head', [$this,'enqueue_dev_assets']);
+            add_action('admin_head', [$this,'enqueue_admin_dev_assets']);
         } else {
             add_action('wp_enqueue_scripts', [$this, 'enqueue_prod_assets']);
             add_action('enqueue_block_assets', [$this, 'enqueue_editor_style']);
@@ -68,16 +67,16 @@ class Vite
     public function enqueue_editor_style()
     {
         // dump($this->get_editor_style());
-        add_editor_style([
+        /*add_editor_style([
             $this->get_editor_style(),
-        ]);
+        ]);*/
 
-        wp_enqueue_style('main', $this->get_main_style());
+        wp_enqueue_style('editor', $this->get_editor_style());
     }
 
     public function dev_assets_wanted(): bool
     {
-        return $this->env === 'development' && !is_admin();
+        return $this->env === 'development' && !is_admin() ;
     }
 
     public function get_main_script(): string|false

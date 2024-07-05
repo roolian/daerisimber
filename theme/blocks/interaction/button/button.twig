@@ -5,100 +5,43 @@
  */
 #}
 
-
 {% set url = is_preview ? "javascript:" : fields.button_link.url  %}
+{% set title = fields.link ? fields.link.title :  "Label"  %}
+{% set style = fields.style ??  block.example.attributes.data.style  %}
 
 <!-- Tailwind white list <a class="btn-secondary-light btn-secondary btn-primary-light btn-primary btn-primary-outline btn-secondary-outline">test</a>-->
 
 <a 
     id="{{ id }}" 
     href="{{ not is_preview ? fields.link.url : "javascript:" }}" 
-    class="{{ fields.style != "outline" ? fields.style }} {{ fields.style == "plein" ? "btn-primary" }} {{ fields.style == "outline" ? "btn-secondary" }}" 
+    class="{{ style }}" 
     target="{{ fields.link.target }}"
 >
     <span>
-        {{ fields.link.title  }}
+        {{ title  }}
     </span>
 
-    {% if fields.button_icon_name %}
+    {% if fields.icon and fields.icon.value != 'none' %}
 
-        {% if fields.button_icon_name != "none" %}
-
-            <span class="block w-5">
-                {% include "svg/" ~ fields.button_icon_name ~ ".twig" %}
-            </span>
-
-        {% endif %}
+            {{ display_icon(fields.icon.value) }}
 
     {% endif %}
 </a>
 
-<style type="text/css">
-    #{{ id }}
-    {
-        {% if item.button_style == "outline" %}
+{% set styles = add_styles("#" ~ id, {
+    ("color: " ~ fields.color) : fields.color,
+    ("background-color: " ~ fields.bg_color) : fields.bg_color,
+    ("border-color: " ~ fields.bg_color) : fields.bg_color,
+}) %}
 
-            {% if item.button_color %}
-                color: {{item.button_color}}
-                ;
-                border-color: {{item.button_color}}
-                ;
-            {% endif %}
 
-            {% if item.button_bg_color %}
-                background-color: {{item.button_bg_color}}
-                ;
-            {% endif %}
+{% set styles = styles|merge(add_styles("#" ~ id ~ ":hover", {
+    ("background-color: " ~ fields.bg_color_hover) : fields.bg_color_hover,
+    ("background-color: transparent") : not fields.bg_color_hover and fields.bg_color ,
+    ("border-color: " ~ fields.bg_color_hover) : fields.bg_color_hover,
+})) %}
 
-        {% else %}
 
-            {% if item.button_color %}
-                color: {{item.button_color}}
-                ;
-            {% endif %}
 
-            {% if item.button_bg_color %}
-                background-color: {{item.button_bg_color}}
-                ;
-                border-color: {{item.button_bg_color}}
-                ;
-            {% endif %}
 
-        {% endif %}
-
-    }
-
-    #{{ id ~ ":hover"  }}
-    {
-
-        {% if item.button_bg_color_hover %}
-
-            background-color: {{item.button_bg_color_hover}}
-            ;
-
-        {% else %}
-
-            {% if item.button_color %}
-                background-color: {{item.button_color}}
-                ;
-            {% endif %}
-
-        {% endif %}
-
-        {% if item.button_color_hover %}
-
-            color: {{item.button_color_hover}}
-            ;
-
-        {% else %}
-
-            {% if item.button_bg_color %}
-                color: {{item.button_bg_color}}
-                ;
-            {% endif %}
-
-        {% endif %}
-
-    }
-
-</style>
+{{ print_styles(styles) }}

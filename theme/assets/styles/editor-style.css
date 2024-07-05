@@ -1,24 +1,59 @@
-@import "main.css";
 
-body {
+
+
+
+    
+@import "tailwindcss/base";
+
+
+@import "base/typo.css";
+@import "base/font.css";
+
+@import "tailwindcss/components";
+@import "components/components.css";
+
+@import "tailwindcss/utilities";
+@import "utilities/utilities.css";
+
+@import "gutenberg/wp-global.css";
+@import "gutenberg/wp-block-group.css";
+@import "gutenberg/wp-font-size.css";
+
+@import "plugin/contact-form.css";
+
+
+.edit-post-visual-editor__post-title-wrapper {
+    @apply py-2 px-5 !mt-0;
+    border-bottom: 2px dashed #e8e8e8;
+
+    .editor-post-title {
+        color: #707070;
+        font-size: 2rem;
+        margin: 0;
+    }
 }
 
-.wp-block{
-  @apply max-w-screen-xl;
-}
 
-.wp-block-post-content {
-  @apply max-w-screen-xl mx-auto my-6;
-}
+body .editor-styles-wrapper {
+    @apply font-body text-base;
 
-.mce-content-body, .acf_content, .mceContentBody {
-  @apply prose prose-lg max-w-none;
-}
+    a:where(:not(.wp-element-button)) {
+        text-decoration: none;
+    }
 
-h1.wp-block-post-title {
-  @apply text-4xl font-bold;
-}
+    .block-editor-block-list__layout .block-editor-block-list__block.is-selected:after,
+    .block-editor-block-list__layout .block-editor-block-list__block.is-selected~.is-multi-selected:after{
+        border-radius:1px;
+        bottom:1px;
+        box-shadow:0 0 0 2px #92ffd3;
+        content:"";
+        left:1px;
+        outline:2px solid #0000;
+        pointer-events:none;
+        position:absolute;
+        right:1px;
+        top:1px;
+        z-index:1;
+      }
 
-.acf-innerblocks-container {
-  @apply w-full;
 }

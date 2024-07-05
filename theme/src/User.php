@@ -1,5 +1,4 @@
 <?php
-
 namespace Daerisimber;
 
 class User
