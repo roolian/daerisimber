@@ -8,6 +8,7 @@
     "email": "contact@daeris.fr"
   }],
   "require": {
+    "php": ">=8.1",
     "hellonico/timber-dump-extension": "^2.0",
     "timber/timber": "^2.0"
   },
