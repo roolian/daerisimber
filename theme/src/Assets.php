@@ -1,7 +1,8 @@
 <?php
+
 namespace Daerisimber;
 
-class Vite
+class Assets
 {
     public string $env = 'production';
 
@@ -27,16 +28,28 @@ class Vite
         if (file_exists($this->dist_path . '/.vite/manifest.json')) {
             $this->manifest = json_decode(file_get_contents($this->dist_path . '/.vite/manifest.json'), true);
         }
+        
+        add_action('enqueue_block_editor_assets', [$this, 'dequeue_default_assets']);
+        add_action('wp_enqueue_scripts', [$this, 'dequeue_default_assets']);
 
         if ($this->dev_assets_wanted()) {
             add_action('wp_head', [$this,'enqueue_dev_assets']);
             add_action('admin_head', [$this,'enqueue_admin_dev_assets']);
         } else {
             add_action('wp_enqueue_scripts', [$this, 'enqueue_prod_assets']);
+            add_action('admin_enqueue_scripts', [$this, 'admin_enqueue_scripts']);
             add_action('enqueue_block_assets', [$this, 'enqueue_editor_style']);
             add_action('enqueue_block_editor_assets', [$this, 'enqueue_block_editor_assets']);
         }
 
+    }
+
+    public function dequeue_default_assets()
+    {
+        wp_dequeue_style('wp-block-library');
+        wp_dequeue_style('wp-block-library-theme');
+        wp_dequeue_style('wp-block-style');
+        wp_dequeue_script('jquery');
     }
 
     public function enqueue_dev_assets()
@@ -62,6 +75,20 @@ class Vite
 
         // wp_enqueue_style('prefix-editor-font', '//fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
         add_editor_style($this->get_editor_style());
+    }
+
+    public function admin_enqueue_scripts()
+    {
+        wp_enqueue_script(
+            'main',
+            $this->get_main_script(),
+            [],
+            '',
+            [
+                'strategy'  => 'defer',
+                'in_footer' => true,
+            ]
+        );
     }
 
     public function enqueue_editor_style()

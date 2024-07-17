@@ -1,0 +1,44 @@
+{#
+/**
+ * Block Name: Tab content
+ */
+#}
+
+{% set allowed_blocks = [
+    "core/code",
+    "core/gallery",
+    "core/group",
+    "core/heading",
+    "core/html",
+    "core/image",
+    "core/list",
+    "core/list-item",
+    "core/paragraph",
+    "core/pullquote",
+    "core/quote",
+    "core/shortcode",
+    "core/site-logo",
+    "core/social-link",
+    "core/social-links",
+    "core/table",
+    "core/video",
+    "daeris/group-button",
+    "daeris/button",
+    "daeris/prose",
+    "daeris/spacer",
+    "daeris/content-image",
+] %}
+
+<div id="tab-{{ fields.id }}" class="{{ class }}">
+
+    <div x-data="tabContent('{{ context['daeris/tab-group'].group_id }}')">
+        {% if is_preview  %}
+            <div x-on:click="setActive('{{ fields.tab_content_id }}')"  class="cursor-pointer w-full h-10 bg-gray-50 flex items-center justify-center"> <div>Tab id: {{fields.tab_content_id}}</div></div>
+        {% endif %}
+
+        <div x-show="isActive('{{ fields.tab_content_id }}')">
+            <InnerBlocks allowedblocks="{{ allowed_blocks|json_encode()| escape('html_attr')}}"/>
+        </div>
+    </div>
+
+</div>

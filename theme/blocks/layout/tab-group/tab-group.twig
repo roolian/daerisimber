@@ -1,0 +1,44 @@
+{#
+/**
+ * Block Name: Tab group
+ *
+ */
+#}
+
+{% set allowed_blocks = ["daeris/tab-content"] %}
+{% set inner_block_template = [
+    [
+        'daeris/tab-content', 
+        {
+            'name' : 'daeris/tab-content',
+            'data' : {
+                "link" : {
+                    "url" : "#",
+                    "title" : "Cliquer ici"
+                },
+                "style" : "btn-primary"
+            },
+            'mode' : 'auto',
+        },
+        [
+            [
+                'core/heading',
+                {
+                    "content" : "New tab"
+                }
+            ]
+        ]
+    ]
+] 
+%}
+
+
+
+<div id="tab-group-{{ fields.id_tab_group }}" class="{{ class }}">
+
+    <div>
+
+        <InnerBlocks template="{{ inner_block_template|json_encode|esc_attr}}" allowedblocks="{{ allowed_blocks|json_encode()|escape('html_attr')}}"/>
+    </div>
+
+</div>

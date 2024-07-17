@@ -9,11 +9,9 @@ class Site extends TimberSite
 {
     public function __construct()
     {
-        add_action('wp_enqueue_scripts', [$this, 'enqueue_assets']);
         add_action('after_setup_theme', [$this, 'theme_supports']);
         add_filter('timber/context', [$this, 'add_to_context']);
-        add_filter('timber/twig', [$this, 'add_to_twig']);
-        add_action('enqueue_block_editor_assets', [$this, 'enqueue_assets']);
+        add_filter('upload_mimes', [$this, 'allow_file_type_upload']);
 
         parent::__construct();
     }
@@ -28,52 +26,6 @@ class Site extends TimberSite
         }
 
         return $context;
-    }
-
-    public function add_to_twig($twig)
-    {
-        $twig->addFunction(
-            new TwigFunction('add_styles', [$this, 'add_styles'])
-        );
-        $twig->addFunction(
-            new TwigFunction('print_styles', [$this, 'print_styles'])
-        );
-
-        return $twig;
-    }
-
-    public function add_styles($selector, $styles = [])
-    {
-        $compiled_styles[$selector] = [];
-
-        foreach ($styles as $key => $value) {
-            if (!empty($value)) {
-                $compiled_styles[$selector][] = $key;
-            }
-        }
-
-        return count($compiled_styles[$selector]) > 0 ? $compiled_styles : [];
-    }
-
-    public function print_styles($styles = [])
-    {
-        if(count($styles) <= 0) {
-            return false;
-        }
-
-        $render = '<style type="text/css">';
-        foreach ($styles as $selector => $rules) {
-            $render .= $selector . '{';
-
-            foreach ($rules as $rule) {
-                $render .= $rule . ';';
-            }
-
-            $render .= '}';
-        }
-        $render .= '</style>';
-
-        return $render;
     }
 
     public function theme_supports()
@@ -98,12 +50,15 @@ class Site extends TimberSite
         add_theme_support('anchor');
     }
 
-    public function enqueue_assets()
+    
+
+    public function allow_file_type_upload($mimes)
     {
-        wp_dequeue_style('wp-block-library');
-        wp_dequeue_style('wp-block-library-theme');
-        wp_dequeue_style('wc-block-style');
-        wp_dequeue_script('jquery');
+        $mimes['svg'] = 'image/svg+xml';
+        //Add this to allow lottie
+        //$mimes['json'] = 'text/plain';
+
+        return $mimes;
     }
 
 }

@@ -10,7 +10,8 @@ use Timber\Timber;
 
 $services = [
     Daerisimber\Site::class,
-    Daerisimber\Vite::class,
+    Daerisimber\Twig::class,
+    Daerisimber\Assets::class,
     Daerisimber\User::class,
     Daerisimber\Menu::class,
     Daerisimber\Cleanup::class,

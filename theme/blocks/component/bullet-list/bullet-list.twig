@@ -1,0 +1,59 @@
+{#
+/**
+ * Block Name: Bullet List Block
+ *
+ */
+#}
+
+
+
+{% if fields.type == "col" %}
+    {% set class_type = "columns-1 space-y-3 gap-x-8" %}
+
+    {% if fields.col_number == 2 %}
+
+         {% set class_type = class_type ~ " md:columns-2" %}
+
+    {% endif %}
+
+{% else %}
+    {% set class_type = "grid grid-cols-1  gap-x-8 gap-y-6" %}
+
+    {% if fields.col_number == 2 %}
+
+         {% set class_type = class_type ~ " md:grid-cols-2 " %}
+
+    {% endif %}
+
+{% endif %}
+
+<div id="{{ id }}" class="{{ class }}">
+    <ul class="{{ class_type }}">
+
+    {% if not(fields.list) %}
+        <div class="italic">Ajoutez des éléments dans la liste</div>
+    {% endif %}
+
+        {% for item in fields.list %}
+
+            <li class="flex items-start gap-2 pl-1">
+
+                {% if fields.image %}
+                    <span class="inline-block w-8">
+                        <img class="w-8" src="{{ get_image(fields.image).src }}" alt="{{ get_image(fields.image).alt }}"/>
+                    </span>
+                {% else %}
+                    <span class="inline-block"> 
+                        •
+                    </span>
+                {% endif %}
+
+                <span class="inline-block flex-1">
+                    {{ item.text }}
+                </span>
+            </li>
+
+        {% endfor %}
+
+    </ul>
+</div>

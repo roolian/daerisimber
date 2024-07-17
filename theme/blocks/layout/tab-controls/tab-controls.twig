@@ -1,0 +1,28 @@
+{#
+/**
+ * Block Name: Tab controls
+ */
+#}
+
+
+
+<div id="{{ id }}" class="{{ class }}" >
+
+    {% if is_preview and fields.tabs|length == 0  %}
+        <div class="w-full h-10 bg-gray-50 flex items-center justify-center"> <div>+ Add tab controls</div></div>
+    {% endif %}
+
+    <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+        <div class="flex flex-wrap -mb-px text-sm font-medium text-center" x-data="tabControls('{{ fields.tab_group_id }}', '{{ fields.tabs[0].tab_content_id }}')">
+        
+            {% for item in fields.tabs %}
+                <div>
+                    <button  class="" x-bind:class="isActive('{{ item.tab_content_id }}') ? 'inline-block p-4 border-b-2 rounded-t-lg text-primary border-primary' : 'inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'" x-on:click="setActive('{{ item.tab_content_id }}')">
+                        {{ item.title }}
+                    </button >
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>

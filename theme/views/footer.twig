@@ -1,5 +1,7 @@
-<footer class="bg-gray-700 min-h-20">
+<footer class="bg-gray-800 min-h-20 py-8">
     <div class="container">
-    {{ display_icon('align-bottom', 40, "text-white") }}
+        {% if logo_footer_url %}
+            <img class="h-10" src="{{ logo_footer_url }}" alt="">
+        {% endif %}
     </div>
 </footer>

@@ -7,6 +7,16 @@ class Customizer
     public function __construct()
     {
         add_action('customize_register', [$this, 'add_footer_logo_field']);
+        add_filter('timber/context', [$this, 'add_to_context']);
+    }
+
+
+    public function add_to_context($context)
+    {
+        $context['logo_url'] = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full');
+        $context['logo_footer_url'] = get_theme_mod('logo_footer');
+
+        return $context;
     }
 
     public function add_footer_logo_field($wp_customize)
