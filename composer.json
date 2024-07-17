@@ -1,11 +1,11 @@
 {
-  "name": "cearls/timberland",
+  "name": "daeris/daerisimber",
   "type": "wordpress-theme",
   "description": "A modern WordPress theme using Timber, ACF, Tailwind CSS and Alpine JS",
   "license": "MIT",
   "authors": [{
-    "name": "Chris Earls",
-    "email": "cgearls@gmail.com"
+    "name": "Daeris",
+    "email": "contact@daeris.fr"
   }],
   "require": {
     "hellonico/timber-dump-extension": "^2.0",

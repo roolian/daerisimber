@@ -1,6 +1,13 @@
 {
   "name": "timberland",
   "version": "2.0.1",
+  "authors": [
+      {
+          "name": "Daeris",
+          "email": "contact@daeris.fr",
+          "homepage": "https://daeris.fr"
+      }
+  ],
   "type": "module",
   "private": true,
   "scripts": {
