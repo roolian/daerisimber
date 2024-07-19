@@ -1,7 +1,7 @@
 <?php
 
 use Timber\Timber;
-use Daerisimber\Plugins\ACF\BlockModel;
+use Daerisimber\Services\Plugins\ACF\BlockModel;
 
 class PostListBlockModel extends BlockModel
 {

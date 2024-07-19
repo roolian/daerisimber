@@ -3,20 +3,20 @@
 
         {% set post = get_post(post) %}
 
-        <div class="faq-box group border-b  border-secondary border-opacity-30 " x-data="{open:false}">
+        <div class="faq-box group border-b  border-gray-100"  x-bind:class="open && 'active'" x-data="{open:false}">
             <div class="text-black py-4 md:py-6 flex flex-row-reverse gap-5 justify-between faq-button cursor-pointer transition-colors" @click="open = !open">
                 <h3 class=" font-body text-base font-bold md:h5 pr-1 flex-1 group-active:text-primary group-hover:text-primary transition-colors">
                     {{ post.title }}
                 </h3>
                 <div class="w-8 relative p-1">
-                    <div class="opacity-100 group-active:opacity-0 absolute right-0 top-1/2 -translate-y-1/2 text-primary faq-control origin-center duration-300   transition-opacity">
+                    <div class="opacity-100 group-active:rotate-45 group-active:opacity-0 absolute right-0 top-1/2 -translate-y-1/2 text-primary faq-control origin-center duration-300   transition">
                         <div class="w-8">
-                            {% include ["svg/more.twig", "svg/rafter-right.twig"] ignore missing %}
+                           {{ display_icon('chevron-right') }}
                         </div>
                     </div>
-                    <div class="opacity-0 group-active:opacity-100 absolute right-0 top-1/2 -translate-y-1/2 text-primary faq-control origin-center duration-300  transition-opacity">
+                    <div  class="opacity-0 -rotate-45 group-active:rotate-0  group-active:opacity-100 absolute right-0 top-1/2 -translate-y-1/2 text-primary faq-control origin-center duration-300  transition">
                         <div class="w-8 ">
-                            {% include ["svg/less.twig", "svg/rafter-right.twig"] ignore missing %}
+                            {{ display_icon('chevron-down') }}
                         </div>
                     </div>
                 </div>

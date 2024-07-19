@@ -1,6 +1,6 @@
 <?php
 
-namespace Daerisimber;
+namespace Daerisimber\Services;
 
 use Twig\TwigFunction;
 

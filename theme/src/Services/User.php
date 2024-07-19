@@ -1,5 +1,6 @@
 <?php
-namespace Daerisimber;
+
+namespace Daerisimber\Services;
 
 class User
 {

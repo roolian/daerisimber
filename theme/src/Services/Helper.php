@@ -1,12 +1,12 @@
 <?php
 
-namespace Daerisimber;
+namespace Daerisimber\Services;
 
 use Roots\WPConfig\Config;
 
 class Helper
 {
-    public static function config(string $key): mixed
+    public static function wp_config(string $key): mixed
     {
         return Config::get($key);
     }

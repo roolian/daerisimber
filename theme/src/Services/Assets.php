@@ -1,27 +1,31 @@
 <?php
 
-namespace Daerisimber;
+namespace Daerisimber\Services;
 
 class Assets
 {
-    public string $env = 'production';
-
-    public static string $hmr_host  = 'http://localhost:3000';
+    private string $env = 'production';
+    public string $hmr_host ;
     public string $dist_uri;
     public string $dist_path;
-    public static string $js_file = 'theme/assets/main.js';
-    public static string $editor_css_file = 'theme/assets/styles/editor-style.css';
+    public string $js_file;
+    public string $editor_css_file;
     public ?array $manifest  = null;
 
     public array $config;
 
     public function __construct()
     {
+        $this->hmr_host = config('assets.hmr_host', 'http://localhost:3000');
+        $this->js_file = config('assets.js_file', 'theme/assets/main.js');
+        $this->editor_css_file = config('assets.editor_css_file', 'theme/assets/styles/editor-style.css');
+
+
         $this->dist_uri = get_template_directory_uri() . '/assets/dist';
         $this->dist_path = get_template_directory() . '/assets/dist';
 
         if (file_exists(get_template_directory() . '/../config.json')) {
-            $this->config   = json_decode(file_get_contents(get_template_directory() . '/../config.json'), true);
+            $this->config = json_decode(file_get_contents(get_template_directory() . '/../config.json'), true);
             $this->env = $this->config['vite']['environment'] ?? 'production';
         }
 
@@ -54,8 +58,8 @@ class Assets
 
     public function enqueue_dev_assets()
     {
-        printf('<script type="module" crossorigin src="%s/@vite/client"></script>', self::$hmr_host);
-        printf('<script type="module" crossorigin src="%s/%s"></script>', self::$hmr_host, self::$js_file);
+        printf('<script type="module" crossorigin src="%s/@vite/client"></script>', $this->hmr_host);
+        printf('<script type="module" crossorigin src="%s/%s"></script>', $this->hmr_host, $this->js_file);
     }
 
     public function enqueue_prod_assets()
@@ -109,7 +113,7 @@ class Assets
     public function get_main_script(): string|false
     {
         if (is_array($this->manifest)) {
-            return $this->dist_uri . '/' . $this->manifest[ self::$js_file ]['file'];
+            return $this->dist_uri . '/' . $this->manifest[ $this->js_file ]['file'];
         }
 
         return false;
@@ -117,7 +121,7 @@ class Assets
     public function get_main_style(): string|false
     {
         if (is_array($this->manifest)) {
-            return $this->dist_uri . '/' . $this->manifest[ self::$js_file ]['css'][0];
+            return $this->dist_uri . '/' . $this->manifest[ $this->js_file ]['css'][0];
         }
 
         return false;
@@ -126,7 +130,7 @@ class Assets
     {
 
         if (is_array($this->manifest)) {
-            return $this->dist_uri . '/' . $this->manifest[ self::$editor_css_file ]['file'];
+            return $this->dist_uri . '/' . $this->manifest[ $this->editor_css_file ]['file'];
         }
 
         return false;

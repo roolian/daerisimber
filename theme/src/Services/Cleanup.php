@@ -1,25 +1,29 @@
 <?php
 
-namespace Daerisimber;
+namespace Daerisimber\Services;
 
 class Cleanup
 {
     public function __construct()
     {
-        add_action('do_feed', [$this, 'disableFeed'], 1);
-        add_action('do_feed_rdf', [$this, 'disableFeed'], 1);
-        add_action('do_feed_rss', [$this, 'disableFeed'], 1);
-        add_action('do_feed_rss2', [$this, 'disableFeed'], 1);
-        add_action('do_feed_atom', [$this, 'disableFeed'], 1);
-        add_action('do_feed_rss2_comments', [$this, 'disableFeed'], 1);
-        add_action('do_feed_atom_comments', [$this, 'disableFeed'], 1);
 
-        add_action('widgets_init', [$this, 'removeRecentCommentsStyle']);
+        if (config('cleanup.disable_feeds', true)) {
+            add_action('do_feed', [$this, 'disableFeed'], 1);
+            add_action('do_feed_rdf', [$this, 'disableFeed'], 1);
+            add_action('do_feed_rss', [$this, 'disableFeed'], 1);
+            add_action('do_feed_rss2', [$this, 'disableFeed'], 1);
+            add_action('do_feed_atom', [$this, 'disableFeed'], 1);
+            add_action('do_feed_rss2_comments', [$this, 'disableFeed'], 1);
+            add_action('do_feed_atom_comments', [$this, 'disableFeed'], 1);
+            $this->removeActions();
+        }
 
+        if (config('cleanup.disable_comments', true)) {
+            $this->disableComments();
+        }
+
+        
         add_action('wp_print_scripts', [$this, 'disableAutosave']);
-
-        $this->disableComments();
-        $this->removeActions();
     }
 
     public function removeActions()
@@ -43,11 +47,13 @@ class Cleanup
     // Désactiver les flux non utilisés
     public function disableFeed()
     {
-        wp_die(__('No feed available,please visit our <a href="'.get_bloginfo('url').'">homepage</a>!'));
+        wp_die(__('No feed available,please visit our <a href="' . get_bloginfo('url') . '">homepage</a>!'));
     }
 
     public function disableComments()
     {
+        
+        add_action('widgets_init', [$this, 'removeRecentCommentsStyle']);
         add_action('comments_open', [$this, 'closeComments'], 10, 2);
         add_action('admin_menu', [$this, 'removeCommentStatusMetaBox']);
         add_action('admin_menu', [$this, 'removeLinksTabMenuComments']);

@@ -1,0 +1,19 @@
+{#
+/**
+ * Block Name: Selection faq
+ *
+ */
+#}
+<div id="{{ id }}" class="{{ class }}">
+
+    <div class="">
+        {% if fields.title %}
+            <h2 class="h2 text-center mb-10 md:mb-14">
+                {{ fields.title }}
+            </h2>
+        {% endif %}
+
+        {% include "Faq/views/faq-list.twig" with {'posts': fields.faq_list} %}
+    </div>
+
+</div>

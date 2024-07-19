@@ -1,25 +1,5 @@
 
-
-
-
-    
-@import "tailwindcss/base";
-
-
-@import "base/typo.css";
-@import "base/font.css";
-
-@import "tailwindcss/components";
-@import "components/components.css";
-
-@import "tailwindcss/utilities";
-@import "utilities/utilities.css";
-
-@import "gutenberg/wp-global.css";
-@import "gutenberg/wp-block-group.css";
-@import "gutenberg/wp-font-size.css";
-
-@import "plugin/contact-form.css";
+@import "main.css";
 
 
 .edit-post-visual-editor__post-title-wrapper {

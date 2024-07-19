@@ -1,10 +1,8 @@
 <?php
 
-namespace Daerisimber\Plugins\ACF;
+namespace Daerisimber\Services\Plugins\ACF;
 
-use Daerisimber\Helper;
-use Daerisimber\Plugins\ACF\BlockFinder;
-use Daerisimber\Plugins\ACF\BlockController;
+use Daerisimber\Services\Helper;
 
 class ACFSetup
 {

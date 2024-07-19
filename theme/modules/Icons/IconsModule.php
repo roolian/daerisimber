@@ -2,7 +2,7 @@
 
 namespace Daerisimber\Modules\Icons;
 
-use Daerisimber\Helper;
+use Daerisimber\Services\Helper;
 
 class IconsModule
 {

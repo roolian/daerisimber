@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 export default {
     content: ["./theme/views/**/*.twig", "./theme/blocks/**/*.twig", "./theme/modules/**/*.twig"],
     theme: {
@@ -51,5 +53,8 @@ export default {
     plugins: [
         require("@tailwindcss/typography"),
         require("@tailwindcss/forms"),
+        plugin(function ({ addVariant }) {
+            addVariant("group-active", ".group.active &");
+        }),
     ],
 };
