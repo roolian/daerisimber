@@ -2,14 +2,14 @@
 
 return [
     'services' => [
-        Daerisimber\Services\Site::class,
-        Daerisimber\Services\Twig::class,
-        Daerisimber\Services\Assets::class,
-        Daerisimber\Services\User::class,
-        Daerisimber\Services\Cleanup::class,
-        Daerisimber\Services\Customizer::class,
-        Daerisimber\Services\CustomPostTypes::class,
-        Daerisimber\Services\Plugins\ACF\ACFSetup::class,
+        Daeris\DaerisimberLibrary\Services\Site::class,
+        Daeris\DaerisimberLibrary\Services\Twig::class,
+        Daeris\DaerisimberLibrary\Services\Assets::class,
+        Daeris\DaerisimberLibrary\Services\User::class,
+        Daeris\DaerisimberLibrary\Services\Cleanup::class,
+        Daeris\DaerisimberLibrary\Services\Customizer::class,
+        Daeris\DaerisimberLibrary\Services\CustomPostTypes::class,
+        Daeris\DaerisimberLibrary\Services\Plugins\ACF\ACFSetup::class,
     ],
     'modules' => [
         Daerisimber\Modules\Faq\FaqModule::class,

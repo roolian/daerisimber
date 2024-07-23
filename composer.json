@@ -7,11 +7,18 @@
     "name": "Daeris",
     "email": "contact@daeris.fr"
   }],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/roolian/daerisimber-library.git"
+    }
+  ],
   "require": {
     "php": ">=8.1",
     "hassankhan/config": "^3.1",
     "hellonico/timber-dump-extension": "^2.0",
     "phlak/config": "^8.0",
+    "daeris/daerisimber-library": "dev-main",
     "timber/timber": "^2.0"
   },
   "config": {

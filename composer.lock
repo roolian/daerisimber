@@ -4,8 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e287f19a904296fbde72fb7bd7c42fc1",
+    "content-hash": "1b752a809ad86e264ad2969d51361a2e",
     "packages": [
+        {
+            "name": "daeris/daerisimber-library",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roolian/daerisimber-library.git",
+                "reference": "22a46ad920ac2c5e5c146f68ec8dd28a6fa1fe26"
+            },
+            "require": {
+                "timber/timber": "^2.2"
+            },
+            "require-dev": {
+                "hellonico/timber-dump-extension": "^2.0",
+                "phlak/config": "^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Daeris\\DaerisimberLibrary\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daeris"
+                }
+            ],
+            "description": "Library used by daerisimber theme.",
+            "time": "2024-07-22T09:51:30+00:00"
+        },
         {
             "name": "hassankhan/config",
             "version": "3.1.0",
@@ -1183,7 +1216,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "daeris/daerisimber-library": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
