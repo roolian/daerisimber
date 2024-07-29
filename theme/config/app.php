@@ -3,6 +3,7 @@
 return [
     'services' => [
         Daeris\DaerisimberLibrary\Services\Site::class,
+        Daeris\DaerisimberLibrary\Services\DefaultViews::class,
         Daeris\DaerisimberLibrary\Services\Twig::class,
         Daeris\DaerisimberLibrary\Services\Assets::class,
         Daeris\DaerisimberLibrary\Services\User::class,

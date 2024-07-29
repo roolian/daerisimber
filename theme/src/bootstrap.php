@@ -1,7 +1,7 @@
 <?php
 
 
-require_once dirname(DIR_ROOT) . '/vendor/autoload.php';
+
 
 use Timber\Timber;
 use PHLAK\Config\Config;
@@ -10,7 +10,7 @@ use PHLAK\Config\Config;
 Timber::init();
 Timber::$dirname    = ['views', 'blocks', 'modules'];
 
-$conf = config::fromDirectory(DIR_ROOT . '/config/');
+$conf = Config::fromDirectory(DIR_ROOT . '/config/');
 
 //Global helper function
 function config($key, $default = null)  {
