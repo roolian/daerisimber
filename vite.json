@@ -3,7 +3,8 @@
     "dest": "./theme/assets/dist",
     "entries": {
         "main" : "./theme/assets/main.js", 
-        "editor": "./theme/assets/styles/editor-style.css"
+        "editor": "./theme/assets/styles/editor-style.css",
+        "theme": "./theme.js"
     },
     "server": {
         "cors": true,

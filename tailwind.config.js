@@ -1,3 +1,4 @@
+import colors from "./theme-colors";
 const plugin = require("tailwindcss/plugin");
 
 export default {
@@ -21,15 +22,8 @@ export default {
           },
         },
         extend: {
-            colors: {
-                current: "currentColor",
-                primary: "#007D8F",
-                secondary: "#E22019",
-                success: "#A0C81E",
-                warning: "#E69441",
-                error: "#E22019",
-                information: "#007D8F",
-            },
+            //Edit theme-colors.js
+            colors,
             fontSize: {
                 xxs: ["0.625rem", "0.875rem"],
                 xs: ["0.75rem", "1.375rem"],

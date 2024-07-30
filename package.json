@@ -2,11 +2,11 @@
   "name": "timberland",
   "version": "2.0.1",
   "authors": [
-      {
-          "name": "Daeris",
-          "email": "contact@daeris.fr",
-          "homepage": "https://daeris.fr"
-      }
+    {
+      "name": "Daeris",
+      "email": "contact@daeris.fr",
+      "homepage": "https://daeris.fr"
+    }
   ],
   "type": "module",
   "private": true,
@@ -23,5 +23,8 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.1",
     "vite": "^5.2.6"
+  },
+  "dependencies": {
+    "jsonfile": "^6.1.0"
   }
 }

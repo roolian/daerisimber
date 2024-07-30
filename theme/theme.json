@@ -1,23 +1,73 @@
 {
-    "version": 2,
-    "settings": {
-		"layout": {
-			"contentSize": "100%",
-			"wideSize": "1024px",
-			"fullSize": "1280px"
-		},
-        "color": {
-            "custom": false,
-            "customGradient": false
-        },
-        "typography": {
-            "customFontSize": false,
-            "dropCap": false,
-            "fontWeight": false,
-            "fontStyle": false,
-            "textTransform": false,
-            "textDecoration": false
-        }
+  "version": 2,
+  "settings": {
+    "layout": {
+      "contentSize": "100%",
+      "wideSize": "1024px",
+      "fullSize": "1280px"
     },
-    "styles": {}
+    "color": {
+      "custom": false,
+      "customGradient": false,
+      "defaultPalette": false,
+      "gradients": [],
+      "defaultGradients": false,
+      "palette": [
+        {
+          "name": "white",
+          "slug": "white",
+          "color": "#ffffff"
+        },
+        {
+          "name": "black",
+          "slug": "black",
+          "color": "#000"
+        },
+        {
+          "name": "current",
+          "slug": "current",
+          "color": "currentColor"
+        },
+        {
+          "name": "primary",
+          "slug": "primary",
+          "color": "#007D8F"
+        },
+        {
+          "name": "secondary",
+          "slug": "secondary",
+          "color": "#E22019"
+        },
+        {
+          "name": "success",
+          "slug": "success",
+          "color": "#A0C81E"
+        },
+        {
+          "name": "warning",
+          "slug": "warning",
+          "color": "#E69441"
+        },
+        {
+          "name": "error",
+          "slug": "error",
+          "color": "#E22019"
+        },
+        {
+          "name": "information",
+          "slug": "information",
+          "color": "#007D8F"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": false,
+      "dropCap": false,
+      "fontWeight": false,
+      "fontStyle": false,
+      "textTransform": false,
+      "textDecoration": false
+    }
+  },
+  "styles": {}
 }
