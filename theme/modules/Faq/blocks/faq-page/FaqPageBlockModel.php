@@ -1,20 +1,20 @@
 <?php
 
 use Timber\Timber;
-use Daerisimber\Services\Plugins\ACF\BlockModel;
+use Daeris\DaerisimberLibrary\Services\Plugins\ACF\BlockModel;
 use Daeristwo\Modules\Faq\Utils\YoastFaqGraphPiece;
 
 class FaqPageBlockModel extends BlockModel
 {
-
-    public function __construct() {
+    public function __construct()
+    {
         //Si yoast SEO est activé
         if (function_exists('yoast_breadcrumb')) {
             add_filter('wpseo_schema_graph_pieces', [$this, 'yoast_add_faq_schema_pieces'], 11, 2);
         }
-        
+
     }
-    public function before_render() : void
+    public function before_render(): void
     {
         $faqList = [];
 
@@ -44,7 +44,7 @@ class FaqPageBlockModel extends BlockModel
         }
 
         $this->timber_context['faq_list'] =  $faqList;
-        
+
     }
 
     /**

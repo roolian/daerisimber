@@ -6,8 +6,10 @@
  * Use this file as boot
  */
 
-define('DIR_ROOT', __DIR__);
+define('ROOT_THEME_DIR', dirname(__DIR__));
+define('THEME_DIR', __DIR__);
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+require_once ROOT_THEME_DIR . '/vendor/autoload.php';
 
-require_once DIR_ROOT . '/src/bootstrap.php';
+
+Daeris\DaerisimberLibrary\Boot::load();

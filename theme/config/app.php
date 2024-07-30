@@ -15,5 +15,8 @@ return [
     'modules' => [
         Daerisimber\Modules\Faq\FaqModule::class,
         Daerisimber\Modules\Icons\IconsModule::class,
+    ],
+    'commands' => [
+        Daeris\DaerisimberLibrary\Console\ViewPublishCommand::class,
     ]
 ];

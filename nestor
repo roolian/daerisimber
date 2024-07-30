@@ -1,22 +1,12 @@
 <?php
 
-require __DIR__.'/vendor/autoload.php';
+use Daeris\DaerisimberLibrary\NestorBoot;
 
-define('COMMAND_DIR', __DIR__);
+require __DIR__ . '/vendor/autoload.php';
 
-// load all commands here from an external php file
-$commands  = [
-    \Daerisimber\Console\ViewPublishCommand::class,
-];
-
-$application = new \Symfony\Component\Console\Application();
-
-foreach ($commands as $class) {
-    if (!class_exists($class)) {
-        throw new RuntimeException(sprintf('Class %s does not exist', $class));
-    }
-    $command = new $class();
-    $application->add($command);
+if(!defined('ROOT_THEME_DIR')){
+    define('ROOT_THEME_DIR', __DIR__);
 }
 
-$application->run();
+
+NestorBoot::load();

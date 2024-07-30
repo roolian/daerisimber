@@ -1,10 +1,15 @@
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 
-const dest = './theme/assets/dist'
-const entries = [
-  './theme/assets/main.js',
-  './theme/assets/styles/editor-style.css',
-]
+import config from "./vite.json";
+
+const {dest, entries, server} = config;
+
+const objectMap = (obj, fn) =>
+    Object.fromEntries(
+      Object.entries(obj).map(
+        ([k, v], i) => [k, fn(v, k, i)]
+      )
+    )
 
 export default defineConfig(({ mode }) => {
   return {
@@ -14,15 +19,7 @@ export default defineConfig(({ mode }) => {
         '@': __dirname
       }
     },
-    server: {
-      cors: true,
-      strictPort: true,
-      port: 3000,
-      https: false,
-      hmr: {
-        host: 'localhost',
-      }
-    },
+    server,
     build: {
       outDir: dest,
       emptyOutDir: true,

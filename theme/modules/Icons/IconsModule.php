@@ -2,7 +2,7 @@
 
 namespace Daerisimber\Modules\Icons;
 
-use Daerisimber\Services\Helper;
+use Daeris\DaerisimberLibrary\Services\Helper;
 
 class IconsModule
 {
@@ -71,7 +71,7 @@ class IconsModule
     {
         $icon_list = scandir(dirname(__FILE__) . '/assets/svg', SCANDIR_SORT_ASCENDING);
 
-        $icon_list_choice = ["none" => "--- Aucun ---"];
+        $icon_list_choice = ['none' => '--- Aucun ---'];
         //dump($icon_list);
 
         foreach ($icon_list as $value) {

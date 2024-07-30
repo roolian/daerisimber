@@ -16,12 +16,13 @@ use Timber\Timber;
  * @since Timberland 2.0.1
  */
 
- 
 global $wp_query;
 
 $context   = Timber::context();
 $templates = ['index.twig'] ;
-if (post_password_required()) {
+if (is_404()) {
+    array_unshift($templates, '404.twig');
+} elseif (post_password_required()) {
     $templates = ['single-password.twig'];
 } else {
     if (is_singular()) {
@@ -51,8 +52,8 @@ if (post_password_required()) {
         } elseif (is_tag()) {
             $context['title'] = single_tag_title('', false);
         } elseif (is_author()) {
-            if ( isset( $wp_query->query_vars['author'] ) ) {
-                $author            = Timber::get_user( $wp_query->query_vars['author'] );
+            if (isset($wp_query->query_vars['author'])) {
+                $author            = Timber::get_user($wp_query->query_vars['author']);
                 $context['author'] = $author;
                 $context['title']  = 'Author Archives: ' . $author->name();
             }
@@ -69,9 +70,7 @@ if (post_password_required()) {
         $context['posts'] = Timber::get_posts();
         array_unshift($templates, 'search.twig');
     }
-    if (is_404()) {
-        array_unshift($templates, '404.twig');
-    }
+
 }
 
 Timber::render($templates, $context);
