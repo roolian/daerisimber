@@ -2,7 +2,7 @@ import colors from "./theme-colors";
 const plugin = require("tailwindcss/plugin");
 
 export default {
-    content: ["./vendor/daeris/daerisimber-library/views/**/*.twig", "./theme/views/**/*.twig", "./theme/blocks/**/*.twig", "./theme/modules/**/*.twig"],
+    content: ["./vendor/daerisimber/library/views/**/*.twig", "./theme/views/**/*.twig", "./theme/blocks/**/*.twig", "./theme/modules/**/*.twig"],
     theme: {
         fontFamily: {
             display: ["Roboto", "Helvetica", "Arial", "sans-serif"],
