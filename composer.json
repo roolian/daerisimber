@@ -1,5 +1,5 @@
 {
-  "name": "daeris/daerisimber",
+  "name": "daerisimber/daerisimber",
   "type": "project",
   "description": "A modern WordPress theme skeleton using Timber, ACF Pro, Tailwind CSS and Alpine JS",
   "keywords": ["wordpress", "framework", "theme"],
@@ -34,8 +34,8 @@
   "minimum-stability": "stable",
   "autoload": {
       "psr-4": {
-          "Daerisimber\\": "theme/src/",
-          "Daerisimber\\Modules\\": "theme/modules/"
+          "Theme\\": "theme/src/",
+          "Theme\\Modules\\": "theme/modules/"
       }
   }
 }
