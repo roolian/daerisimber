@@ -12,4 +12,4 @@ define('THEME_DIR', __DIR__);
 require_once ROOT_THEME_DIR . '/vendor/autoload.php';
 
 
-Daeris\DaerisimberLibrary\Boot::load();
+Daerisimber\Boot::load();

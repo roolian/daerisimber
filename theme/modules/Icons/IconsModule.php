@@ -2,7 +2,7 @@
 
 namespace Theme\Modules\Icons;
 
-use Daeris\DaerisimberLibrary\Services\Helper;
+use Daerisimber\Services\Helper;
 
 class IconsModule
 {
