@@ -1,6 +1,6 @@
 <?php
 
-namespace Daerisimber\Modules\Icons;
+namespace Theme\Modules\Icons;
 
 use Daeris\DaerisimberLibrary\Services\Helper;
 

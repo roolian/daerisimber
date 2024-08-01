@@ -2,7 +2,7 @@
 
 use Timber\Timber;
 use Daeris\DaerisimberLibrary\Services\Plugins\ACF\BlockModel;
-use Daeristwo\Modules\Faq\Utils\YoastFaqGraphPiece;
+use Theme\Modules\Faq\Utils\YoastFaqGraphPiece;
 
 class FaqPageBlockModel extends BlockModel
 {

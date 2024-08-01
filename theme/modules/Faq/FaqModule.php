@@ -1,5 +1,5 @@
 <?php 
-namespace Daerisimber\Modules\Faq;
+namespace Theme\Modules\Faq;
 
 class FaqModule
 {

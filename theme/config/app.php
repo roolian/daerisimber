@@ -13,8 +13,8 @@ return [
         Daeris\DaerisimberLibrary\Services\Plugins\ACF\ACFSetup::class,
     ],
     'modules' => [
-        Daerisimber\Modules\Faq\FaqModule::class,
-        Daerisimber\Modules\Icons\IconsModule::class,
+        Theme\Modules\Faq\FaqModule::class,
+        Theme\Modules\Icons\IconsModule::class,
     ],
     'commands' => [
         Daeris\DaerisimberLibrary\Console\ViewPublishCommand::class,

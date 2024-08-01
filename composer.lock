@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef01657da1d420b70cc19515214e200f",
+    "content-hash": "cb73a0cf30786afa032ca53512e01f1a",
     "packages": [
         {
             "name": "daeris/daerisimber-library",
