@@ -8,15 +8,9 @@
     "name": "Daeris",
     "email": "contact@daeris.fr"
   }],
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/roolian/daerisimber-library.git"
-    }
-  ],
   "require": {
     "php": ">=8.1",
-    "daeris/daerisimber-library": "dev-main",
+    "daerisimber/library": "^1.0.1",
     "phlak/config": "^8.0",
     "timber/timber": "^2.0"
   },
