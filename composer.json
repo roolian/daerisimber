@@ -1,7 +1,8 @@
 {
   "name": "daeris/daerisimber",
-  "type": "wordpress-theme",
-  "description": "A modern WordPress theme using Timber, ACF, Tailwind CSS and Alpine JS",
+  "type": "project",
+  "description": "A modern WordPress theme skeleton using Timber, ACF Pro, Tailwind CSS and Alpine JS",
+  "keywords": ["wordpress", "framework", "theme"],
   "license": "MIT",
   "authors": [{
     "name": "Daeris",
@@ -16,10 +17,12 @@
   "require": {
     "php": ">=8.1",
     "daeris/daerisimber-library": "dev-main",
-    "hellonico/timber-dump-extension": "^2.0",
     "phlak/config": "^8.0",
-    "symfony/console": "^6.4",
     "timber/timber": "^2.0"
+  },
+  "require-dev": {
+    "hellonico/timber-dump-extension": "^2.0",
+    "symfony/console": "^6.4"
   },
   "config": {
     "optimize-autoloader": true,
