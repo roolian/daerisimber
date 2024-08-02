@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'disable_block_editor' => [],
+    'remove_block_editor' => [],
     'taxonomies' => [
         'categorie_question' => [
             'label' => __('Categorie de question', 'daerisimber'),
