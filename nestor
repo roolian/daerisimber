@@ -4,9 +4,14 @@ use Daerisimber\NestorBoot;
 
 require __DIR__ . '/vendor/autoload.php';
 
-if(!defined('ROOT_THEME_DIR')){
+if(!defined('ROOT_THEME_DIR')) {
     define('ROOT_THEME_DIR', __DIR__);
 }
 
+//Mock trad function used in conf files
+function __($text, $domain = 'default')
+{
+    return $text;
+}
 
 NestorBoot::load();
