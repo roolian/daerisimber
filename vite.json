@@ -1,18 +1,17 @@
 {
-    "environment": "production",
-    "dest": "./theme/assets/dist",
-    "entries": {
-        "main" : "./theme/assets/main.js", 
-        "editor": "./theme/assets/styles/editor-style.css",
-        "theme": "./theme.js"
-    },
-    "server": {
-        "cors": true,
-        "strictPort": true,
-        "https": false,
-        "port": 3000,
-        "hmr": {
-            "host": "http://localhost"
-        }
+  "environment": "production",
+  "dest": "./theme/assets/dist",
+  "entries": {
+    "main": "./theme/assets/main.js",
+    "editor": "./theme/assets/styles/editor-style.css"
+  },
+  "server": {
+    "cors": true,
+    "strictPort": true,
+    "https": false,
+    "port": 3000,
+    "hmr": {
+      "host": "localhost"
     }
+  }
 }

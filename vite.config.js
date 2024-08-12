@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import { writeFile } from "fs";
 import viteConfig from "./vite.json";
-import themeConfig from "./theme.js";
+import themeConfig from "./theme-json/theme.js";
 
 const { dest, entries, server } = viteConfig;
 
@@ -29,17 +29,33 @@ export default defineConfig(({ mode, command }) => {
             {
                 name: "build-script",
                 buildStart(options) {
+                    const wantedViteConfig = { ...viteConfig };
+                    wantedViteConfig.environment = command === "build" ? "production" : "development";
+                    const viteConfigWrite = viteConfig.environment != wantedViteConfig.environment;
+                    const pathTheme = "./theme/theme.json";
+                    const pathVite = "./vite.json";
+
                     if (command === "build") {
-                        const path = "./theme/theme.json";
-                        writeFile(path, JSON.stringify(themeConfig, null, 2), (error) => {
+                        writeFile(pathTheme, JSON.stringify(themeConfig, null, 2), (error) => {
                             if (error) {
                                 console.log("An error has occurred at theme.json creation", error);
                                 return;
                             }
-                            console.log("theme.json succefully generated");
+                            console.log(pathTheme + " succefully generated");
+                        });
+                    }
+
+                    if (viteConfigWrite) {
+                        writeFile(pathVite, JSON.stringify(wantedViteConfig, null, 2), (error) => {
+                            if (error) {
+                                console.log("An error has occurred at vite.json creation", error);
+                                return;
+                            }
+                            console.log(pathVite + " succefully generated");
                         });
                     }
                 },
+
             },
         ],
     };

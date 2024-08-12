@@ -1,4 +1,4 @@
-import colors from "./theme-colors";
+import colors from "./theme-json/theme-colors";
 const plugin = require("tailwindcss/plugin");
 
 export default {
