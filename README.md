@@ -26,8 +26,6 @@ Timberland is an opinionated WordPress theme using
 
 ## Development
 
-[](https://github.com/cearls/timberland?tab=readme-ov-file#development)
-
 Timberland builds your css and js files using Vite. This allows you to use the latest Javascript and CSS features.
 
 To get started:
@@ -37,12 +35,23 @@ To get started:
 
 ### Live Reload
 
-[](https://github.com/cearls/timberland?tab=readme-ov-file#live-reload)
+Live reload is enabled by default with vite.
+Vite config is located in ./vite.json.
+`environment` variable in this file is read by this WP theme to know if it load assets from HMR or not.
+`environment` variable is set automatically when running `npm run build` (environment = production) or `npm run dev` (environment = development).
 
-Live reload is enabled by default.
+### Wordpress theme config
 
-### Versioning
+theme.json is generated from files in ./theme-json folder. 
+THe command `npm run build` automatically update the file in ./theme/theme.json.
 
-[](https://github.com/cearls/timberland?tab=readme-ov-file#versioning)
+#### Colors
 
-To assist with long-term caching, file hashing (e.g.  `main-e1457bfd.js`) is enabled by default. This is useful for cache-busting purposes.
+Define colors in ./theme-json/theme-colors.js.
+This way the same colors are available from :
+
+- WP Gutenberg color palette
+
+- Tailwind css class
+
+- ACf color field (loaded in ./theme/assets/main.js)
