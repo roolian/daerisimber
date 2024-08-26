@@ -1,5 +1,8 @@
 /node_modules/
+/dev/
 /vendor/
 *.log
 .DS_Store
 /theme/assets/dist/
+.phpunit.result.cache
+.phpunit.cache/test-results

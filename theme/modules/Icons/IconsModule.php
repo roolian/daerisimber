@@ -25,13 +25,27 @@ class IconsModule
 
     public static function display_icon($name, $size = '24', $class = '')
     {
-        $href = get_template_directory() . '/modules/Icons/assets/svg/' . $name . '.svg';
+        $href = __DIR__ . '/assets/svg/' . $name . '.svg';
 
         if($svg = @file_get_contents($href)) {
             //replace width
-            $svg = preg_replace(['/width\s*=\s*"\d*"/', '/height\s*=\s*"\d*"/', '/<svg\s*/'], ['width="' . $size . '"', 'height="' . $size . '"', '<svg class="' . $class . '"'], $svg);
+            $svg = preg_replace(
+                [
+                    '/(\s\s+|\t|\n)/',
+                    '/width\s*=\s*"\d*"/',
+                    '/height\s*=\s*"\d*"/',
+                    '/<svg\s*/'
+                ],
+                [
+                    ' ',
+                    'width="' . $size . '"',
+                    'height="' . $size . '"',
+                    '<svg class="' . $class . '" '
+                ],
+                $svg
+            );
 
-            return $svg;
+            return  trim($svg);
         }
 
         return "<span class='text-sm'>icon not found</span>";

@@ -1,35 +1,51 @@
 {
-  "name": "daerisimber/daerisimber",
-  "type": "project",
-  "description": "A modern WordPress theme skeleton using Timber, ACF Pro, Tailwind CSS and Alpine JS",
-  "keywords": ["wordpress", "framework", "theme"],
-  "license": "MIT",
-  "authors": [{
-    "name": "Daeris",
-    "email": "contact@daeris.fr"
-  }],
-  "require": {
-    "php": ">=8.1",
-    "daerisimber/library": "^1.0.1",
-    "phlak/config": "^8.0",
-    "timber/timber": "^2.0"
-  },
-  "require-dev": {
-    "hellonico/timber-dump-extension": "^2.0",
-    "symfony/console": "^6.4"
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "sort-packages": true,
-    "allow-plugins": {
-      "composer/installers": true
+    "name": "daerisimber/daerisimber",
+    "type": "project",
+    "description": "A modern WordPress theme skeleton using Timber, ACF Pro, Tailwind CSS and Alpine JS",
+    "keywords": [
+        "wordpress",
+        "framework",
+        "theme"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daeris",
+            "email": "contact@daeris.fr"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "dev/*/*",
+            "options": {
+                "symLink": true
+            }
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "daerisimber/library": "dev-main",
+        "phlak/config": "^8.0",
+        "timber/timber": "^2.0"
+    },
+    "require-dev": {
+        "hellonico/timber-dump-extension": "^2.0",
+        "symfony/console": "^6.4",
+        "yoast/wp-test-utils": "^1.2"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Theme\\": "theme/src/",
+            "Theme\\Modules\\": "theme/modules/"
+        }
     }
-  },
-  "minimum-stability": "stable",
-  "autoload": {
-      "psr-4": {
-          "Theme\\": "theme/src/",
-          "Theme\\Modules\\": "theme/modules/"
-      }
-  }
 }
