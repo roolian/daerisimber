@@ -15,6 +15,7 @@ return [
     'modules' => [
         Theme\Modules\Faq\FaqModule::class,
         Theme\Modules\Icons\IconsModule::class,
+        Theme\Modules\Testimony\TestimonyModule::class,
     ],
     'commands' => [
         Daerisimber\Console\ViewPublishCommand::class,

@@ -1,0 +1,36 @@
+{% set options = {
+  'slidesPerView': 1,
+  'spaceBetween': 10,
+  'breakpoints': {
+    '900': {
+      'slidesPerView': 3,
+      'spaceBetween': 40,
+    }
+  }
+} %}
+
+<div class="swiper" data-swiper-options='{{ options | json_encode() }}'>
+    <div class="swiper-wrapper">
+        {% for item in testimony_list %}
+            <div class="swiper-slide">
+                <div class="bg-white rounded-xl p-8">
+                    <div class="text-blue-500 size-20">
+                        {{ display_icon('quote', '100%') }}
+                    </div>
+                    <div>
+                        {{ item.description }}
+                    </div>
+
+                    <div class="mb-1">
+                        {{ item.title }}
+                    </div>
+                    <div class="">
+                        {{ item.job_title }}
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>

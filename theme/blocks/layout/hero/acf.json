@@ -1,33 +1,8 @@
 {
-    "modified": 1716999175,
+    "modified": 1741715187,
     "key": "group_61953c65eda97",
-    "title": "Bloc hero",
+    "title": "Bloc - Hero",
     "fields": [
-        {
-            "key": "field_64356e9e77fe7",
-            "label": "Style",
-            "name": "style",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "default": "Par défault"
-            },
-            "default_value": "default",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
         {
             "key": "field_61953c74a448f",
             "label": "Titre",

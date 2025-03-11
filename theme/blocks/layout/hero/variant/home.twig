@@ -1,0 +1,35 @@
+<div class="relative overflow-clip rounded-2xl h-[600px]  p-14">
+
+    <div class="flex justify-between items-end h-full">
+        <div class="text-white relative z-10 lg:w-6/12">
+            {% if fields.title %}
+                <h1 class="h1 mb-10 pt-40">
+                    {{ fields.title|striptags('<strong><br>') }}
+                </h1>
+            {% endif %}
+            <div class="border-t border-white/50 pt-6 flex items-center gap-4">
+                <div class="flex -space-x-2">
+                    <div class="size-8 rounded-full bg-gray-100"></div>
+                    <div class="size-8 rounded-full bg-gray-200"></div>
+                    <div class="size-8 rounded-full bg-gray-300"></div>
+                    <div class="size-8 rounded-full bg-gray-400"></div>
+                </div>
+                <div><strong>+1000 clients</strong> en France et dans le monde nous font confiances</div>
+            </div>
+        </div>
+
+        
+        <div class="text-white relative z-10 lg:w-96 backdrop-blur-md p-6 border border-white/50 rounded-lg ">
+            <div class="mb-4">Découvrez notre simulateur d'honoraires</div>
+            <a href="" class="btn-primary">Faire une simulation</a>
+        </div>
+    </div>
+
+    <div class="absolute inset-0 bg-gray-400">
+        <div class="absolute inset-0 bg-gray-900/15"></div>
+        {% if fields.image %}
+            <img class="size-full object-cover" src="{{ get_image(fields.image).src }}" alt="">
+        {% endif %}
+    </div>
+
+</div>

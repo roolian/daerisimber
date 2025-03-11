@@ -1,5 +1,5 @@
 {
-  "environment": "production",
+  "environment": "development",
   "dest": "./theme/assets/dist",
   "entries": {
     "main": "./theme/assets/main.js",

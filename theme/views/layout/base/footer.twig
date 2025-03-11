@@ -1,12 +1,94 @@
-<footer class="bg-gray-800 text-white   min-h-20 py-8">
+<footer class="bg-neutral-900 text-white   min-h-20 py-16">
     <div class="container">
-        <div class="flex justify-between">
-            {% if logo_footer %}
-                <img class="h-10" src="{{ logo_footer }}" alt="">
-            {% endif %}
-            <div class="text-sm">
-                {{ options.footer_copyright }}
+
+        <div class="0 flex justify-between">
+            <div class="font-bold">
+                Besoin d'un renseignement ?
             </div>
+            <a href="" class="btn-primary">
+                Envoyer nous un message
+            </a>
+        </div>
+
+        <hr class="my-16 text-white/10">
+
+        <div class="flex justify-between">
+            <div class="grid grid-cols-3 gap-8">
+                <div>
+                    <div class="font-bold">
+                        Bureau de Paris 7ème
+                    </div>
+                    <div>
+                        12/14 rue Ernest Psichari
+                        <br>
+                        75007 Paris
+                        <br>
+                        France
+                    </div>
+                </div>
+                <div>
+                    <div class="font-bold">
+                        Bureau de Paris 7ème
+                    </div>
+                    <div>
+                        12/14 rue Ernest Psichari
+                        <br>
+                        75007 Paris
+                        <br>
+                        France
+                    </div>
+                </div>
+                <div>
+                    <div class="font-bold">
+                        Bureau de Paris 7ème
+                    </div>
+                    <div>
+                        12/14 rue Ernest Psichari
+                        <br>
+                        75007 Paris
+                        <br>
+                        France
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    Contactez-nous par téléphone
+                </div>
+                <div class="text-3xl">
+                    +33 1 45 51 03 62
+                </div>
+                <div class="text-xs text-neutral-300">
+                    Du lundi au vendredi de 9h à 18h
+                </div>
+                {% if logo_footer %}
+                    <img class="h-10" src="{{ logo_footer }}" alt="">
+                {% endif %}
+            </div>
+
+        </div>
+
+        <hr class="my-16 text-white/10">
+
+        <div class="flex justify-between mt-8">
+
+            <nav class="flex gap-10">
+                <div class="text-sm">
+                    {{ options.footer_copyright }}
+                </div>
+
+                {% for item in footer_menu.items  %}
+                    <a href="{{ item.url }}" class="f">
+                        {{ item.title }}
+                    </a>
+                {% endfor %}
+            </nav>
+
+            {% if options.social_link %}
+            
+                <a href="{{ options.social_link.url }}" target="{{ options.social_link.target }}">{{options.social_link.title}}</a>
+            {% endif %}
+            
 
         </div>
 

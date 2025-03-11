@@ -1,5 +1,5 @@
 {
-    "modified": 1716999178,
+    "modified": 1741686426,
     "key": "group_619cdc7817eeb",
     "title": "Bloc posts list",
     "fields": [
@@ -115,7 +115,7 @@
             "aria-label": "",
             "type": "true_false",
             "instructions": "La pagination ne doit être activée que pour une seule liste de la page",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -124,9 +124,10 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 1,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_61a60b2fab20d",
@@ -135,7 +136,7 @@
             "aria-label": "",
             "type": "true_false",
             "instructions": "Cette option masquera la pagination classique",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -144,39 +145,10 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 1,
+            "allow_in_bindings": 1,
             "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_61a60d44ab29e",
-            "label": "Clone de Element bouton",
-            "name": "see_more_button",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_61a60b2fab20d",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_61a60c311770a"
-            ],
-            "display": "group",
-            "layout": "row",
-            "prefix_label": 0,
-            "prefix_name": 0
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [

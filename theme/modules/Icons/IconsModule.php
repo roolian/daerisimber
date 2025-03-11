@@ -49,7 +49,6 @@ class IconsModule
         }
 
         return "<span class='text-sm'>icon not found</span>";
-
     }
 
     public static function add_icon_field()
@@ -70,7 +69,7 @@ class IconsModule
                     'conditional_logic' => 0,
                     'choices' => self::get_icon_list(),
                     'default_value' => false,
-                    'return_format' => 'array',
+                    'return_format' => 'value',
                     'multiple' => 0,
                     'allow_null' => 0,
                     'ui' => 0,

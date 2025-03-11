@@ -21,9 +21,9 @@
         {{ title  }}
     </span>
 
-    {% if fields.icon and fields.icon.value != 'none' %}
+    {% if fields.icon and fields.icon != 'none' and fields.icon != '' %}
 
-            {{ display_icon(fields.icon.value) }}
+            {{ display_icon(fields.icon) }}
 
     {% endif %}
 </a>

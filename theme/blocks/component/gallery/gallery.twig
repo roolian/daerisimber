@@ -1,0 +1,6 @@
+<div class="flex flex-wrap -mx-4 gap-6">
+    {% for image in fields.gallery %}
+        <div class=""><img class="!size-48 object-cover rounded-xl" src="{{ image.url }}" alt="{{ image.alt }}"/></div>
+    {% endfor %}
+
+</div>

@@ -3,24 +3,21 @@
 namespace Tests;
 
 use Yoast\WPTestUtils\BrainMonkey\YoastTestCase;
-
 use Theme\Modules\Icons\IconsModule;
-
-use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
-use Brain\Monkey;
 
 /**
  * @see Theme\Modules\Icons\IconsModule
  */
 class ModuleIconTest extends YoastTestCase
 {
-
-    protected function set_up() {
+    protected function set_up()
+    {
         parent::set_up();
         // Your own additional setup.
     }
 
-    protected function tear_down() {
+    protected function tear_down()
+    {
         // Your own additional tear down.
         parent::tear_down();
     }

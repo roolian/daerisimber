@@ -3,6 +3,9 @@ import.meta.glob("../blocks/**/*.css", { eager: true });
 import Alpine from "alpinejs";
 import theme from "./../theme.json";
 
+
+import.meta.glob("./js/**/*.js", { eager: true });
+
 window.Alpine = Alpine;
 
 window.parseAlpineTags = function (root = document) {

@@ -1,5 +1,5 @@
 {
-    "modified": 1723465956,
+    "modified": 1741703380,
     "key": "group_66b9fcfb760a3",
     "title": "Options - main",
     "fields": [
@@ -18,7 +18,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66ba00533c8a0",
@@ -51,7 +52,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_66ba008f3c8a2",
@@ -67,11 +69,29 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Copyrights © 2024",
+            "default_value": "Copyrights © 2025",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_67d048a53201f",
+            "label": "Social link",
+            "name": "social_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
