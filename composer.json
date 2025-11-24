@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=8.1",
-        "daerisimber/library": "^1.0.8",
+        "daerisimber/library": "@dev",
         "phlak/config": "^8.0",
         "timber/timber": "^2.0"
     },
@@ -35,8 +35,8 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Theme\\": "theme/src/",
-            "Theme\\Modules\\": "theme/modules/"
+            "Theme\\": "src/",
+            "Theme\\Modules\\": "src/modules/"
         }
     }
 }

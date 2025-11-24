@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import { writeFile } from "fs";
 import viteConfig from "./vite.json";
-import themeConfig from "./theme-json/theme.js";
+import themeConfig from "./theme/theme.js";
 
 const { dest, entries, server } = viteConfig;
 
@@ -32,7 +32,7 @@ export default defineConfig(({ mode, command }) => {
                     const wantedViteConfig = { ...viteConfig };
                     wantedViteConfig.environment = command === "build" ? "production" : "development";
                     const viteConfigWrite = viteConfig.environment != wantedViteConfig.environment;
-                    const pathTheme = "./theme/theme.json";
+                    const pathTheme = "./theme.json";
                     const pathVite = "./vite.json";
 
                     if (command === "build") {

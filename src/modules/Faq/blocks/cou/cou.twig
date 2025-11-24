@@ -1,0 +1,17 @@
+{#
+  Title: Block cou
+  Description: A custom block
+  Category: formatting
+  Icon: admin-comments
+  Keywords: cou
+  Mode: preview
+  Align: center
+  PostTypes: page post
+  SupportsAlign: left right wide full
+#}
+
+<div class="{{ slug }}-block">
+    <h2>Block: {{ title }}</h2>
+    <p>Edit this file in {{ directory }}/{{ slug }}.twig</p>
+    <p>Sample variable from model: {{ sample_variable }}</p>
+</div>

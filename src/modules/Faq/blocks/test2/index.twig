@@ -1,0 +1,17 @@
+{#
+  Title: Block test2
+  Description: A custom block
+  Category: formatting
+  Icon: admin-comments
+  Keywords: test2
+  Mode: preview
+  Align: center
+  PostTypes: page post
+  SupportsAlign: left right wide full
+#}
+
+<div class="{{ slug }}-block">
+    <h2>Block: {{ title }}</h2>
+    <p>Edit this file in {{ directory }}/index.twig</p>
+    <p>Sample variable from model: {{ sample_variable }}</p>
+</div>

@@ -1,0 +1,18 @@
+{
+    "name": "daerisimber/cou",
+    "title": "cou",
+    "description": "A custom block.",
+    "category": "drs_query",
+    "icon": "admin-comments",
+    "keywords": [
+        "cou",
+        "cou"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "cou.twig"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

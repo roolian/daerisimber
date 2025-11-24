@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "727dc8a76d4a445c20f0f918a2dd801c",
+    "content-hash": "42fb10a2932d81477ea225b208829257",
     "packages": [
         {
             "name": "daerisimber/library",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roolian/daerisimber-library.git",
+                "reference": "c7d71fb009fa24def04bfab3c0a744e8307ccca3"
+            },
             "dist": {
-                "type": "path",
-                "url": "dev/daerisimber/library",
-                "reference": "11ef3b3fc0cbf4eeaa0dd4ad15bbfda30940f1a0"
+                "type": "zip",
+                "url": "https://api.github.com/repos/roolian/daerisimber-library/zipball/c7d71fb009fa24def04bfab3c0a744e8307ccca3",
+                "reference": "c7d71fb009fa24def04bfab3c0a744e8307ccca3",
+                "shasum": ""
             },
             "require": {
                 "phlak/config": "^8.0",
@@ -22,12 +28,14 @@
                 "hellonico/timber-dump-extension": "^2.0",
                 "symfony/console": "^6.4"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Daerisimber\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -37,9 +45,11 @@
                 }
             ],
             "description": "Library used by daerisimber theme.",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/roolian/daerisimber-library/issues",
+                "source": "https://github.com/roolian/daerisimber-library/tree/1.1.4"
+            },
+            "time": "2025-07-08T16:50:57+00:00"
         },
         {
             "name": "phlak/config",

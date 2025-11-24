@@ -1,9 +1,9 @@
 {
   "environment": "production",
-  "dest": "./theme/assets/dist",
+  "dest": "./src/assets/dist",
   "entries": {
-    "main": "./theme/assets/main.js",
-    "editor": "./theme/assets/styles/editor-style.css"
+    "main": "./src/assets/main.js",
+    "editor": "./src/assets/styles/editor-style.css"
   },
   "server": {
     "cors": true,

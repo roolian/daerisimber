@@ -1,8 +1,8 @@
-import colors from "./theme-json/theme-colors";
+import colors from "./theme/theme-colors";
 const plugin = require("tailwindcss/plugin");
 
 export default {
-    content: ["./vendor/daerisimber/library/views/**/*.twig", "./theme/views/**/*.twig", "./theme/blocks/**/*.twig", "./theme/modules/**/*.twig"],
+    content: ["./vendor/daerisimber/library/views/**/*.twig", "./src/views/**/*.twig", "./src/blocks/**/*.twig", "./src/modules/**/*.twig"],
     theme: {
         fontFamily: {
             display: ["Roboto", "Helvetica", "Arial", "sans-serif"],
@@ -15,11 +15,11 @@ export default {
             xl: "1280px",
         },
         container: {
-          center: true,
-          padding: {
-              DEFAULT: "1.25rem",
-              xl: "0",
-          },
+            center: true,
+            padding: {
+                DEFAULT: "1.25rem",
+                xl: "0",
+            },
         },
         extend: {
             //Edit theme-colors.js

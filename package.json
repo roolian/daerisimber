@@ -1,6 +1,6 @@
 {
-  "name": "timberland",
-  "version": "2.0.1",
+  "name": "daerisimber",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Daeris",
@@ -22,7 +22,7 @@
     "cross-env": "^7.0.3",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.2.6"
+    "vite": "^5.4.21"
   },
   "dependencies": {
     "jsonfile": "^6.1.0"

@@ -84,7 +84,7 @@ Vite config is located in ./vite.json.
 
 theme.json is generated from files in ./theme-json folder.
 
-THe command `npm run build` automatically update the file in ./theme/theme.json.
+THe command `npm run build` automatically update the file in ./src/theme.json.
 
   
 
@@ -106,7 +106,7 @@ This way the same colors are available from :
 
   
 
-- ACf color field (loaded in ./theme/assets/main.js)
+- ACf color field (loaded in ./src/assets/main.js)
 
   
 
@@ -121,20 +121,20 @@ This way the same colors are available from :
 
 #### General
 
-Each block in theme/blocks is located in a dedicated folder (theme/blocks/component/button/) and require a block.json file to be auto registered.
+Each block in src/blocks is located in a dedicated folder (src/blocks/component/button/) and require a block.json file to be auto registered.
 
 Render twig file will be in priority order:
 
   
 
-- folder-name.twig (theme/blocks/component/button/button.twig)
+- folder-name.twig (src/blocks/component/button/button.twig)
 
-- index.twig (theme/blocks/component/button/index.twig)
+- index.twig (src/blocks/component/button/index.twig)
 
   
 
 ACF field group associated with the block will be stored in the dedicated folder :
-- theme/blocks/component/button/acf.json
+- src/blocks/component/button/acf.json
 
   
 
