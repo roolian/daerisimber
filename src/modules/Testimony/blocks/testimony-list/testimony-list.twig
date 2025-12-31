@@ -1,0 +1,69 @@
+{% set options = {
+  'slidesPerView': 1,
+  'spaceBetween': 16,
+  'navigation': {
+    'nextEl': ".swiper-next",
+    'prevEl': ".swiper-prev",
+    'disabledClass': "disabled",
+  },
+  'breakpoints': {
+    '720': {
+    'spaceBetween': 32,
+      'slidesPerView': 2,
+    },
+    '1200': {
+    'spaceBetween': 32,
+      'slidesPerView': 3,
+    }
+  }
+} %}
+
+<div class="">
+    <div class="-mx-5 px-10 md:px-20">
+        <div class="swiper overflow-visible! " data-swiper-options='{{ options | json_encode() }}'>
+            <div class="swiper-wrapper items-stretch">
+                {% for item in testimony_list %}
+                    <div class="swiper-slide h-auto!">
+                        <div class="bg-white px-8 py-6 text-sm rounded-tr-[60px] border-gradient h-full">
+                            <div class="flex items-end gap-6 mb-6">
+                                {% if item.photo %}
+                                    <div class="w-20">
+                                        <img src="{{ get_image( item.photo).src }}" alt="{{ get_image( item.photo).alt }}" class="object-cover size-20 rounded-full">
+                                    </div>
+                                {% endif %}
+                                <div class="flex-1">
+                                    <div class="h3 mt-6 font-bold text-dark">
+                                        {{ item.title }}
+                                    </div>
+                                    <div class="text-sm uppercase mt-2 text-primary">
+                                        {{ item.job_title }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                {{ item.description }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="flex gap-6 lg:gap-10 mt-10 items-center">
+                <div class="flex-1 relative">
+                    <div class="swiper-pagination [--swiper-pagination-progressbar-size:2px] [--swiper-theme-color:var(--wp--preset--color--secondary)] [--swiper-pagination-progressbar-bg-color:#DCDCDC] "></div>
+                </div>
+                <div class="flex gap-2 lg:gap-3">
+                    <div class="swiper-prev group [&.disabled]:opacity-35">
+                        <div class="size-14 bg-white border-gradient rounded-full flex justify-center items-center group-disabled:opacity-35 cursor-pointer">
+                            {{display_icon('arrow-left', 32, 'text-primary') }}
+                        </div>
+                    </div>
+                    <div class="swiper-next group [&.disabled]:opacity-35">
+                        <div class="size-14 bg-white border-gradient rounded-full flex justify-center items-center group-disabled:opacity-35 cursor-pointer">
+                            {{display_icon('arrow-right', 32, 'text-primary') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

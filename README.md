@@ -208,3 +208,90 @@ You can create a folder variant/ containing twig template files in your block fo
     {% include [variant_path ~ fields.variant, variant_path ~ 'default.twig'] ignore missing %}
     </div>
 ```
+
+### Modules
+
+Modules are self-contained features that can include custom post types, ACF fields, and blocks. The theme provides a `BaseModule` class to simplify module development.
+
+#### Creating a Module
+
+1. Create a new directory in `src/modules/{ModuleName}/`
+2. Create a module class extending `BaseModule`:
+
+```php
+<?php
+
+namespace Theme\Modules\Testimony;
+
+use Daerisimber\Modules\BaseModule;
+
+class TestimonyModule extends BaseModule
+{
+    public function __construct()
+    {
+        // Register ACF paths for this module
+        $this->registerAcfPaths();
+
+        // Register a custom post type
+        $this->registerPostType('testimony', [
+            'name' => __('Testimonials', 'theme'),
+            'singular_name' => __('Testimonial', 'theme'),
+            'add_new' => __('Add New', 'theme'),
+            'add_new_item' => __('Add New Testimonial', 'theme'),
+            // ... other labels
+        ], [
+            'menu_icon' => 'dashicons-format-quote',
+            'supports' => ['title', 'editor'],
+            'has_archive' => true,
+            // ... other args
+        ]);
+    }
+}
+```
+
+3. Register your module in `src/config/app.php`:
+
+```php
+'modules' => [
+    Theme\Modules\Testimony\TestimonyModule::class,
+],
+```
+
+#### Multiple Post Types
+
+A module can register multiple custom post types:
+
+```php
+public function __construct()
+{
+    $this->registerAcfPaths();
+
+    // First post type
+    $this->registerPostType('testimony', [
+        'name' => __('Testimonials', 'theme'),
+        // ...
+    ], [
+        'menu_icon' => 'dashicons-format-quote',
+    ]);
+
+    // Second post type
+    $this->registerPostType('review', [
+        'name' => __('Reviews', 'theme'),
+        // ...
+    ], [
+        'menu_icon' => 'dashicons-star-filled',
+    ]);
+}
+```
+
+#### ACF Field Management
+
+ACF field groups created for your module's post types will automatically be saved to `src/modules/{ModuleName}/acf-json/`. This keeps your module's field definitions version-controlled and portable.
+
+The module will automatically:
+- Load ACF JSON files from its `acf-json/` directory
+- Save ACF field groups associated with its post types to its `acf-json/` directory
+
+#### Module Blocks
+
+Blocks within a module are only registered if the module is active in `app.php`. Store module-specific blocks in `src/modules/{ModuleName}/blocks/` and they will be automatically discovered.
