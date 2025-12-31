@@ -8,11 +8,6 @@ class FaqPageBlockModel extends BlockModel
 {
     public function __construct()
     {
-        //Si yoast SEO est activé
-        if (function_exists('yoast_breadcrumb')) {
-            add_filter('wpseo_schema_graph_pieces', [$this, 'yoast_add_faq_schema_pieces'], 11, 2);
-        }
-
     }
     public function before_render(): void
     {
@@ -44,20 +39,5 @@ class FaqPageBlockModel extends BlockModel
         }
 
         $this->timber_context['faq_list'] =  $faqList;
-
-    }
-
-    /**
-     * If this fires, we know there's an FAQ block on the page, so filter the page type.
-     *
-     * @param [type] $blocks
-     * @param mixed $pieces
-     * @param mixed $context
-     */
-    public function yoast_add_faq_schema_pieces($pieces, $context)
-    {
-        $pieces[] = new YoastFaqGraphPiece($context);
-
-        return $pieces;
     }
 }
