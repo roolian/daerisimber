@@ -1,5 +1,5 @@
 {
-    "apiVersion": 2,
+    "apiVersion": 3,
     "name": "daeris/group-button",
     "title": "Groupe de boutons",
     "description": "Ajouter un ou plusieurs boutons mis en forme",

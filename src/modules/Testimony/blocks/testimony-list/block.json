@@ -1,5 +1,5 @@
 {
-    "apiVersion": 2,
+    "apiVersion": 3,
     "name": "daeris/testimony-list",
     "title": "Liste de témoignages",
     "description": "Liste de témoignages",

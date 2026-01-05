@@ -1,5 +1,5 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "daeris/post-list",
   "title": "List de contenu",
   "description": "Ajoute une liste de contenu",

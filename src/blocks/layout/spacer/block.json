@@ -1,5 +1,5 @@
 {
-    "apiVersion": 2,
+    "apiVersion": 3,
     "name": "daeris/spacer",
     "title": "Spacer responsive",
     "description": "Espacement responsive pour avoir des écarts uniformes entre les blocs",

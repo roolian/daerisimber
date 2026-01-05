@@ -1,5 +1,5 @@
 {
-    "apiVersion": 2,
+    "apiVersion": 3,
     "name": "daeris/prose",
     "title": "Prose",
     "description": "Ajouter du texte qui sera mis en forme automatiquement",

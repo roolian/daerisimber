@@ -1,5 +1,5 @@
 {
-    "apiVersion": 2,
+    "apiVersion": 3,
     "name": "daeris/tab-controls",
     "title": "Tab controls",
     "description": "Ajouter les onglet de controle d'un affichage controlé",

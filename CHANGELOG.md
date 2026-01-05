@@ -17,9 +17,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.2.0] - 2026-01-05
 
+### Added
+- Documentation (README.md) for each JavaScript module
+- Organized JS modules into separate directories with documentation
+
 ### Changed
 - Migrated to iframe editor with apiVersion 3 for Gutenberg blocks
 - Updated daerisimber/library to ^1.2.0
+- Restructured JS modules: SwiperModule, AjaxFactoryModule, ParalaxModule, ScrollToModule
 
 ## [1.0.0] - 2026-01-05
 

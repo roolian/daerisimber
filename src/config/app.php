@@ -13,6 +13,7 @@ return [
         Daerisimber\Services\Plugins\ACF\ACFSetup::class,
     ],
     'modules' => [
+        Theme\Modules\SiteModule::class,
         Theme\Modules\Faq\FaqModule::class,
         Theme\Modules\Icons\IconsModule::class,
         Theme\Modules\Testimony\TestimonyModule::class,

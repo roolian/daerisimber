@@ -1,5 +1,5 @@
 {
-    "apiVersion": 2,
+    "apiVersion": 3,
     "name": "daeris/bullet-list",
     "title": "Liste à points",
     "description": "Ajouter une liste à points",

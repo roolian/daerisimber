@@ -1,5 +1,5 @@
 {
-    "apiVersion": 2,
+    "apiVersion": 3,
     "name": "daeris/tab-content",
     "title": "Tab content",
     "description": "Ajouter un contenu à affichage controlé",
