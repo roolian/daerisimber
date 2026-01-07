@@ -1,11 +1,17 @@
 {
+  "src/assets/admin.js": {
+    "file": "assets/admin-Dh3p-tD-.js",
+    "name": "admin",
+    "src": "src/assets/admin.js",
+    "isEntry": true
+  },
   "src/assets/main.js": {
-    "file": "assets/main-C9oZvec7.js",
+    "file": "assets/main-DRiGG-LG.js",
     "name": "main",
     "src": "src/assets/main.js",
     "isEntry": true,
     "css": [
-      "assets/main-CyLPEr3K.css"
+      "assets/main-BKGnG3uH.css"
     ]
   },
   "src/assets/styles/editor-style.css": {

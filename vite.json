@@ -1,8 +1,9 @@
 {
   "environment": "production",
-  "dest": "./src/assets/dist",
+  "dest": "./dist",
   "entries": {
     "main": "./src/assets/main.js",
+    "admin": "./src/assets/admin.js",
     "editor": "./src/assets/styles/editor-style.css"
   },
   "server": {
