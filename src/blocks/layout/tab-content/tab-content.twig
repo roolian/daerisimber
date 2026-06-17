@@ -37,7 +37,7 @@
         {% endif %}
 
         <div x-show="isActive('{{ fields.tab_content_id }}')">
-            <InnerBlocks allowedblocks="{{ allowed_blocks|json_encode()| escape('html_attr')}}"/>
+            <InnerBlocks allowedblocks="{{ allowed_blocks|json_encode()| escape('html_attr')}}" class="{{ fields.prose ? 'prose max-w-none' : '' }}"/>
         </div>
     </div>
 

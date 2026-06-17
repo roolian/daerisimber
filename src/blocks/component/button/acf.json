@@ -1,5 +1,5 @@
 {
-    "modified": 1720110951,
+    "modified": 1781695886,
     "key": "group_61a60c311770a",
     "title": "Bloc - bouton",
     "fields": [
@@ -17,7 +17,8 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "return_format": "array",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_637177860664f",
@@ -46,7 +47,9 @@
             "allow_null": 0,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_6374204381eaf",
@@ -181,7 +184,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_61a60fa0c94d8",
@@ -199,7 +203,10 @@
             },
             "default_value": "",
             "enable_opacity": 1,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_61a60fcac94d9",
@@ -217,7 +224,10 @@
             },
             "default_value": "",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_63713117ea0de",
@@ -234,7 +244,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_637133985c7eb",
@@ -252,7 +263,10 @@
             },
             "default_value": "",
             "enable_opacity": 1,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_637133ae5c7ec",
@@ -270,7 +284,10 @@
             },
             "default_value": "",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         }
     ],
     "location": [
@@ -290,5 +307,8 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": ""
 }
