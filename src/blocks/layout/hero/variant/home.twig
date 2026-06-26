@@ -1,0 +1,30 @@
+<div class="relative overflow-clip">
+    <div class="row justify-center items-center relative z-10">
+        <div class="col md:w-10/12  xl:w-6/12 ">
+            <div class="md:py-30">
+                 <h1 class="display mb-6">
+                    {{ fields.title|striptags('<strong><br>') }}
+                </h1>
+
+                {% if fields.subtitle %}
+                    <div class="mb-10">
+                        {{ fields.subtitle }}
+                    </div>
+                {% endif %}
+                <InnerBlocks class="mt-10"/>
+
+            </div>
+        </div>
+        {% if fields.image %}
+
+            {% set image_container_class = "flex justify-center" %}
+            {% set image_class = "" %}
+
+            <div class="col xl:w-6/12">
+                <div class=" {{ image_container_class }}">
+                    <img src="{{ get_image(fields.image).src }}" alt="" class="{{ image_class }}">
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

@@ -6,7 +6,7 @@
     "category": "drs_layout",
     "keyords": ["tab", "onglet", "interaction"],
     "acf": {
-        "mode": "preview"
+        "blockVersion": 3
     },
     "supports": {
         "align": false,

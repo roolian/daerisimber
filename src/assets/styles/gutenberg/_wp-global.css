@@ -1,0 +1,17 @@
+
+.is-style-md-text-center {
+    @apply md:text-center;
+}
+
+.is-style-max-md-hidden {
+    @apply max-md:hidden;
+}
+
+.is-style-image-map img {
+    @apply max-lg:h-[600px];
+}
+
+.wp-block-image .components-resizable-box__container img,
+.wp-block-image img {
+    @apply inline-block;
+}

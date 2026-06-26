@@ -1,0 +1,62 @@
+@utility btn-base {
+  @apply inline-flex cursor-pointer text-primary items-center justify-center space-x-3 rounded-2xl border py-4 px-6 text-center  font-semibold leading-3 transition-colors no-underline!;
+  border: 2px solid transparent;
+}
+
+@layer components {
+  .link-button {
+    @apply no-underline! font-bold inline-flex flex-col-reverse pb-1;
+    &::before {
+      content: "";
+      height: 3px;
+      z-index: -1;
+      @apply block w-full bg-primary transition-all relative inset-x-0 bottom-0;
+    }
+    &:hover {
+      @apply text-primary;
+      &::before {
+        @apply scale-x-150;
+      }
+    }
+  }
+
+  .btn {
+    @apply btn-base border-primary bg-primary text-white hover:border-secondary hover:bg-primary;
+  }
+
+  .btn-primary {
+    @apply btn-base border-primary bg-primary text-white hover:border-secondary;
+  }
+
+  .btn-primary-light {
+    @apply btn-base border-white bg-white text-primary hover:bg-gray-200;
+  }
+
+  .btn-primary-outline {
+    @apply btn-base border-primary bg-transparent text-primary hover:bg-primary hover:text-white;
+  }
+
+  .btn-secondary {
+    @apply btn-base border-primary bg-white text-primary hover:border-primary hover:bg-primary hover:text-white;
+  }
+
+  .btn-secondary-light {
+    @apply btn-base border-white bg-transparent text-white hover:bg-white hover:text-primary;
+  }
+
+  .btn-secondary-outline {
+    @apply btn-base border-white bg-secondary text-white hover:bg-white hover:text-secondary;
+  }
+
+  .btn-white {
+    @apply btn-base border-white bg-white text-primary hover:bg-transparent hover:text-white;
+  }
+
+  .btn-icon {
+    @apply flex h-10 w-10 items-center justify-center rounded border border-gray-100 bg-white text-black transition-colors hover:border-primary hover:bg-transparent hover:text-primary;
+  }
+
+  .btn-sm {
+    @apply py-2 px-3 max-lg:text-sm whitespace-nowrap lg:px-4;
+  }
+}

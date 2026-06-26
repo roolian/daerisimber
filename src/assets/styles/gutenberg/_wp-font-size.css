@@ -14,6 +14,6 @@
 .has-xl-font-size {
     @apply text-xl;
 }
-.has-xxl-font-size {
+.has-2-xl-font-size {
     @apply text-2xl;
 }

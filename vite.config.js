@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { writeFile } from "fs";
+import tailwindcss from "@tailwindcss/vite";
 import viteConfig from "./vite.json";
 import themeConfig from "./theme/theme.js";
 
@@ -26,6 +27,7 @@ export default defineConfig(({ mode, command }) => {
             write: true,
         },
         plugins: [
+            tailwindcss(),
             {
                 name: "build-script",
                 buildStart(options) {

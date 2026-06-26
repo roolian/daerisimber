@@ -1,10 +1,11 @@
 {
+    "modified": 1782469656,
     "key": "group_6378cc04b8f28",
     "title": "Bloc - Responsive spacer",
     "fields": [
         {
             "key": "field_6378cc05c1ed0",
-            "label": "Type",
+            "label": "",
             "name": "spacer_type",
             "aria-label": "",
             "type": "radio",
@@ -27,6 +28,7 @@
             "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
+            "allow_in_bindings": 1,
             "layout": "vertical",
             "save_other_choice": 0
         }
@@ -49,5 +51,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684858828
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": ""
 }

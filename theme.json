@@ -14,6 +14,31 @@
       "defaultGradients": false,
       "palette": [
         {
+          "name": "color1",
+          "slug": "color1",
+          "color": "#67bca8"
+        },
+        {
+          "name": "color2",
+          "slug": "color2",
+          "color": "#f163ad"
+        },
+        {
+          "name": "color3",
+          "slug": "color3",
+          "color": "#f1ee63"
+        },
+        {
+          "name": "color4",
+          "slug": "color4",
+          "color": "#67bca8"
+        },
+        {
+          "name": "color5",
+          "slug": "color5",
+          "color": "#2d84c7"
+        },
+        {
           "name": "white",
           "slug": "white",
           "color": "#ffffff"
@@ -66,7 +91,39 @@
       "fontWeight": false,
       "fontStyle": false,
       "textTransform": false,
-      "textDecoration": false
+      "textDecoration": false,
+      "fontSizes": [
+        {
+          "name": "xs",
+          "slug": "xs",
+          "size": "12px"
+        },
+        {
+          "name": "md",
+          "slug": "md",
+          "size": "14px"
+        },
+        {
+          "name": "base",
+          "slug": "base",
+          "size": "16px"
+        },
+        {
+          "name": "lg",
+          "slug": "lg",
+          "size": "18px"
+        },
+        {
+          "name": "xl",
+          "slug": "xl",
+          "size": "20px"
+        },
+        {
+          "name": "2xl",
+          "slug": "2xl",
+          "size": "24px"
+        }
+      ]
     }
   },
   "styles": {}

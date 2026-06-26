@@ -1,0 +1,20 @@
+.wpcf7 {
+    .wpcf7-not-valid-tip {
+        @apply text-error inline-block w-auto bg-white mx-auto absolute left-1 bottom-1 translate-y-1/2 px-2 mt-1 text-xs rounded;
+        font-weight: normal;
+    }
+
+    .wpcf7-not-valid {
+        @apply mb-5
+    }
+
+    .wpcf7-response-output {
+        @apply bg-white/20;
+        color: var(--color-primary);
+    }
+
+    form.invalid .wpcf7-response-output {
+        @apply bg-white rounded-xl p-5 border-white;
+        color: var(--color-error);
+    }
+}

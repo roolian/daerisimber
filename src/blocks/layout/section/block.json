@@ -5,7 +5,7 @@
     "description": "Section de page",
     "category": "drs_layout",
     "acf": {
-      "mode": "preview"
+        "blockVersion": 3
     },
     "keyords": ["section", "layout"],
     "supports": {

@@ -1,28 +1,8 @@
 {
+    "modified": 1782468430,
     "key": "group_637a0cebe3a06",
     "title": "Bloc - Layout - Section",
     "fields": [
-        {
-            "key": "field_666880e8bf5fe",
-            "label": "Analytics - Nom section",
-            "name": "analytics_section",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "translations": "sync",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
         {
             "key": "field_637a0cec73bc9",
             "label": "Couleur du fond",
@@ -39,7 +19,12 @@
             },
             "default_value": "",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "allow_in_bindings": 1,
+            "show_custom_palette": 1,
+            "custom_palette_source": "themejson",
+            "show_color_wheel": 1,
+            "palette_colors": ""
         },
         {
             "key": "field_6422f778a1a15",
@@ -57,7 +42,10 @@
             },
             "default_value": "",
             "enable_opacity": 0,
-            "return_format": "string"
+            "return_format": "string",
+            "custom_palette_source": "",
+            "palette_colors": "",
+            "show_color_wheel": true
         },
         {
             "key": "field_637a1b8dabf0d",
@@ -92,7 +80,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_637a1c12abf0f",
@@ -194,7 +183,8 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_637a1db79c18e",
@@ -283,5 +273,7 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718125301
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": ""
 }

@@ -1,0 +1,23 @@
+.field {
+    @apply relative flex flex-col font-semibold gap-1 mb-5;
+}
+
+.label {
+    @apply absolute top-4 left-px px-4 text-gray-500 font-bold hidden text-xl ;
+}
+
+.input {
+    @apply bg-white/5 placeholder:text-white/80  text-black  hover:border-white/90 rounded-xl border border-white/50 p-4 py-3 text-sm block focus:bg-white/20 w-full max-w-lg
+    focus-within:ring-0  ;
+}
+
+.is-invalid .input {
+    @apply border-red-500 focus:border-red-500;
+}
+
+.field-error {
+    @apply text-red-500 text-xs mt-1 hidden;
+}
+.is-invalid .field-error {
+    @apply block;
+}

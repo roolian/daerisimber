@@ -11,7 +11,7 @@
 
 {% if fields.bg_color %}
 
-    {% set spacing_class = "py-20 md:py-30 first:pt-30  md:first:py-0" %}
+    {% set spacing_class = "py-20 first:pt-20 md:py-30 md:first:py-0" %}
     {% set styles = "background-color:" ~ fields.bg_color ~ ";" %}
 
     {% set inset_deco = "" %}
@@ -24,18 +24,18 @@
 
 <section id="{{ id }}" class="relative  {{ spacing_class }} {{ class }}  group/section" style="{{ styles }}">
 
-        {% if fields.divider_top_activate %}
-            <div class="absolute top-0 w-full">
-                {% include "component/shape-divider.twig" with { options:fields.divider_top} %}
-            </div>
-        {% endif %}
-        <div>
-            <InnerBlocks/>
+    {% if fields.divider_top_activate %}
+        <div class="absolute top-0 w-full">
+            {% include "component/shape-divider.twig" with { options:fields.divider_top} %}
         </div>
-        {% if fields.divider_bottom_activate %}
-            <div class="absolute bottom-0 w-full">
-                {% include "component/shape-divider.twig" with { options:fields.divider_bottom} %}
-            </div>
-        {% endif %}
+    {% endif %}
+    <div>
+        <InnerBlocks/>
+    </div>
+    {% if fields.divider_bottom_activate %}
+        <div class="absolute bottom-0 w-full">
+            {% include "component/shape-divider.twig" with { options:fields.divider_bottom} %}
+        </div>
+    {% endif %}
 
 </section>

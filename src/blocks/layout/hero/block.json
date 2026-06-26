@@ -1,11 +1,11 @@
 {
   "apiVersion": 3,
   "name": "daeris/hero",
-  "title": "Hero",
-  "description": "Entête de page",
+  "title": "Entête de page",
+  "description": "Entête, à placer en haut de page, avec un titre",
   "category": "drs_layout",
   "acf": {
-    "mode": "preview"
+    "blockVersion": 3
   },
   "supports": {
     "align": false,
@@ -15,7 +15,9 @@
     "attributes": {
       "mode": "preview",
       "data": {
-        "is_preview": true
+        "is_example": true,
+        "title": "Titre de la page",
+        "subtitle": "Sous titre de la page"
       }
     }
   },

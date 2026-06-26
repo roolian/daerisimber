@@ -1,0 +1,13 @@
+@utility row {
+    @apply flex flex-row flex-wrap -mx-4 gap-y-10;
+}
+@utility col {
+    @apply w-full px-4;
+}
+@utility st-cloak {
+    @apply invisible;
+}
+
+@utility container {
+  @apply w-full max-w-7xl px-5 mx-auto;
+}
