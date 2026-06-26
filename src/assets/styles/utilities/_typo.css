@@ -1,3 +1,7 @@
+@utility text-contrast-* {
+  --text-contrast: --value(--color-*);
+}
+
 @utility display {
     @apply font-display  text-6xl md:text-6xl font-bold text-primary; 
 }

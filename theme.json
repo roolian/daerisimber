@@ -1,10 +1,11 @@
 {
-  "version": 2,
+  "version": 3,
   "settings": {
     "layout": {
       "contentSize": "100%",
       "wideSize": "1024px",
-      "fullSize": "1280px"
+      "fullSize": "1280px",
+      "allowEditing": false
     },
     "color": {
       "custom": false,
@@ -21,7 +22,7 @@
         {
           "name": "secondary",
           "slug": "secondary",
-          "color": "#E22019"
+          "color": "#030712"
         },
         {
           "name": "white",
@@ -34,29 +35,24 @@
           "color": "#000000"
         },
         {
-          "name": "color1",
-          "slug": "color1",
-          "color": "#67bca8"
+          "name": "sage",
+          "slug": "sage",
+          "color": "#4CA882"
         },
         {
-          "name": "color2",
-          "slug": "color2",
-          "color": "#f163ad"
+          "name": "coral",
+          "slug": "coral",
+          "color": "#E8694A"
         },
         {
-          "name": "color3",
-          "slug": "color3",
-          "color": "#f1ee63"
+          "name": "amber",
+          "slug": "amber",
+          "color": "#EBA63A"
         },
         {
-          "name": "color4",
-          "slug": "color4",
-          "color": "#67bca8"
-        },
-        {
-          "name": "color5",
-          "slug": "color5",
-          "color": "#2d84c7"
+          "name": "indigo",
+          "slug": "indigo",
+          "color": "#4F67B0"
         }
       ]
     },
@@ -99,6 +95,61 @@
           "size": "24px"
         }
       ]
+    },
+    "spacing": {
+      "customSpacingSize": false,
+      "defaultSpacingSizes": false,
+      "spacingScale": {
+        "steps": 0
+      },
+      "spacingSizes": [
+        {
+          "name": "sm",
+          "slug": "sm",
+          "size": "clamp( 20px,  3vw, 40px )"
+        },
+        {
+          "name": "md",
+          "slug": "md",
+          "size": "clamp( 56px, 4vw,  56px )"
+        },
+        {
+          "name": "lg",
+          "slug": "lg",
+          "size": "clamp( 20px, 5vw + 84px  ,  84px )"
+        },
+        {
+          "name": "xl",
+          "slug": "xl",
+          "size": "clamp( 20px, 6vw,  112px )"
+        }
+      ]
+    },
+    "blocks": {
+      "core/group": {
+        "typography": {
+          "fontSizes": [],
+          "customLineHeight": false,
+          "customFontSize": false,
+          "defaultFontSizes": false,
+          "writingMode": false,
+          "dropCap": false,
+          "textDecoration": false,
+          "letterSpacing": false,
+          "textTransform": false,
+          "fontWeight": false,
+          "fontStyle": false
+        },
+        "color": {
+          "text": false
+        },
+        "shadow": {
+          "defaultPresets": false
+        },
+        "spacing": {
+          "padding": true
+        }
+      }
     }
   },
   "styles": {}

@@ -49,7 +49,7 @@ class SiteModule
 
         $slug = $this->colorPalette[strtolower($hex)] ?? null;
 
-        return $slug ? 'bg-' . $slug : null;
+        return $slug ? 'has-' . $slug . '-background-color' : null;
     }
 
     public function print_ajax_url()

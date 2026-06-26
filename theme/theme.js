@@ -1,30 +1,33 @@
-import { themeColors } from "./theme-colors";
+import { palette } from "./theme-colors";
 
 const colorPalette = [];
 
-const reduceColors = (entries) => {
-  for (const [key, value] of Object.entries(themeColors)) {
-    if (typeof value == "object") {
-      reduceColors(value);
-    } else {
-      colorPalette.push({
-        name: key,
-        slug: key,
-        color: value,
-      });
-    }
-  }
+for (const [slug, entry] of Object.entries(palette)) {
+  colorPalette.push({ name: slug, slug, color: entry.color });
+}
+
+const disableTypography = {
+  fontSizes: [],
+  customLineHeight: false,
+  customFontSize: false,
+  defaultFontSizes: false,
+  writingMode: false,
+  dropCap: false,
+  textDecoration: false,
+  letterSpacing: false,
+  textTransform: false,
+  fontWeight: false,
+  fontStyle: false,
 };
 
-reduceColors(themeColors);
-
 const themeConfig = {
-  version: 2,
+  version: 3,
   settings: {
     layout: {
       contentSize: "100%",
       wideSize: "1024px",
       fullSize: "1280px",
+      allowEditing: false,
     },
     color: {
       custom: false,
@@ -73,6 +76,49 @@ const themeConfig = {
           size: "24px",
         },
       ],
+    },
+    spacing: {
+      customSpacingSize: false,
+      defaultSpacingSizes: false,
+      spacingScale: {
+        steps: 0,
+      },
+      spacingSizes: [
+        {
+          name: "sm",
+          slug: "sm",
+          size: "clamp( 20px,  3vw, 40px )",
+        },
+        {
+          name: "md",
+          slug: "md",
+          size: "clamp( 56px, 4vw,  56px )",
+        },
+        {
+          name: "lg",
+          slug: "lg",
+          size: "clamp( 20px, 5vw + 84px  ,  84px )",
+        },
+        {
+          name: "xl",
+          slug: "xl",
+          size: "clamp( 20px, 6vw,  112px )",
+        },
+      ],
+    },
+    blocks: {
+      "core/group": {
+        typography: disableTypography,
+        color: {
+          text: false,
+        },
+        shadow: {
+          defaultPresets: false,
+        },
+        spacing: {
+          padding: true,
+        },
+      },
     },
   },
   styles: {},

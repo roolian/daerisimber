@@ -1,103 +1,147 @@
 /* Auto-generated — do not edit manually */
 
-@source inline("bg-{primary,secondary,white,black,color1,color2,color3,color4,color5}");
+[class*="-background-color"] :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
 
-.has-primary-background-color,
-.bg-primary {
+[class*="-background-color"] h1 {
+  color: var(--text-contrast-h1, var(--text-contrast));
+}
+[class*="-background-color"] h2 {
+  color: var(--text-contrast-h2, var(--text-contrast));
+}
+[class*="-background-color"] h3 {
+  color: var(--text-contrast-h3, var(--text-contrast));
+}
+[class*="-background-color"] h4 {
+  color: var(--text-contrast-h4, var(--text-contrast));
+}
+[class*="-background-color"] h5 {
+  color: var(--text-contrast-h5, var(--text-contrast));
+}
+[class*="-background-color"] h6 {
+  color: var(--text-contrast-h6, var(--text-contrast));
+}
+[class*="-background-color"] p {
+  color: var(--text-contrast-p, var(--text-contrast));
+}
+[class*="-background-color"] li {
+  color: var(--text-contrast-li, var(--text-contrast));
+}
+[class*="-background-color"] a {
+  color: var(--text-contrast-a, var(--text-contrast));
+}
+[class*="-background-color"] span {
+  color: var(--text-contrast-span, var(--text-contrast));
+}
+
+.has-primary-background-color {
   --text-contrast: #ffffff;
-  background-color: #007D8F;
+  background-color: #007D8F !important;
   color: #ffffff;
 }
-.has-primary-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
-.bg-primary :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
+
+@media (prefers-color-scheme: dark) {
+  body:not(.editor-styles-wrapper) .has-primary-background-color {
+    background-color: #005A67 !important;
+  }
 }
 
-.has-secondary-background-color,
-.bg-secondary {
+.has-secondary-background-color {
   --text-contrast: #ffffff;
-  background-color: #E22019;
+  background-color: #030712 !important;
+  color: #ffffff;
+  --text-contrast-h2: #00ccea;
+  --text-contrast-h1: #00ccea;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.editor-styles-wrapper) .has-secondary-background-color {
+    background-color: #020c1a !important;
+    --text-contrast-h2: #00ccea;
+    --text-contrast-h1: #00ccea;
+  }
+}
+
+.has-white-background-color {
+  --text-contrast: #030712;
+  background-color: #ffffff !important;
+  color: #030712;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.editor-styles-wrapper) .has-white-background-color {
+    background-color: #030712 !important;
+    --text-contrast: #ffffff;
+    color: #ffffff;
+  }
+}
+
+.has-black-background-color {
+  --text-contrast: #ffffff;
+  background-color: #000000 !important;
   color: #ffffff;
 }
-.has-secondary-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
-.bg-secondary :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
+
+@media (prefers-color-scheme: dark) {
+  body:not(.editor-styles-wrapper) .has-black-background-color {
+    background-color: #ffffff !important;
+    --text-contrast: #000000;
+    color: #000000;
+  }
 }
 
-.has-white-background-color,
-.bg-white {
+.has-sage-background-color {
   --text-contrast: #000000;
-  background-color: #ffffff;
+  background-color: #4CA882 !important;
   color: #000000;
 }
-.has-white-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
-.bg-white :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
+
+@media (prefers-color-scheme: dark) {
+  body:not(.editor-styles-wrapper) .has-sage-background-color {
+    background-color: #2A6B4F !important;
+    --text-contrast: #ffffff;
+    color: #ffffff;
+  }
 }
 
-.has-black-background-color,
-.bg-black {
+.has-coral-background-color {
+  --text-contrast: #000000;
+  background-color: #E8694A !important;
+  color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.editor-styles-wrapper) .has-coral-background-color {
+    background-color: #A83C25 !important;
+    --text-contrast: #ffffff;
+    color: #ffffff;
+  }
+}
+
+.has-amber-background-color {
+  --text-contrast: #000000;
+  background-color: #EBA63A !important;
+  color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.editor-styles-wrapper) .has-amber-background-color {
+    background-color: #9A6910 !important;
+    --text-contrast: #ffffff;
+    color: #ffffff;
+  }
+}
+
+.has-indigo-background-color {
   --text-contrast: #ffffff;
-  background-color: #000000;
+  background-color: #4F67B0 !important;
   color: #ffffff;
 }
-.has-black-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
-.bg-black :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
-}
 
-.has-color1-background-color,
-.bg-color1 {
-  --text-contrast: #000000;
-  background-color: #67bca8;
-  color: #000000;
-}
-.has-color1-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
-.bg-color1 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
-}
-
-.has-color2-background-color,
-.bg-color2 {
-  --text-contrast: #000000;
-  background-color: #f163ad;
-  color: #000000;
-}
-.has-color2-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
-.bg-color2 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
-}
-
-.has-color3-background-color,
-.bg-color3 {
-  --text-contrast: #000000;
-  background-color: #f1ee63;
-  color: #000000;
-}
-.has-color3-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
-.bg-color3 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
-}
-
-.has-color4-background-color,
-.bg-color4 {
-  --text-contrast: #000000;
-  background-color: #67bca8;
-  color: #000000;
-}
-.has-color4-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
-.bg-color4 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
-}
-
-.has-color5-background-color,
-.bg-color5 {
-  --text-contrast: #ffffff;
-  background-color: #2d84c7;
-  color: #ffffff;
-}
-.has-color5-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
-.bg-color5 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
+@media (prefers-color-scheme: dark) {
+  body:not(.editor-styles-wrapper) .has-indigo-background-color {
+    background-color: #2E3F7A !important;
+  }
 }
 

@@ -1,21 +1,21 @@
-body .editor-styles-wrapper .block-editor-block-list__layout.is-root-container .alignwide,
+
 .alignwide {
     @apply max-w-5xl px-5 lg:mx-auto;
 }
-body .editor-styles-wrapper .block-editor-block-list__layout.is-root-container .alignfull,
+
 .alignfull {
     @apply max-w-7xl px-5 lg:mx-auto;
 }
 
 .wp-block-group.has-background {
-    padding: 0;
+    @apply px-5 py-8;
 }
 
-body .editor-styles-wrapper .block-editor-block-list__layout.is-root-container .wp-block-group.is-style-w-sm,
+
 .wp-block-group.is-style-w-sm {
     @apply max-w-[628px] mx-5 lg:mx-auto;
 }
-body .editor-styles-wrapper .block-editor-block-list__layout.is-root-container .wp-block-group.is-style-w-md,
+
 .wp-block-group.is-style-w-md {
     @apply max-w-[848px] mx-5 lg:mx-auto;
 }

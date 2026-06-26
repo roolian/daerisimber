@@ -1,0 +1,25 @@
+<ul class="{{ class_type }}">
+
+    {% for item in fields.list %}
+
+        <li class="flex items-start gap-2 p-3 rounded-lg border border-primary-dark bg-white text-contrast-secondary dark:text-contrast-white  dark:bg-secondary ">
+
+            {% if fields.image %}
+                <span class="inline-block w-6"> 
+                    <img class="w-6" src="{{ get_image(fields.image).src }}" alt="{{ get_image(fields.image).alt }}"/>
+                </span>
+            {% else %}
+                <span class="inline-block">
+                    {{ display_icon('check') }}
+                </span>
+            {% endif %}
+
+
+            <span class="inline-block flex-1  text-inherit">
+                {{ item.text }}
+            </span>
+        </li>
+
+    {% endfor %}
+
+</ul>

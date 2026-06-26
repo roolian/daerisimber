@@ -1,7 +1,7 @@
-<div class="relative overflow-clip">
+<div class="relative">
     <div class="row justify-center items-center relative z-10">
         <div class="col md:w-10/12  xl:w-6/12 ">
-            <div class="md:py-30">
+            <div class="">
                  <h1 class="display mb-6">
                     {{ fields.title|striptags('<strong><br>') }}
                 </h1>
@@ -16,11 +16,12 @@
             </div>
         </div>
         {% if fields.image %}
+            <div class="col max-lg:hidden xl:w-1/12">
+            </div>
+            {% set image_container_class = "flex justify-start" %}
+            {% set image_class = "rounded-full size-160 object-cover max-w-none" %}
 
-            {% set image_container_class = "flex justify-center" %}
-            {% set image_class = "" %}
-
-            <div class="col xl:w-6/12">
+            <div class="col lg:w-5/12">
                 <div class=" {{ image_container_class }}">
                     <img src="{{ get_image(fields.image).src }}" alt="" class="{{ image_class }}">
                 </div>
