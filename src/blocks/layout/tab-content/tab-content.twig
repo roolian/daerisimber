@@ -29,15 +29,22 @@
     "daeris/content-image",
 ] %}
 
-<div id="tab-{{ fields.id }}" class="{{ class }}">
+<div id="tab-{{ fields.id }}" class="w-full  {{ class }}" x-data="tabContent('{{ context['daeris/tab-controls'].tab_group_id }}')" >
 
-    <div x-data="tabContent('{{ context['daeris/tab-group'].group_id }}')">
-        {% if is_preview  %}
-            <div x-on:click="setActive('{{ fields.tab_content_id }}')"  class="cursor-pointer w-full h-10 bg-gray-50 flex items-center justify-center"> <div>Tab id: {{fields.tab_content_id}}</div></div>
-        {% endif %}
+    {% if is_preview  %}
+        <div x-on:click="setActive('{{ fields.tab_content_id }}')" class="cursor-pointer w-full h-10 bg-gray-50 flex items-center justify-center">
+            <div>
+                Tab id:
+                {{fields.tab_content_id}}
+            </div>
+        </div>
+    {% endif %}
 
-        <div x-show="isActive('{{ fields.tab_content_id }}')">
-            <InnerBlocks allowedblocks="{{ allowed_blocks|json_encode()| escape('html_attr')}}" class="{{ fields.prose ? 'prose max-w-none' : '' }}"/>
+    <div x-on:click="setActive('{{ fields.tab_content_id }}')" x-text="getTitle('{{ fields.tab_content_id }}')" class="h3 text-xl mb-4 md:hidden cursor-pointer bg-gradient-green text-white p-4 rounded-lg">
+    </div>
+    <div class="max-md:grid   overflow-hidden max-md:transition-all" x-bind:class="isActive('{{ fields.tab_content_id }}') ? 'max-md:grid-rows-[1fr] max-md:mb-4' : 'max-md:grid-rows-[0fr]' ">
+        <div x-bind:class="isActive('{{ fields.tab_content_id }}') ? 'visible' : 'invisible hidden' ">
+            <InnerBlocks allowedblocks="{{ allowed_blocks|json_encode()| escape('html_attr')}}" class="max-md:transition-all min-h-0" />
         </div>
     </div>
 

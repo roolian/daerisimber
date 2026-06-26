@@ -1,0 +1,26 @@
+{% if is_preview and fields.tabs|length == 0  %}
+    <div class="w-full h-10 bg-gray-50 flex items-center justify-center">
+        <div>
+            + Add tab controls
+        </div>
+    </div>
+{% endif %}
+
+<div class="mb-10 border-b border-primary/50 ">
+    <div class="flex flex-wrap -mb-px font-medium text-center"  x-data="tabControls('{{ fields.tab_group_id }}', '{{ fields.tabs[0].tab_content_id }}')">
+
+        {% for item in fields.tabs %}
+            <div>
+                <button class="" x-bind:class="isActive('{{ item.tab_content_id }}') ? 'inline-block px-6 py-4  rounded-t-lg text-white  bg-primary' : 'inline-block p-4 rounded-t-lg hover:text-primary  cursor-pointer '" x-on:click="setActive('{{ item.tab_content_id }}')">
+                    {{ item.title }}
+                </button>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div id="tab-group-{{ fields.id_tab_group }}" class="{{ class }}">
+
+    <InnerBlocks template="{{ inner_block_template|json_encode|esc_attr}}" allowedblocks="{{ allowed_blocks|json_encode()|escape('html_attr')}}"/>
+
+</div>

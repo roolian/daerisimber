@@ -14,6 +14,26 @@
       "defaultGradients": false,
       "palette": [
         {
+          "name": "primary",
+          "slug": "primary",
+          "color": "#007D8F"
+        },
+        {
+          "name": "secondary",
+          "slug": "secondary",
+          "color": "#E22019"
+        },
+        {
+          "name": "white",
+          "slug": "white",
+          "color": "#ffffff"
+        },
+        {
+          "name": "black",
+          "slug": "black",
+          "color": "#000000"
+        },
+        {
           "name": "color1",
           "slug": "color1",
           "color": "#67bca8"
@@ -37,51 +57,6 @@
           "name": "color5",
           "slug": "color5",
           "color": "#2d84c7"
-        },
-        {
-          "name": "white",
-          "slug": "white",
-          "color": "#ffffff"
-        },
-        {
-          "name": "black",
-          "slug": "black",
-          "color": "#000"
-        },
-        {
-          "name": "current",
-          "slug": "current",
-          "color": "currentColor"
-        },
-        {
-          "name": "primary",
-          "slug": "primary",
-          "color": "#007D8F"
-        },
-        {
-          "name": "secondary",
-          "slug": "secondary",
-          "color": "#E22019"
-        },
-        {
-          "name": "success",
-          "slug": "success",
-          "color": "#A0C81E"
-        },
-        {
-          "name": "warning",
-          "slug": "warning",
-          "color": "#E69441"
-        },
-        {
-          "name": "error",
-          "slug": "error",
-          "color": "#E22019"
-        },
-        {
-          "name": "information",
-          "slug": "information",
-          "color": "#007D8F"
         }
       ]
     },

@@ -5,7 +5,7 @@
     "description": "Contenu + image",
     "category": "drs_layout",
     "acf": {
-        "mode": "preview"
+        "blockVersion": 3
     },
     "supports": {
         "align": [],

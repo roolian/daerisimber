@@ -1,16 +1,19 @@
 {
     "apiVersion": 3,
     "name": "daeris/tab-controls",
-    "title": "Tab controls",
+    "title": "Onglets - Zone de contrôle",
     "description": "Ajouter les onglet de controle d'un affichage controlé",
     "category": "drs_layout",
     "keyords": ["tab", "onglet", "interaction"],
     "acf": {
-        "blockVersion": 3
+        "mode": "preview"
     },
     "supports": {
         "align": ["wide", "full"],
-        "jsx": false
+        "jsx": true
+    },
+    "providesContext": {
+        "daeris/tab-controls": "data"
     },
     "example": {
         "attributes": {

@@ -7,22 +7,24 @@
 
 {% set spacing_class = "my-20 md:my-30" %}
 {% set styles = "" %}
+{% set bg_class = "" %}
 {% set inset_deco = "-inset-y-20 md:-inset-y-30 first:-top-30 md:group-first/section:-top-40" %}
 
 {% if fields.bg_color %}
 
     {% set spacing_class = "py-20 first:pt-20 md:py-30 md:first:py-0" %}
-    {% set styles = "background-color:" ~ fields.bg_color ~ ";" %}
+    {% set bg_class = color_class(fields.bg_color) %}
+    
+    {% if not bg_class %}
+        {% set styles = "background-color:" ~ fields.bg_color ~ ";" %}
+    {% endif %}
 
     {% set inset_deco = "" %}
 
 {% endif %}
 
-{% if fields.text_color %}
-    {% set styles = styles ~ " color:" ~ fields.text_color %}
-{% endif %}
 
-<section id="{{ id }}" class="relative  {{ spacing_class }} {{ class }}  group/section" style="{{ styles }}">
+<section id="{{ id }}" class="relative {{ spacing_class }} {{ bg_class }} {{ class }} group/section" style="{{ styles }}">
 
     {% if fields.divider_top_activate %}
         <div class="absolute top-0 w-full">

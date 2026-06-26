@@ -56,23 +56,12 @@
         </div>
 
         <div class="col md:w-6/12 {{ fields.image_hidden_on_mobile ? " hidden md:block" }} ">
-        
+
             <div class="relative {{  fields.image_position == 'right' ? " flex justify-end"}}">
 
                 <div class="lg:w-10/12 " style="{{ fields.image_position == "left" ? " direction:rtl;"}} ">
 
-                    {% if fields.tab_controlled_group %}
-                        <div id="tab-group-{{ fields.tab_controlled_group }}-images">
-                            {% for item in fields.tab_controlled_images %}
-                                <img id="tab-{{ item.tab_id }}-image" class="tab-content-image rounded-xl aspect-square object-cover" src="{{ get_image(item.image).src }}" alt="{{ get_image(item.image).alt }}" style="{% if loop.index != 1 %}display:none;{% endif %}">
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        <img class="{{ fields.uncrop_image ? "" : "rounded-xl aspect-square object-cover " }} {{ fields.image_overflow == true ? " lg:w-[131%] lg:max-w-none "}}" src="{{ get_image(fields.image).src }}" alt="{{ get_image(fields.image).alt }}"/>
-
-
-                    {% endif %}
-
+                    <img class="{{ fields.uncrop_image ? "" : "rounded-xl aspect-square object-cover " }} {{ fields.image_overflow == true ? " lg:w-[131%] lg:max-w-none "}}" src="{{ get_image(fields.image).src }}" alt="{{ get_image(fields.image).alt }}"/>
 
                 </div>
             </div>

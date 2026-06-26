@@ -1,15 +1,15 @@
 {
-    "modified": 1779376752,
+    "modified": 1721059799,
     "key": "group_669549b231fa2",
     "title": "Bloc - Tab content",
     "fields": [
         {
             "key": "field_669549b2836a7",
-            "label": "Tab content ID",
+            "label": "ID de l'onglet de contenu",
             "name": "tab_content_id",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "L'identifiant de l'onglet de contenu doit être unique et correspondre à l'identifiant de l'onglet de contrôle associé.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -22,27 +22,6 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_6a0f221f8a35b",
-            "label": "Prose",
-            "name": "prose",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "Ajoute un formatage par défaut aux textes",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
         }
     ],
     "location": [
@@ -62,8 +41,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "display_title": "",
-    "allow_ai_access": false,
-    "ai_description": ""
+    "show_in_rest": 0
 }

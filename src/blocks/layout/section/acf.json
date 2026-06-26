@@ -1,5 +1,5 @@
 {
-    "modified": 1782468430,
+    "modified": 1782483237,
     "key": "group_637a0cebe3a06",
     "title": "Bloc - Layout - Section",
     "fields": [
@@ -21,9 +21,9 @@
             "enable_opacity": 0,
             "return_format": "string",
             "allow_in_bindings": 1,
-            "show_custom_palette": 1,
-            "custom_palette_source": "themejson",
-            "show_color_wheel": 1,
+            "show_custom_palette": 0,
+            "show_color_wheel": 0,
+            "custom_palette_source": "",
             "palette_colors": ""
         },
         {

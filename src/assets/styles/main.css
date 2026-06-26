@@ -20,6 +20,7 @@
 @import "./components/_buttons.css";
 
 @import "./gutenberg/_wp-global.css";
+@import "./gutenberg/_wp-contrast.css";
 @import "./gutenberg/_wp-block-group.css";
 @import "./gutenberg/_wp-block-image.css";
 @import "./gutenberg/_wp-block-embed.css";

@@ -10,10 +10,18 @@ if (window.acf) {
 document.addEventListener("alpine:init", () => {
     Alpine.data("tabContent", (groupid = "default") => ({
         isActive(tabId) {
-            return this.$store.tabStore.data[groupid] == tabId;
+            return this.$store.tabStore.data[groupid].activeTab == tabId;
         },
         setActive(tabId) {
-            this.$store.tabStore.data[groupid] = tabId;
+            if (this.$store.tabStore?.data[groupid]) {
+                this.$store.tabStore.data[groupid].activeTab = tabId;
+            }
         },
+        getTitle(tabId) {
+            const control = this.$store.tabStore.data[groupid].controls.find(
+                (control) => control.id === tabId
+            );
+            return control ? control.title : "";
+        }
     }));
 });

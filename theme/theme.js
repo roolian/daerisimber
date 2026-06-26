@@ -1,9 +1,9 @@
-import colors from "./theme-colors";
+import { themeColors } from "./theme-colors";
 
 const colorPalette = [];
 
 const reduceColors = (entries) => {
-  for (const [key, value] of Object.entries(colors)) {
+  for (const [key, value] of Object.entries(themeColors)) {
     if (typeof value == "object") {
       reduceColors(value);
     } else {
@@ -16,7 +16,7 @@ const reduceColors = (entries) => {
   }
 };
 
-reduceColors(colors);
+reduceColors(themeColors);
 
 const themeConfig = {
   version: 2,

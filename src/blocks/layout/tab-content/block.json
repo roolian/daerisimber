@@ -1,18 +1,18 @@
 {
     "apiVersion": 3,
     "name": "daeris/tab-content",
-    "title": "Tab content",
+    "title": "Onglets - Zone de contenu",
     "description": "Ajouter un contenu à affichage controlé",
     "category": "drs_layout",
     "keyords": ["tab", "onglet", "interaction"],
     "acf": {
-        "blockVersion": 3
+        "mode": "preview"
     },
     "supports": {
         "align": false,
         "jsx": true
     },
-    "usesContext": ["daeris/tab-group"],
+    "usesContext": ["daeris/tab-controls"],
     "example": {
         "attributes": {
             "mode": "preview",

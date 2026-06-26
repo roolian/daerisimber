@@ -5,11 +5,11 @@
     "fields": [
         {
             "key": "field_66954780156df",
-            "label": "ID Groupe",
+            "label": "ID du groupe",
             "name": "tab_group_id",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "L'identifiant du groupe doit être unique dans la page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -25,7 +25,7 @@
         },
         {
             "key": "field_669543e77c428",
-            "label": "Tabs",
+            "label": "Onglets",
             "name": "tabs",
             "aria-label": "",
             "type": "repeater",
@@ -47,7 +47,7 @@
             "sub_fields": [
                 {
                     "key": "field_669544027c429",
-                    "label": "Title",
+                    "label": "Titre",
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
@@ -68,11 +68,11 @@
                 },
                 {
                     "key": "field_6695479ab109b",
-                    "label": "ID Content",
+                    "label": "ID du contenu",
                     "name": "tab_content_id",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "L'identifiant du contenu doit être unique et correspondre à l'identifiant de l'onglet de contenu associé.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {

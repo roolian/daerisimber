@@ -1,0 +1,41 @@
+{% if is_preview and fields.tabs|length == 0  %}
+    <div class="w-full h-10 bg-gray-50 flex items-center justify-center">
+        <div>
+            + Add tab controls
+        </div>
+    </div>
+{% endif %}
+
+<div class="flex flex-col md:flex-row border-gradient rounded-xl overflow-clip items-stretch" x-data="tabControls('{{ fields.tab_group_id }}', '{{ fields.tabs[0].tab_content_id }}')">
+
+    <div class="w-full md:w-1/2 lg:w-1/3 flex flex-col text-lg font-semibold text-center gap-px max-md:hidden" >
+
+        {% for item in fields.tabs %}
+            <div class="bg-gradient-green text-white  md:min-h-20 md:flex-1" x-init="pushControl('{{ item.tab_content_id }}', '{{ item.title }}')">
+                <button class="size-full cursor-pointer block px-4 py-3" x-bind:class="isActive('{{ item.tab_content_id }}')
+                            ? '  text-primary bg-white '
+                            : '    '" x-on:click="setActive('{{ item.tab_content_id }}')">
+                    {{ item.title }}
+                </button>
+            </div>
+        {% endfor %}
+        
+    </div>
+
+    <div id="tab-group-{{ fields.id_tab_group }}" class="p-5 md:p-8 w-full md:w-1/2 lg:w-2/3 ">
+
+        <InnerBlocks  class="flex flex-col md:flex-row" template="{{ inner_block_template|json_encode|esc_attr}}" allowedblocks="{{ allowed_blocks|json_encode()|escape('html_attr')}}"/>
+        
+        <div class="flex md:hidden justify-between mt-8">
+            <div x-on:click="setPrevious()"
+             class="bg-gradient-green  text-dark rounded-full border-gradient size-12 flex items-center justify-center">
+            {{display_icon('arrow-left', null, 'size-8')}}
+            </div>
+            <div x-on:click="setNext()"
+             class="bg-gradient-green  text-dark rounded-full border-gradient size-12 flex items-center justify-center">
+            {{display_icon('arrow-right', null, 'size-8')}}
+            </div>
+        </div>
+
+    </div>
+</div>

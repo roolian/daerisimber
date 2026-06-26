@@ -1,0 +1,103 @@
+/* Auto-generated — do not edit manually */
+
+@source inline("bg-{primary,secondary,white,black,color1,color2,color3,color4,color5}");
+
+.has-primary-background-color,
+.bg-primary {
+  --text-contrast: #ffffff;
+  background-color: #007D8F;
+  color: #ffffff;
+}
+.has-primary-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
+.bg-primary :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
+
+.has-secondary-background-color,
+.bg-secondary {
+  --text-contrast: #ffffff;
+  background-color: #E22019;
+  color: #ffffff;
+}
+.has-secondary-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
+.bg-secondary :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
+
+.has-white-background-color,
+.bg-white {
+  --text-contrast: #000000;
+  background-color: #ffffff;
+  color: #000000;
+}
+.has-white-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
+.bg-white :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
+
+.has-black-background-color,
+.bg-black {
+  --text-contrast: #ffffff;
+  background-color: #000000;
+  color: #ffffff;
+}
+.has-black-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
+.bg-black :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
+
+.has-color1-background-color,
+.bg-color1 {
+  --text-contrast: #000000;
+  background-color: #67bca8;
+  color: #000000;
+}
+.has-color1-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
+.bg-color1 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
+
+.has-color2-background-color,
+.bg-color2 {
+  --text-contrast: #000000;
+  background-color: #f163ad;
+  color: #000000;
+}
+.has-color2-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
+.bg-color2 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
+
+.has-color3-background-color,
+.bg-color3 {
+  --text-contrast: #000000;
+  background-color: #f1ee63;
+  color: #000000;
+}
+.has-color3-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
+.bg-color3 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
+
+.has-color4-background-color,
+.bg-color4 {
+  --text-contrast: #000000;
+  background-color: #67bca8;
+  color: #000000;
+}
+.has-color4-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
+.bg-color4 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
+
+.has-color5-background-color,
+.bg-color5 {
+  --text-contrast: #ffffff;
+  background-color: #2d84c7;
+  color: #ffffff;
+}
+.has-color5-background-color :is(h1, h2, h3, h4, h5, h6, p, li, a, span),
+.bg-color5 :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
+  color: var(--text-contrast);
+}
+
