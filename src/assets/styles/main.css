@@ -5,8 +5,9 @@
 
 @source "../../../vendor/daerisimber/library/views/**/*.twig";
 
-@layer theme, base, components, utilities;
 
+
+@import "./generated/_contrast-vars.css";
 @import "./_theme.css" ;
 @import "./_variants.css" ;
 @import "./_base.css" layer(base);
@@ -20,7 +21,6 @@
 @import "./components/_buttons.css";
 
 @import "./gutenberg/_wp-global.css";
-@import "./gutenberg/_wp-contrast.css";
 @import "./gutenberg/_wp-block-group.css";
 @import "./gutenberg/_wp-block-image.css";
 @import "./gutenberg/_wp-block-embed.css";

@@ -1,10 +1,280 @@
 # Theme Color System
 
+## Concept
+
+The goal of this system is to provide a **per-block mini-theme**: when you apply a background color to any block or container, a complete set of typographic styles automatically activates — text colors, heading colors, dark mode — all coherent and configurable without touching any template code.
+
+```twig
+{{-- This one class activates a complete mini-theme --}}
+<section class="has-primary-background-color">
+    <h1>White heading</h1>
+    <h2>Also white, or overridden to a tint</h2>
+    <p>White paragraph text</p>
+    {{-- Switches to darker background automatically in dark OS mode --}}
+</section>
+```
+
+The mini-theme is defined in `theme-colors.js` (palette defaults), customizable per project in `_theme.css` (CSS variable overrides), and never requires touching HTML or PHP.
+
+---
+
 This document describes how theme colors are defined, distributed across the build pipeline, and how automatic text contrast is enforced.
 
 ---
 
 ## Single Source of Truth
+
+All theme colors are defined in **`theme/theme-colors.js`**.
+
+```js
+export const palette = {
+  primary:   { color: "#007D8F", contrast: "#ffffff", dark: "#005A67", darkContrast: "#ffffff" },
+  secondary: {
+    color: "#030712",
+    contrast: { default: "#ffffff", h1: "#007D8F", h2: "#007D8F" },
+    dark: "#ffffff",
+    darkContrast: { default: "#030712", h1: "#00ccea", h2: "#00ccea" },
+  },
+  white: { color: "#ffffff", contrast: "#030712" },
+  // ...
+};
+```
+
+| Key            | Required | Description |
+|----------------|----------|-------------|
+| `color`        | ✓        | Base hex value |
+| `contrast`     | ✓        | Text color — string `"#hex"` (all elements) or object `{ default: "#hex", h2: "#hex" }` (per selector) |
+| `dark`         |          | Darker variant hex (string only) |
+| `darkContrast` |          | Same format as `contrast`, applied in dark mode |
+
+**`themeColors`** and **`tailwindColors`** are derived from `palette` — do not edit manually.
+
+---
+
+## Build Pipeline
+
+`vite build` (and `vite dev`) generates:
+
+| File | Source | Purpose |
+|---|---|---|
+| `theme.json` | `theme/theme.js` | WordPress block editor color palette |
+| `src/assets/styles/generated/_contrast-vars.css` | `vite.config.js` | CSS variables defaults in `@theme inline` |
+
+---
+
+## CSS Architecture
+
+The contrast system relies on 4 layers working together.
+
+### Layer 1 — Default CSS variables (`@theme`, lowest priority)
+
+`_contrast-vars.css` is auto-generated and imported **before** `_theme.css` in `main.css`. It defines one variable per background color per element selector:
+
+```css
+@theme inline {
+  --contrast-color-bg-primary: #ffffff;
+  --contrast-color-bg-primary-h1: var(--contrast-color-bg-primary);  /* fallback */
+  --contrast-color-bg-primary-h2: var(--contrast-color-bg-primary);
+  --contrast-color-bg-secondary-h1: #007D8F;  /* explicit palette override */
+  /* ... */
+}
+```
+
+Because `@theme inline` is in `@layer theme` (the lowest CSS layer), anything declared later in `_theme.css` will override these defaults.
+
+### Layer 2 — Theme overrides (`@theme inline` in `_theme.css`)
+
+To customize a contrast color without touching the palette JS:
+
+```css
+/* _theme.css */
+@theme inline {
+  --contrast-color-bg-white-h2: #444444;  /* override default */
+  --contrast-color-bg-secondary-h1: #00ccea;
+}
+```
+
+This works because `_theme.css` is imported **after** `_contrast-vars.css` — within the same `@layer theme`, last declaration wins.
+
+### Layer 3 — Wildcard base rules (`@layer base`)
+
+The Tailwind plugin (`tailwind.config.js`) adds rules via `addBase` that cascade the CSS variables to all text elements inside any `*-background-color` or `contrast-bg-*` container:
+
+```css
+/* @layer base */
+[class*="-background-color"] h2,
+[class*="contrast-bg-"] h2 {
+  color: var(--text-contrast-h2, var(--text-contrast));
+}
+```
+
+`var(--text-contrast-h2, var(--text-contrast))` resolves to:
+1. `--text-contrast-h2` if set on the parent block (from the next layer)
+2. Otherwise `--text-contrast` (the default for the block)
+
+Since this is in `@layer base`, **any Tailwind utility class (`text-white`, `text-primary`, etc.) takes precedence** — explicit color classes always win.
+
+### Layer 4 — Color blocks (`@layer utilities`)
+
+Two `addUtilities` calls generate the color-specific rules:
+
+**Grouped declaration** — shared by both the WP class and the Tailwind utility class:
+```css
+/* @layer utilities */
+.has-primary-background-color,
+.contrast-bg-primary {
+  --text-contrast: var(--contrast-color-bg-primary);       /* reads @theme var */
+  --text-contrast-h1: var(--contrast-color-bg-primary-h1); /* reads @theme var */
+  --text-contrast-h2: var(--contrast-color-bg-primary-h2);
+  /* ... for all elements */
+  background-color: #007D8F !important;
+  color: var(--contrast-color-bg-primary);
+}
+```
+
+**Dark mode** — separate rule, only on the WP class:
+```css
+.has-primary-background-color {
+  @media (prefers-color-scheme: dark) {
+    body:not(.editor-styles-wrapper) & {
+      background-color: #005A67 !important;  /* @theme var not used here */
+    }
+  }
+}
+```
+
+`contrast-bg-*` deliberately has no `@media` — dark mode is handled explicitly with Tailwind's `dark:` prefix.
+
+### Why `background-color: !important`
+
+WordPress injects globally: `.has-primary-background-color { background-color: var(--wp--preset--color--primary) !important; }`. Without `!important`, the dark mode override would be silently ignored.
+
+### Why dark mode is excluded from the editor
+
+`body:not(.editor-styles-wrapper)` ensures the dark mode switch doesn't affect the block editor preview, which is wrapped in `.editor-styles-wrapper` inside the Gutenberg iframe.
+
+---
+
+## Available Classes
+
+| Class | Dark mode | Contrast rules |
+|---|---|---|
+| `has-{slug}-background-color` | Auto via `@media` | ✓ via CSS variables |
+| `contrast-bg-{slug}` | Manual via `dark:contrast-bg-{slug}-dark` | ✓ via CSS variables |
+| `contrast-text-{color}` | — | Sets `--text-contrast` to any theme color |
+
+### `contrast-text-{color}`
+
+Sets `--text-contrast` to any color from the Tailwind palette. Useful when you need manual control:
+
+```twig
+<div class="contrast-bg-primary contrast-text-amber">
+    <h2>This heading uses amber instead of default white</h2>
+</div>
+```
+
+---
+
+## Class Responsibilities
+
+| Class | Used by | Context |
+|---|---|---|
+| `has-{slug}-background-color` | WP editor, `color_class()` PHP | WordPress content context, auto dark mode |
+| `contrast-bg-{slug}` | Hand-written templates | Tailwind context, explicit dark mode |
+| `bg-{slug}` | UI components (buttons, cards…) | Pure Tailwind, no contrast rules at all |
+
+`bg-primary` on a button is untouched by the contrast system — contrast is the developer's responsibility in that context.
+
+---
+
+## PHP: `color_class()` Twig Function
+
+Maps an ACF hex value to the corresponding `has-{slug}-background-color` class:
+
+```php
+color_class('#007D8F') // → 'has-primary-background-color'
+color_class('#ff0000') // → null (not in palette → inline style fallback)
+```
+
+Reads `theme.json` once (static cache). Returns `has-*` (not `bg-*`) so the contrast system applies.
+
+---
+
+## Usage in Twig Templates
+
+### WordPress content (section block)
+
+```twig
+{% set bg_class = color_class(fields.bg_color) %}
+
+{% if fields.bg_color %}
+    {% set spacing_class = "py-20 ..." %}
+    {% if not bg_class %}
+        {% set styles = "background-color:" ~ fields.bg_color ~ ";" %}
+    {% endif %}
+{% endif %}
+
+<section class="{{ bg_class }}" style="{{ styles }}">
+```
+
+### Hand-written templates
+
+```twig
+{{-- Auto contrast + auto dark mode --}}
+<div class="has-primary-background-color p-8">
+    <h2>White text, switches to dark variant on dark OS</h2>
+</div>
+
+{{-- Auto contrast, manual dark mode --}}
+<div class="contrast-bg-primary dark:contrast-bg-primary-dark p-8">
+    <h2>Same contrast, explicit dark control</h2>
+</div>
+
+{{-- UI component, no contrast system --}}
+<button class="bg-primary text-white hover:bg-primary-dark">
+    Button
+</button>
+```
+
+---
+
+## Overriding Contrast Colors
+
+Without touching the palette JS, override any variable in `_theme.css`:
+
+```css
+/* src/assets/styles/_theme.css */
+@theme inline {
+  /* Override the default contrast for all elements on white background */
+  --contrast-color-bg-white: #222222;
+
+  /* Override only h2 on white background */
+  --contrast-color-bg-white-h2: #444444;
+
+  /* Override h1 color on secondary background */
+  --contrast-color-bg-secondary-h1: #00ccea;
+}
+```
+
+The `_contrast-vars.css` defaults are in `@layer theme`. Since `_theme.css` is imported after, its `@theme inline` declarations take precedence within the same layer.
+
+---
+
+## Adding a New Color
+
+1. Add to `palette` in `theme/theme-colors.js`:
+   ```js
+   brand: {
+     color: "#3a1f6e",
+     contrast: "#ffffff",
+     dark: "#260f50",
+     darkContrast: "#ffffff",
+   },
+   ```
+2. Run `npm run build` — `theme.json`, `_contrast-vars.css` regenerated automatically.
+
+`themeColors` is derived automatically. No other files need to be touched.
+
 
 All theme colors are defined in **`theme/theme-colors.js`**. This file is the only place to add, remove, or modify colors and their contrast pairs.
 

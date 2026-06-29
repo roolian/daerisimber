@@ -1,147 +1,146 @@
 /* Auto-generated — do not edit manually */
-
-[class*="-background-color"] :is(h1, h2, h3, h4, h5, h6, p, li, a, span) {
-  color: var(--text-contrast);
-}
-
-[class*="-background-color"] h1 {
-  color: var(--text-contrast-h1, var(--text-contrast));
-}
-[class*="-background-color"] h2 {
-  color: var(--text-contrast-h2, var(--text-contrast));
-}
-[class*="-background-color"] h3 {
-  color: var(--text-contrast-h3, var(--text-contrast));
-}
-[class*="-background-color"] h4 {
-  color: var(--text-contrast-h4, var(--text-contrast));
-}
-[class*="-background-color"] h5 {
-  color: var(--text-contrast-h5, var(--text-contrast));
-}
-[class*="-background-color"] h6 {
-  color: var(--text-contrast-h6, var(--text-contrast));
-}
-[class*="-background-color"] p {
-  color: var(--text-contrast-p, var(--text-contrast));
-}
-[class*="-background-color"] li {
-  color: var(--text-contrast-li, var(--text-contrast));
-}
-[class*="-background-color"] a {
-  color: var(--text-contrast-a, var(--text-contrast));
-}
-[class*="-background-color"] span {
-  color: var(--text-contrast-span, var(--text-contrast));
-}
-
-.has-primary-background-color {
-  --text-contrast: #ffffff;
-  background-color: #007D8F !important;
-  color: #ffffff;
-}
-
-@media (prefers-color-scheme: dark) {
-  body:not(.editor-styles-wrapper) .has-primary-background-color {
-    background-color: #005A67 !important;
+@base {
+  [class*="-background-color"] h1 {
+    color: var(--text-contrast-h1, var(--text-contrast));
+  }
+  [class*="-background-color"] h2 {
+    color: var(--text-contrast-h2, var(--text-contrast));
+  }
+  [class*="-background-color"] h3 {
+    color: var(--text-contrast-h3, var(--text-contrast));
+  }
+  [class*="-background-color"] h4 {
+    color: var(--text-contrast-h4, var(--text-contrast));
+  }
+  [class*="-background-color"] h5 {
+    color: var(--text-contrast-h5, var(--text-contrast));
+  }
+  [class*="-background-color"] h6 {
+    color: var(--text-contrast-h6, var(--text-contrast));
+  }
+  [class*="-background-color"] p {
+    color: var(--text-contrast-p, var(--text-contrast));
+  }
+  [class*="-background-color"] li {
+    color: var(--text-contrast-li, var(--text-contrast));
+  }
+  [class*="-background-color"] a {
+    color: var(--text-contrast-a, var(--text-contrast));
+  }
+  [class*="-background-color"] span {
+    color: var(--text-contrast-span, var(--text-contrast));
   }
 }
 
-.has-secondary-background-color {
-  --text-contrast: #ffffff;
-  background-color: #030712 !important;
-  color: #ffffff;
-  --text-contrast-h2: #00ccea;
-  --text-contrast-h1: #00ccea;
-}
+@layer utilities {
+  .has-primary-background-color {
+    --text-contrast: #ffffff;
+    background-color: #007D8F !important;
+    color: #ffffff;
 
-@media (prefers-color-scheme: dark) {
-  body:not(.editor-styles-wrapper) .has-secondary-background-color {
-    background-color: #020c1a !important;
+    @media (prefers-color-scheme: dark) {
+      body:not(.editor-styles-wrapper) & {
+        background-color: #005A67 !important;
+      }
+    }
+  }
+
+  .has-secondary-background-color {
+    --text-contrast: #ffffff;
+    background-color: #030712 !important;
+    color: #ffffff;
     --text-contrast-h2: #00ccea;
     --text-contrast-h1: #00ccea;
+
+    @media (prefers-color-scheme: dark) {
+      body:not(.editor-styles-wrapper) & {
+        background-color: #020c1a !important;
+        --text-contrast-h2: #00ccea;
+        --text-contrast-h1: #00ccea;
+      }
+    }
   }
-}
 
-.has-white-background-color {
-  --text-contrast: #030712;
-  background-color: #ffffff !important;
-  color: #030712;
-}
-
-@media (prefers-color-scheme: dark) {
-  body:not(.editor-styles-wrapper) .has-white-background-color {
-    background-color: #030712 !important;
-    --text-contrast: #ffffff;
-    color: #ffffff;
-  }
-}
-
-.has-black-background-color {
-  --text-contrast: #ffffff;
-  background-color: #000000 !important;
-  color: #ffffff;
-}
-
-@media (prefers-color-scheme: dark) {
-  body:not(.editor-styles-wrapper) .has-black-background-color {
+  .has-white-background-color {
+    --text-contrast: #030712;
     background-color: #ffffff !important;
+    color: #030712;
+
+    @media (prefers-color-scheme: dark) {
+      body:not(.editor-styles-wrapper) & {
+        background-color: #030712 !important;
+        --text-contrast: #ffffff;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .has-black-background-color {
+    --text-contrast: #ffffff;
+    background-color: #000000 !important;
+    color: #ffffff;
+
+    @media (prefers-color-scheme: dark) {
+      body:not(.editor-styles-wrapper) & {
+        background-color: #ffffff !important;
+        --text-contrast: #000000;
+        color: #000000;
+      }
+    }
+  }
+
+  .has-sage-background-color {
     --text-contrast: #000000;
+    background-color: #4CA882 !important;
     color: #000000;
+
+    @media (prefers-color-scheme: dark) {
+      body:not(.editor-styles-wrapper) & {
+        background-color: #2A6B4F !important;
+        --text-contrast: #ffffff;
+        color: #ffffff;
+      }
+    }
   }
-}
 
-.has-sage-background-color {
-  --text-contrast: #000000;
-  background-color: #4CA882 !important;
-  color: #000000;
-}
+  .has-coral-background-color {
+    --text-contrast: #000000;
+    background-color: #E8694A !important;
+    color: #000000;
 
-@media (prefers-color-scheme: dark) {
-  body:not(.editor-styles-wrapper) .has-sage-background-color {
-    background-color: #2A6B4F !important;
+    @media (prefers-color-scheme: dark) {
+      body:not(.editor-styles-wrapper) & {
+        background-color: #A83C25 !important;
+        --text-contrast: #ffffff;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .has-amber-background-color {
+    --text-contrast: #000000;
+    background-color: #EBA63A !important;
+    color: #000000;
+
+    @media (prefers-color-scheme: dark) {
+      body:not(.editor-styles-wrapper) & {
+        background-color: #9A6910 !important;
+        --text-contrast: #ffffff;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .has-indigo-background-color {
     --text-contrast: #ffffff;
+    background-color: #4F67B0 !important;
     color: #ffffff;
+
+    @media (prefers-color-scheme: dark) {
+      body:not(.editor-styles-wrapper) & {
+        background-color: #2E3F7A !important;
+      }
+    }
   }
-}
 
-.has-coral-background-color {
-  --text-contrast: #000000;
-  background-color: #E8694A !important;
-  color: #000000;
 }
-
-@media (prefers-color-scheme: dark) {
-  body:not(.editor-styles-wrapper) .has-coral-background-color {
-    background-color: #A83C25 !important;
-    --text-contrast: #ffffff;
-    color: #ffffff;
-  }
-}
-
-.has-amber-background-color {
-  --text-contrast: #000000;
-  background-color: #EBA63A !important;
-  color: #000000;
-}
-
-@media (prefers-color-scheme: dark) {
-  body:not(.editor-styles-wrapper) .has-amber-background-color {
-    background-color: #9A6910 !important;
-    --text-contrast: #ffffff;
-    color: #ffffff;
-  }
-}
-
-.has-indigo-background-color {
-  --text-contrast: #ffffff;
-  background-color: #4F67B0 !important;
-  color: #ffffff;
-}
-
-@media (prefers-color-scheme: dark) {
-  body:not(.editor-styles-wrapper) .has-indigo-background-color {
-    background-color: #2E3F7A !important;
-  }
-}
-

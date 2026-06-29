@@ -6,16 +6,16 @@
     "isEntry": true
   },
   "src/assets/main.js": {
-    "file": "assets/main-BZq5lw9g.js",
+    "file": "assets/main-ByUxQ-7-.js",
     "name": "main",
     "src": "src/assets/main.js",
     "isEntry": true,
     "css": [
-      "assets/main-B5eq1rxY.css"
+      "assets/main-DVhGVd9u.css"
     ]
   },
   "src/assets/styles/editor-style.css": {
-    "file": "assets/editor-n8Jy4Ayx.css",
+    "file": "assets/editor-C4sedc3t.css",
     "src": "src/assets/styles/editor-style.css",
     "isEntry": true
   }

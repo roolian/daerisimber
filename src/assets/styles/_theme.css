@@ -9,4 +9,13 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
 
+
+}
+
+@theme inline {
+  --contrast-color-white: var(--color-primary, #000);
+  --contrast-color-bg-white: black;
+  --contrast-color-bg-white-h1: var(--contrast-color-bg-white);  /* fallback */
+  --contrast-color-bg-white-h2: var(--contrast-color-bg-white);
+  --contrast-color-bg-secondary-h1: #00ccea;
 }
