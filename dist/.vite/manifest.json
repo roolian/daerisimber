@@ -1,21 +1,21 @@
 {
   "src/assets/admin.js": {
-    "file": "assets/admin-vH7w1OrO.js",
+    "file": "assets/admin-CGEyvWST.js",
     "name": "admin",
     "src": "src/assets/admin.js",
     "isEntry": true
   },
   "src/assets/main.js": {
-    "file": "assets/main-ByUxQ-7-.js",
+    "file": "assets/main-DLVYBEcE.js",
     "name": "main",
     "src": "src/assets/main.js",
     "isEntry": true,
     "css": [
-      "assets/main-DVhGVd9u.css"
+      "assets/main-C71bhsFQ.css"
     ]
   },
   "src/assets/styles/editor-style.css": {
-    "file": "assets/editor-C4sedc3t.css",
+    "file": "assets/editor-iTeqfiPx.css",
     "src": "src/assets/styles/editor-style.css",
     "isEntry": true
   }

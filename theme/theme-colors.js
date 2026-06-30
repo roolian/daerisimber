@@ -19,60 +19,36 @@ export const palette = {
     dark: "#005A67",
     darkContrast: { default: "#ffffff" },
   },
+  "primary-light": {
+    color: "#00ccea",
+    contrast: { default: "#ffffff" },
+    dark: "#00ccea",
+    darkContrast: { default: "#ff0000" },
+  },
   secondary: {
     color: "#030712",
     contrast: { default: "#ffffff", h2: "#00ccea", h1: "#00ccea" },
-    dark: "#020c1a",
-    darkContrast: { default: "#ffffff", h2: "#00ccea", h1: "#00ccea" },
   },
-
-  // Neutrals
-  white: {
-    color: "#ffffff",
-    contrast: "#030712",
-    dark: "#030712",
-    darkContrast: "#ffffff",
-  },
-  black: {
-    color: "#000000",
-    contrast: "#ffffff",
-    dark: "#ffffff",
-    darkContrast: "#000000",
-  },
-
-  // Accent — 4 directions distinctes du cercle chromatique
-  sage: {
+  tertiary: {
     color: "#4CA882",
     contrast: "#000000",
-    dark: "#2A6B4F",
-    darkContrast: "#ffffff",
   },
-  coral: {
-    color: "#E8694A",
-    contrast: "#000000",
-    dark: "#A83C25",
-    darkContrast: "#ffffff",
+  light: {
+    color: "#ffffff",
+    contrast: "#030712",
   },
-  amber: {
-    color: "#EBA63A",
-    contrast: "#000000",
-    dark: "#9A6910",
-    darkContrast: "#ffffff",
-  },
-  indigo: {
-    color: "#4F67B0",
+  dark: {
+    color: "#000000",
     contrast: "#ffffff",
-    dark: "#2E3F7A",
-    darkContrast: "#ffffff",
   },
 };
 
 /**
- * Tailwind color tokens — derived from palette.
+ * Tailwind custom color tokens — derived from palette, extends Tailwind's base palette.
  * Colors with a `dark` variant become { DEFAULT, dark } for Tailwind
  * (generates `bg-primary` and `bg-primary-dark`).
  */
-export const themeColors = Object.fromEntries(
+export const tailwindCustomColors = Object.fromEntries(
   Object.entries(palette).map(([slug, { color, dark }]) => {
     const darkColor = typeof dark === "object" ? dark?.default : dark;
     return [

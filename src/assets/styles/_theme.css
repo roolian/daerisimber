@@ -8,14 +8,30 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
-
-
 }
 
+/* Here set an auto dark mode for surfaces set in gutenberg editor if needed */
+
 @theme inline {
-  --contrast-color-white: var(--color-primary, #000);
-  --contrast-color-bg-white: black;
-  --contrast-color-bg-white-h1: var(--contrast-color-bg-white);  /* fallback */
-  --contrast-color-bg-white-h2: var(--contrast-color-bg-white);
-  --contrast-color-bg-secondary-h1: #00ccea;
+  /* Surfaces */
+  --surface-primary: #ffffff;
+  --surface-primary-h1: var(--surface-primary);
+  --surface-primary-h2: var(--surface-primary);
+  --surface-primary-h3: var(--surface-primary);
+  --surface-primary-h4: var(--surface-primary);
+  --surface-primary-h5: var(--surface-primary);
+  --surface-primary-h6: var(--surface-primary);
+  --surface-primary-p: var(--surface-primary);
+  --surface-primary-li: var(--surface-primary);
+  --surface-primary-a: var(--surface-primary);
+  --surface-primary-span: var(--surface-primary);
+}
+
+@variant dark {
+  [class*="-background-color"] {
+    --surface-light-bg: #030712;
+    --surface-light: var(--color-white);
+    --surface-secondary-bg: #020c1a;
+    --surface-secondary: var(--color-white);
+  }
 }

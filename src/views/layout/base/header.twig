@@ -1,10 +1,10 @@
-<div x-data="{ open: false }" class="has-white-background-color border-b border-primary/20">
+<div x-data="{ open: false }" class="has-light-background-color border-b border-primary/20">
     <div class="container mx-auto ">
         <div class="flex justify-between items-center">
             <div class="py-5 text-3xl">
                 <a class="block" href="{{ site.url }}" title="{{ site.title }}">
                     {% if logo_url %}
-                        <img class="h-10 dark:invert-200 dark:brightness-200 dark:saturate-0" src="{{ logo_url }}" alt="{{ site.title }}">
+                        <img class="h-10 dark:invert-200 dark:saturate-0 dark:brightness-200  " src="{{ logo_url }}" alt="{{ site.title }}">
                     {% else %}
                         {{ site.title }}
                     {% endif %}

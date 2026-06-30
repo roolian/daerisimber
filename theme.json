@@ -20,39 +20,29 @@
           "color": "#007D8F"
         },
         {
+          "name": "primary-light",
+          "slug": "primary-light",
+          "color": "#00ccea"
+        },
+        {
           "name": "secondary",
           "slug": "secondary",
           "color": "#030712"
         },
         {
-          "name": "white",
-          "slug": "white",
-          "color": "#ffffff"
-        },
-        {
-          "name": "black",
-          "slug": "black",
-          "color": "#000000"
-        },
-        {
-          "name": "sage",
-          "slug": "sage",
+          "name": "tertiary",
+          "slug": "tertiary",
           "color": "#4CA882"
         },
         {
-          "name": "coral",
-          "slug": "coral",
-          "color": "#E8694A"
+          "name": "light",
+          "slug": "light",
+          "color": "#ffffff"
         },
         {
-          "name": "amber",
-          "slug": "amber",
-          "color": "#EBA63A"
-        },
-        {
-          "name": "indigo",
-          "slug": "indigo",
-          "color": "#4F67B0"
+          "name": "dark",
+          "slug": "dark",
+          "color": "#000000"
         }
       ]
     },

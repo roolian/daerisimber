@@ -1,15 +1,13 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@config  "../../../tailwind.config.js";
+@config "../../../tailwind.config.js";
 
 @source "../../../vendor/daerisimber/library/views/**/*.twig";
 
 
-
-@import "./generated/_contrast-vars.css";
-@import "./_theme.css" ;
-@import "./_variants.css" ;
+@import "./_theme.css";
+@import "./_variants.css";
 @import "./_base.css" layer(base);
 
 @import "./utilities/_layout.css";
