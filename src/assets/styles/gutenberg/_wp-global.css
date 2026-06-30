@@ -1,3 +1,7 @@
+/* surface-classes:start — auto-generated, do not edit */
+@source inline("has-primary-background-color has-primary-light-background-color has-secondary-background-color has-tertiary-background-color has-light-background-color has-dark-background-color");
+@source inline("surface-primary surface-primary-light surface-secondary surface-tertiary surface-light surface-dark");
+/* surface-classes:end */
 
 .is-style-md-text-center {
     @apply md:text-center;
@@ -15,3 +19,5 @@
 .wp-block-image img {
     @apply inline-block;
 }
+
+

@@ -1,38 +1,20 @@
-
-  
-
 # Daerisimber
-
-  
-  
 
 A theme extending [Timberland](https://github.com/cearls/timberland)
 
-  
-
-  
-
 Timberland is an opinionated WordPress theme using
 
-  
+- [Timber](https://www.upstatement.com/timber/)
 
--  [Timber](https://www.upstatement.com/timber/)
+- [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/)
 
--  [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/)
+- [Vite](https://vitejs.dev/)
 
--  [Vite](https://vitejs.dev/)
+- [Tailwind](https://tailwindcss.com/)
 
--  [Tailwind](https://tailwindcss.com/)
-
--  [Alpine.js](https://github.com/alpinejs/alpine).
-
-  
-
-  
+- [Alpine.js](https://github.com/alpinejs/alpine).
 
 ## Installation
-
-  
 
 1. Download the zip for this theme (or clone it) and move it to `wp-content/themes` in your WordPress installation.
 
@@ -44,19 +26,11 @@ Timberland is an opinionated WordPress theme using
 
 5. Make sure you have installed [Advanced Custom Fields Pro](https://www.advancedcustomfields.com/)
 
-  
-
 ## Development
-
-  
 
 Timberland builds your css and js files using Vite. This allows you to use the latest Javascript and CSS features.
 
-  
-
 To get started:
-
-  
 
 1. Run `npm run build` to generate assets that can be used in the admin block editor. This only needs to be run as often as you want to see updated block previews in the admin.
 
@@ -78,10 +52,11 @@ The theme includes a CLI tool named Nestor to streamline development. Use `php n
 #### Block Management
 
 - **`block:create`** - Creates a new Gutenberg block with full scaffolding
+
   ```bash
   php nestor block:create
   ```
-  
+
   This interactive command will prompt you for:
   1. **Block name** - Enter a human-readable name (e.g., "Hero Banner")
   2. **Category** - Choose from:
@@ -90,15 +65,16 @@ The theme includes a CLI tool named Nestor to streamline development. Use `php n
      - **Query** - For dynamic content blocks (post lists, archives)
      - **Module** - For blocks within existing modules
   3. **Module selection** - If you selected "Module" category, choose which module to add the block to
-  
+
   The command automatically generates:
   - **Block directory** in `src/blocks/{category}/{slug}/` (or `src/modules/{module}/blocks/{slug}/` for modules)
   - **block.json** - Block registration configuration with metadata, category, icon, and ACF settings
   - **{slug}.twig** - Twig template file for rendering the block's HTML output
   - **{BlockName}BlockModel.php** - PHP model class extending `BlockModel` to handle data preparation and business logic
   - **acf.json** - ACF field group definition with a sample "title" field, automatically linked to the block
-  
+
   Example workflow:
+
   ```bash
   php nestor block:create
   # Enter "Feature Card" as block name
@@ -114,11 +90,7 @@ The theme includes a CLI tool named Nestor to streamline development. Use `php n
   ```
   Allows you to copy default Timber templates into your theme directory so you can modify them without affecting the core files.
 
-  
-
 ### Live Reload
-
-  
 
 Live reload is enabled by default with vite.
 
@@ -128,48 +100,27 @@ Vite config is located in ./vite.json.
 
 `environment` variable is set automatically when running `npm run build` (environment = production) or `npm run dev` (environment = development).
 
-  
-
 ### Wordpress theme config
-
-  
 
 theme.json is generated from files in ./theme folder.
 
 THe command `npm run build` automatically update the file in ./theme.json.
 
-  
-
 #### Colors
-
-  
 
 Define colors in ./theme/theme-colors.js.
 
 This way the same colors are available from :
 
-  
-
 - WP Gutenberg color palette
-
-  
 
 - Tailwind css class
 
-  
-
 - ACf color field (loaded in ./src/assets/main.js)
-
-  
 
 ## ACF related features
 
-  
-
 ### Gutenberg blocks
-
-  
-  
 
 #### General
 
@@ -177,26 +128,17 @@ Each block in src/blocks is located in a dedicated folder (src/blocks/component/
 
 Render twig file will be in priority order:
 
-
 - folder-name.twig (src/blocks/component/button/button.twig)
 
 - index.twig (src/blocks/component/button/index.twig)
 
-  
-
 ACF field group associated with the block will be stored in the dedicated folder :
-- src/blocks/component/button/acf.json
 
-  
+- src/blocks/component/button/acf.json
 
 A block can be easily copied to another daerisimber theme without adaptations.
 
-  
-  
-
 #### Variants
-
-  
 
 Sometimes you need to display same field with another layout.
 
@@ -289,6 +231,7 @@ public function __construct()
 ACF field groups created for your module's post types will automatically be saved to `src/modules/{ModuleName}/acf-json/`. This keeps your module's field definitions version-controlled and portable.
 
 The module will automatically:
+
 - Load ACF JSON files from its `acf-json/` directory
 - Save ACF field groups associated with its post types to its `acf-json/` directory
 

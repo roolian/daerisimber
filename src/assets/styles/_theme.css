@@ -28,10 +28,8 @@
 }
 
 @variant dark {
-  [class*="-background-color"] {
-    --surface-light-bg: #030712;
-    --surface-light: var(--color-white);
-    --surface-secondary-bg: #020c1a;
-    --surface-secondary: var(--color-white);
+  [class*="-background-color"],
+  .surface-auto-dark-mode
+  {
   }
 }

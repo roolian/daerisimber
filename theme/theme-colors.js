@@ -16,14 +16,10 @@ export const palette = {
   primary: {
     color: "#007D8F",
     contrast: { default: "#ffffff" },
-    dark: "#005A67",
-    darkContrast: { default: "#ffffff" },
   },
   "primary-light": {
     color: "#00ccea",
     contrast: { default: "#ffffff" },
-    dark: "#00ccea",
-    darkContrast: { default: "#ff0000" },
   },
   secondary: {
     color: "#030712",
