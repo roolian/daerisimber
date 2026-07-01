@@ -10,7 +10,7 @@
   --breakpoint-xl: 1280px;
 }
 
-/* Here set an auto dark mode for surfaces set in gutenberg editor if needed */
+
 
 @theme inline {
   /* Surfaces */
@@ -31,5 +31,6 @@
   [class*="-background-color"],
   .surface-auto-dark-mode
   {
+    /* Here set an auto dark mode for surfaces set in gutenberg editor if needed */
   }
 }

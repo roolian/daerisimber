@@ -1,6 +1,6 @@
 /* surface-classes:start — auto-generated, do not edit */
-@source inline("has-primary-background-color has-primary-light-background-color has-secondary-background-color has-tertiary-background-color has-light-background-color has-dark-background-color");
-@source inline("surface-primary surface-primary-light surface-secondary surface-tertiary surface-light surface-dark");
+@source inline("has-primary-background-color has-primary-900-background-color has-primary-700-background-color has-primary-300-background-color has-primary-100-background-color has-secondary-background-color has-tertiary-background-color has-light-background-color has-dark-background-color");
+@source inline("surface-primary surface-primary-900 surface-primary-700 surface-primary-300 surface-primary-100 surface-secondary surface-tertiary surface-light surface-dark");
 /* surface-classes:end */
 
 .is-style-md-text-center {

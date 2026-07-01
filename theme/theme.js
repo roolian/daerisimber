@@ -22,6 +22,7 @@ const disableTypography = {
 
 const themeConfig = {
   version: 3,
+  appearanceTools: false,
   settings: {
     layout: {
       contentSize: "100%",
@@ -121,7 +122,18 @@ const themeConfig = {
       },
     },
   },
-  styles: {},
+  styles: {
+    blocks: {
+      "core/button": {
+        color: {
+          background: "var:preset|color|primary",
+        },
+        border: {
+          radius: "1rem",
+        },
+      },
+    },
+  },
 };
 
 export default themeConfig;

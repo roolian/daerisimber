@@ -8,20 +8,13 @@ use Twig\TwigFunction;
 
 class SiteModule
 {
-    private $colorPalette = null;
+    private ?array $colorPalette = null;
 
     public function __construct()
     {
-        static $palette = null;
-        if ($palette === null) {
-            $data    = json_decode(file_get_contents(get_template_directory() . '/theme.json'), true);
-            $entries = $data['settings']['color']['palette'] ?? [];
-            $palette = [];
-            foreach ($entries as $entry) {
-                $palette[strtolower($entry['color'])] = $entry['slug'];
-            }
-            $this->colorPalette = $palette;
-        }
+        $this->colorPalette = $this->get_color_palette();
+
+
         // add is_admin to twig context
         add_filter('timber/twig', [$this, 'add_to_twig']);
 
@@ -57,5 +50,17 @@ class SiteModule
         echo '<script>const siteData = ' . json_encode([
             'ajaxUrl' => admin_url('admin-ajax.php'),
         ]) . '</script>';
+    }
+
+    private function get_color_palette(): array
+    {
+        $data    = json_decode(file_get_contents(get_template_directory() . '/theme.json'), true);
+        $entries = $data['settings']['color']['palette'] ?? [];
+        $palette = [];
+        foreach ($entries as $entry) {
+            $palette[strtolower($entry['color'])] = $entry['slug'];
+        }
+
+        return $palette;
     }
 }

@@ -1,5 +1,6 @@
 {
   "version": 3,
+  "appearanceTools": false,
   "settings": {
     "layout": {
       "contentSize": "100%",
@@ -17,12 +18,27 @@
         {
           "name": "primary",
           "slug": "primary",
-          "color": "#007D8F"
+          "color": "#2555DA"
         },
         {
-          "name": "primary-light",
-          "slug": "primary-light",
-          "color": "#00ccea"
+          "name": "primary-900",
+          "slug": "primary-900",
+          "color": "#07112C"
+        },
+        {
+          "name": "primary-700",
+          "slug": "primary-700",
+          "color": "#163383"
+        },
+        {
+          "name": "primary-300",
+          "slug": "primary-300",
+          "color": "#7C99E9"
+        },
+        {
+          "name": "primary-100",
+          "slug": "primary-100",
+          "color": "#D3DDF8"
         },
         {
           "name": "secondary",
@@ -142,5 +158,16 @@
       }
     }
   },
-  "styles": {}
+  "styles": {
+    "blocks": {
+      "core/button": {
+        "color": {
+          "background": "var:preset|color|primary"
+        },
+        "border": {
+          "radius": "1rem"
+        }
+      }
+    }
+  }
 }

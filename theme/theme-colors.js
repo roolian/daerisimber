@@ -14,12 +14,24 @@ import twColors from "tailwindcss/colors";
 export const palette = {
   // Brand
   primary: {
-    color: "#007D8F",
+    color: "#2555DA",
     contrast: { default: "#ffffff" },
   },
-  "primary-light": {
-    color: "#00ccea",
+  "primary-900": {
+    color: "#07112C",
     contrast: { default: "#ffffff" },
+  },
+  "primary-700": {
+    color: "#163383",
+    contrast: { default: "#ffffff" },
+  },
+  "primary-300": {
+    color: "#7C99E9",
+    contrast: { default: "#ffffff" },
+  },
+  "primary-100": {
+    color: "#D3DDF8",
+    contrast: { default: "#07112C" },
   },
   secondary: {
     color: "#030712",
