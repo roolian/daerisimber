@@ -35,7 +35,7 @@ export const palette = {
   },
   secondary: {
     color: "#030712",
-    contrast: { default: "#ffffff", h2: "#00ccea", h1: "#00ccea" },
+    contrast: { default: "#ffffff", h2: "#7C99E9", h1: "#7C99E9" },
   },
   tertiary: {
     color: "#4CA882",
