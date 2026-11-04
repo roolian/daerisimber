@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42fb10a2932d81477ea225b208829257",
+    "content-hash": "a0551de416ac3944b8bc748cf84ead36",
     "packages": [
         {
             "name": "daerisimber/library",
-            "version": "dev-main",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roolian/daerisimber-library.git",
-                "reference": "c7d71fb009fa24def04bfab3c0a744e8307ccca3"
+                "reference": "9ef6f049a7b0c64055f81f45ccad7abe1f2d955f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roolian/daerisimber-library/zipball/c7d71fb009fa24def04bfab3c0a744e8307ccca3",
-                "reference": "c7d71fb009fa24def04bfab3c0a744e8307ccca3",
+                "url": "https://api.github.com/repos/roolian/daerisimber-library/zipball/9ef6f049a7b0c64055f81f45ccad7abe1f2d955f",
+                "reference": "9ef6f049a7b0c64055f81f45ccad7abe1f2d955f",
                 "shasum": ""
             },
             "require": {
@@ -28,7 +28,6 @@
                 "hellonico/timber-dump-extension": "^2.0",
                 "symfony/console": "^6.4"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -47,9 +46,10 @@
             "description": "Library used by daerisimber theme.",
             "support": {
                 "issues": "https://github.com/roolian/daerisimber-library/issues",
-                "source": "https://github.com/roolian/daerisimber-library/tree/1.1.4"
+                "source": "https://github.com/roolian/daerisimber-library/tree/1.2.4"
             },
-            "time": "2025-07-08T16:50:57+00:00"
+            "time": "2026-11-04T10:26:09+00:00",
+            "published-time": "2026-11-04T10:26:33+00:00"
         },
         {
             "name": "phlak/config",
@@ -3767,14 +3767,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "daerisimber/library": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.1"
+        "php": ">=8.2"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.11.0"
 }
