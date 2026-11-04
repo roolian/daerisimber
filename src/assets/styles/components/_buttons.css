@@ -24,32 +24,48 @@
     @apply btn-base border-primary bg-primary text-white hover:border-secondary hover:bg-primary;
   }
 
-  .btn-primary {
-    @apply btn-base border-primary bg-primary text-white hover:border-secondary;
+  
+
+  .btn-transparent {
+    @apply btn-base hover:bg-white;
+    background-color: var(--surface-text-color);
+    border-color: var(--surface-text-color);
+    color: var(--surface-bg-color);
+    &:hover {
+      background-color: var(--surface-bg-color);
+      color: var(--surface-text-color);
+    }
   }
 
-  .btn-primary-light {
-    @apply btn-base border-white bg-white text-primary hover:bg-gray-200;
+  .btn-transparent-outline {
+    @apply btn-base hover:bg-white;
+    border-color: var(--surface-text-color);
+    background-color: var(--surface-bg-color);
+    color: var(--surface-text-color);
+    &:hover {
+      background-color: var(--surface-text-color);
+      color: var(--surface-bg-color);
+    }
+  }
+
+  .btn-primary {
+    @apply btn-base border-primary bg-primary text-white hover:bg-secondary hover:border-secondary;
   }
 
   .btn-primary-outline {
-    @apply btn-base border-primary bg-transparent text-primary hover:bg-primary hover:text-white;
+    @apply btn-base border-primary bg-white text-primary hover:bg-primary hover:text-white;
   }
 
   .btn-secondary {
-    @apply btn-base border-primary bg-white text-primary hover:border-primary hover:bg-primary hover:text-white;
-  }
-
-  .btn-secondary-light {
-    @apply btn-base border-white bg-transparent text-white hover:bg-white hover:text-primary;
+    @apply btn-base border-secondary bg-secondary text-white hover:border-primary hover:bg-primary hover:text-white;
   }
 
   .btn-secondary-outline {
-    @apply btn-base border-white bg-secondary text-white hover:bg-white hover:text-secondary;
+    @apply btn-base border-secondary bg-white text-secondary hover:bg-secondary hover:text-white;
   }
 
   .btn-white {
-    @apply btn-base border-white bg-white text-primary hover:bg-transparent hover:text-white;
+    @apply btn-base border-primary bg-white text-secondary hover:bg-secondary hover:text-white;
   }
 
   .btn-icon {

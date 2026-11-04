@@ -1,7 +1,7 @@
 {#
 /**
- * Block Name: Button Block
- *
+ *  Block Name: Button Block
+ *  Tailwind white list 
  */
 #}
 
@@ -9,21 +9,17 @@
 {% set title = fields.link ? fields.link.title :  "Label"  %}
 {% set style = fields.style ??  block.example.attributes.data.style  %}
 
-<!-- Tailwind white list <a class="btn-secondary-light btn-secondary btn-primary-light btn-primary btn-primary-outline btn-secondary-outline">test</a>-->
 
-<a 
-    id="{{ id }}" 
-    href="{{ not is_preview ? fields.link.url : "javascript:" }}" 
-    class="{{ style }}" 
-    target="{{ fields.link.target }}"
->
+<a id="{{ id }}" href="{{ not is_preview ? fields.link.url : "javascript:" }}" class="{{ style }} no-surface" target="{{ fields.link.target }}">
     <span>
         {{ title  }}
     </span>
 
     {% if fields.icon and fields.icon.value != 'none' %}
 
-            <span>{{ display_icon(fields.icon.value, 20) }}</span>
+        <span>
+            {{ display_icon(fields.icon.value, 20) }}
+        </span>
 
     {% endif %}
 </a>
@@ -34,14 +30,10 @@
     ("border-color: " ~ fields.bg_color) : fields.bg_color,
 }) %}
 
-
 {% set styles = styles|merge(add_styles("#" ~ id ~ ":hover", {
     ("background-color: " ~ fields.bg_color_hover) : fields.bg_color_hover,
     ("background-color: transparent") : not fields.bg_color_hover and fields.bg_color ,
     ("border-color: " ~ fields.bg_color_hover) : fields.bg_color_hover,
 })) %}
-
-
-
 
 {{ print_styles(styles) }}

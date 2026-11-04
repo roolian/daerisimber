@@ -1,5 +1,5 @@
 {
-    "modified": 1781695886,
+    "modified": 1783009120,
     "key": "group_61a60c311770a",
     "title": "Bloc - bouton",
     "fields": [
@@ -36,15 +36,17 @@
             },
             "choices": {
                 "btn-primary": "Primary",
-                "btn-primary-light": "Primary light",
-                "btn-secondary": "Secondary dark",
-                "btn-secondary-light": "Secondary light",
-                "btn-primary-outiline": "Outline"
+                "btn-primary-outline": "Primary outline",
+                "btn-secondary": "Secondary",
+                "btn-secondary-outline": "Secondary outline",
+                "btn-transparent": "Transparent",
+                "btn-transparent-outline": "Transparent outline"
             },
             "default_value": "btn-primary",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
             "placeholder": "",

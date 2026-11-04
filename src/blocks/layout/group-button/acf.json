@@ -1,5 +1,5 @@
 {
-    "modified": 1782469665,
+    "modified": 1783012278,
     "key": "group_6a3e525d09c6a",
     "title": "Common - Spacing options",
     "fields": [
@@ -99,7 +99,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
