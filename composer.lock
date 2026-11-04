@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef1bac947463e1f86eed8527f50125fc",
+    "content-hash": "d58b334c95df102c53637a306b709b41",
     "packages": [
         {
             "name": "daerisimber/library",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roolian/daerisimber-library.git",
-                "reference": "9ef6f049a7b0c64055f81f45ccad7abe1f2d955f"
+                "reference": "46d7d55363d03a5c70f8d0ca1d75dca09d464834"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roolian/daerisimber-library/zipball/9ef6f049a7b0c64055f81f45ccad7abe1f2d955f",
-                "reference": "9ef6f049a7b0c64055f81f45ccad7abe1f2d955f",
+                "url": "https://api.github.com/repos/roolian/daerisimber-library/zipball/46d7d55363d03a5c70f8d0ca1d75dca09d464834",
+                "reference": "46d7d55363d03a5c70f8d0ca1d75dca09d464834",
                 "shasum": ""
             },
             "require": {
@@ -46,10 +46,10 @@
             "description": "Library used by daerisimber theme.",
             "support": {
                 "issues": "https://github.com/roolian/daerisimber-library/issues",
-                "source": "https://github.com/roolian/daerisimber-library/tree/1.2.4"
+                "source": "https://github.com/roolian/daerisimber-library/tree/1.2.5"
             },
-            "time": "2026-11-04T10:26:09+00:00",
-            "published-time": "2026-11-04T10:26:33+00:00"
+            "time": "2026-11-04T10:58:14+00:00",
+            "published-time": "2026-11-04T10:58:40+00:00"
         },
         {
             "name": "phlak/config",
