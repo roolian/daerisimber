@@ -1,17 +1,17 @@
 <div class="relative overflow-clip">
     <div class="row justify-center items-center relative z-10">
         <div class="col  md:w-6/12 ">
-            <div class="py-20 md:py-30">
+            <div class="">
                 <h1 class="h1 mb-6">
                     {{ fields.title|striptags('<strong><br>') }}
                 </h1>
 
                 {% if fields.subtitle %}
-                    <div class="mb-10">
+                    <div class="">
                         {{ fields.subtitle }}
                     </div>
                 {% endif %}
-                <InnerBlocks class="mt-10"/>
+                <InnerBlocks class=""/>
 
             </div>
         </div>

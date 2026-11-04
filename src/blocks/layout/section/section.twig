@@ -5,14 +5,14 @@
  */
 #}
 
-{% set spacing_class = "my-20 md:my-30" %}
+{% set spacing_class = "my-20 md:my-30 first:mt-0" %}
 {% set styles = "" %}
 {% set bg_class = "" %}
 {% set inset_deco = "-inset-y-20 md:-inset-y-30 first:-top-30 md:group-first/section:-top-40" %}
 
 {% if fields.bg_color %}
 
-    {% set spacing_class = "py-20 first:pt-20 md:py-30" %}
+    {% set spacing_class = "py-20  md:py-30 first:py-16 md:first:py-24" %}
     {% set bg_class = color_class(fields.bg_color) %}
     
     {% if not bg_class %}
