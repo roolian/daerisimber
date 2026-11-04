@@ -40,6 +40,7 @@ const themeConfig = {
     },
     typography: {
       customFontSize: false,
+      defaultFontSizes: false,
       dropCap: false,
       fontWeight: false,
       fontStyle: false,
@@ -81,10 +82,16 @@ const themeConfig = {
     spacing: {
       customSpacingSize: false,
       defaultSpacingSizes: false,
+      blockGap: false,
       spacingScale: {
         steps: 0,
       },
       spacingSizes: [
+        {
+          name: "xs",
+          slug: "xs",
+          size: "12px",
+        },
         {
           name: "sm",
           slug: "sm",
@@ -118,6 +125,14 @@ const themeConfig = {
         },
         spacing: {
           padding: true,
+          margin: true,
+          blockGap: true,
+        },
+        layout: {
+          allowEditing: true, // ← autoriser le changement de type de layout
+        },
+        dimensions: {
+          minHeight: true, // ← hauteur min sur les colonnes
         },
       },
     },

@@ -20,4 +20,19 @@
     @apply inline-block;
 }
 
+/* Gutenberg default overrides */
+
+:root :where(.is-layout-constrained) > * {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h1:where(.wp-block-heading).has-background,
+h2:where(.wp-block-heading).has-background,
+h3:where(.wp-block-heading).has-background,
+h4:where(.wp-block-heading).has-background,
+h5:where(.wp-block-heading).has-background,
+h6:where(.wp-block-heading).has-background {
+  padding: 2rem 2.5rem;
+}
 

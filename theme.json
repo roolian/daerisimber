@@ -64,6 +64,7 @@
     },
     "typography": {
       "customFontSize": false,
+      "defaultFontSizes": false,
       "dropCap": false,
       "fontWeight": false,
       "fontStyle": false,
@@ -105,10 +106,16 @@
     "spacing": {
       "customSpacingSize": false,
       "defaultSpacingSizes": false,
+      "blockGap": false,
       "spacingScale": {
         "steps": 0
       },
       "spacingSizes": [
+        {
+          "name": "xs",
+          "slug": "xs",
+          "size": "12px"
+        },
         {
           "name": "sm",
           "slug": "sm",
@@ -153,7 +160,15 @@
           "defaultPresets": false
         },
         "spacing": {
-          "padding": true
+          "padding": true,
+          "margin": true,
+          "blockGap": true
+        },
+        "layout": {
+          "allowEditing": true
+        },
+        "dimensions": {
+          "minHeight": true
         }
       }
     }
