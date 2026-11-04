@@ -37,6 +37,10 @@
         "psr-4": {
             "Theme\\": "src/",
             "Theme\\Modules\\": "src/modules/"
-        }
+        },
+        "exclude-from-classmap": [
+            "src/blocks/",
+            "src/modules/*/blocks/"
+        ]
     }
 }
