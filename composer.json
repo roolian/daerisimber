@@ -16,8 +16,8 @@
     ],
     "require": {
         "php": ">=8.2",
-        "daerisimber/library": "^1.2.5",
-        "phlak/config": "^8.0",
+        "daerisimber/library": "^1.2.6",
+        "phlak/config": "^8.0 || ^10.0",
         "timber/timber": "^2.0"
     },
     "require-dev": {
